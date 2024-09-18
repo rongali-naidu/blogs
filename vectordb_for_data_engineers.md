@@ -12,8 +12,8 @@ Example: Let's say a user asks a question in natural language, like:
 
 "Show me the names of employees who were hired after 2020."
 
-Step 1: Retrieval : Before sending the query to the AI model, we retrieve the relevant tables schema, metadata and SQL query examples from the Vector Store. The relevancy is based on the similarity search. This information is sent to the AI Model in the prompt along with the user question..
-Step 2 : Generation : The AI model generates the SQL query based on the user's question and relevant metadata included in the promot.
+* Step 1: Retrieval : Before sending the query to the AI model, we retrieve the relevant tables schema, metadata and SQL query examples from the Vector Store. The relevancy is based on the similarity search. This information is sent to the AI Model in the prompt along with the user question..
+* Step 2 : Generation : The AI model generates the SQL query based on the user's question and relevant metadata included in the promot.
 
 Without the relevant metadata in the prompt, the AI model does not know the exact  table and column names to be used.
 
