@@ -1,6 +1,6 @@
 ## Why Mastering Vector Databases is Important for Data Engineers in the Generative AI Landscape
 
-In this blog, we'll explore how vector databases work in the context of Generative AI and RAG, specifically focusing on Amazon OpenSearch Service, and why data engineers need to upskill in building pipelines for such databases.
+In this blog, we'll understand how vector databases work in the context of Generative AI and RAG, specifically focusing on Amazon OpenSearch Service, and why data engineers need to learn  building pipelines for Vector databases.
 
 ## How RAG Works
 
