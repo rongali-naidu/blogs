@@ -27,7 +27,12 @@ Data engineers are key to building the pipelines that feed RAG models. They are 
 
 ## How do we ingest data into OpenSearch Vecctor DB?
 
-Multiples ways for ingesting data into Vector DB
+Multiples ways for ingesting data into Vector DB. Listing below a couple of alternatives
+
+* Ingesting Data with Apache Spark connector
+* Ingesting Data with Glue ETL
+* Ingesting Data with opensearchpy Python Module
+* Ingesting Data with Amazon Kinesis Firehose
 
 ### Ingesting Data with Apache Spark connector 
 
