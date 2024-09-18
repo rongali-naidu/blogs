@@ -8,8 +8,7 @@ Landscape of Generative AI continues to evolve. To make use of these Generative 
 
 Lets try to understand with one of the Data engineering related Generative AI use case ...ie. Text2SQL . Reference is taken from this [AWS Text2SQL Blog](https://aws.amazon.com/blogs/machine-learning/build-a-robust-text-to-sql-solution-generating-complex-queries-self-correcting-and-querying-diverse-data-sources/)
 
-Example: Text-to-SQL with RAG
-Let's say a user asks a question in natural language, like:
+Example: Let's say a user asks a question in natural language, like:
 
 "Show me the names of employees who were hired after 2020."
 
