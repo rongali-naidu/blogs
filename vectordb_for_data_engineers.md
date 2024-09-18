@@ -1,20 +1,24 @@
 ## Why Mastering Vector Databases is Key for Data Engineers in the AI Revolution
 
-Landscape of Generative AI continues to evolve. To make use of these Generative AI models, prompt techniques plays important role. One of the prompting technique is RAG (Retrieval-Augmented Generation). RAG combines the strengths of retrieval systems and generative models to produce highly accurate and context-aware outputs. In RAG, the model doesn't rely solely on pre-trained knowledge; instead, it retrieves relevant external documents or data points to enhance its response generation. This approach is crucial for many applications, such as answering complex queries, generating code snippets, or summarizing large document. 
-
 In this blog, we'll explore how vector databases work in the context of Generative AI and RAG, specifically focusing on Amazon OpenSearch Service, and why data engineers need to upskill in building pipelines for such databases.
 
 ## How RAG Works
 
-When a user submits a query to generative AI models, it is first converted into a vector representation (embedding) . This vector captures the semantic meaning of the query.
+Landscape of Generative AI continues to evolve. To make use of these Generative AI models, prompt techniques plays important role. One of the prompting technique is RAG (Retrieval-Augmented Generation). RAG combines the strengths of retrieval systems and generative models to produce highly accurate and context-aware outputs. In RAG, the model doesn't rely solely on pre-trained knowledge; instead, it retrieves relevant external documents or data points to enhance its response generation. This approach is crucial for many applications, such as answering complex queries, generating code snippets, or summarizing large document. 
 
-* Vector Search in OpenSearch: The query vector is then passed to a vector database like OpenSearch. OpenSearch performs a k-NN (k-Nearest Neighbors) search to find documents or data points with similar embeddings, meaning they are semantically close to the query.
-* Document Retrieval: Once the most relevant documents are retrieved based on their vector similarity, they are sent back to the generative model.
-* Augmented Response Generation: The generative AI model  uses the retrieved documents to produce a more contextually accurate and informative response, augmenting its output with real-time, relevant data.
+Lets try to understand with one of the Data engineering related Generative AI use case ...ie. Text2SQL . Reference is taken from this [AWS Text2SQL Blog](https://aws.amazon.com/blogs/machine-learning/build-a-robust-text-to-sql-solution-generating-complex-queries-self-correcting-and-querying-diverse-data-sources/)
 
-This is where vector databases play a pivotal role—they enable efficient, low-latency searches across large datasets of vectorized information, ensuring the generative model has the most relevant context to produce high-quality responses.
+Example: Text-to-SQL with RAG
+Let's say a user asks a question in natural language, like:
 
-Refer this AWS Blog for more details on RAG : https://aws.amazon.com/what-is/retrieval-augmented-generation/
+"Show me the names of employees who were hired after 2020."
+
+Step 1: Retrieval : Before sending the query to the AI model, we retrieve the relevant tables schema, metadata and SQL query examples from the Vector Store. The relevancy is based on the similarity search. This information is sent to the AI Model in the prompt along with the user question..
+Step 2 : Generation : The AI model generates the SQL query based on the user's question and relevant metadata included in the promot.
+
+Without the relevant metadata in the prompt, the AI model does not know the exact  table and column names to be used.
+
+Refer this [AWS Blog for more details on RAG](https://aws.amazon.com/what-is/retrieval-augmented-generation/)
 
 ## Why RAG and Vector Databases Matter for Data Engineers
 
