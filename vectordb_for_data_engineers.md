@@ -106,7 +106,7 @@ def lambda_handler(event, context):
 
 ### Ingesting Data with Glue ETL
 
-Check this AWS Blog : https://aws.amazon.com/blogs/big-data/accelerate-analytics-on-amazon-opensearch-service-with-aws-glue-through-its-native-connector/
+Check this [AWS Glue ETL Opensearch Connector Blog](https://aws.amazon.com/blogs/big-data/accelerate-analytics-on-amazon-opensearch-service-with-aws-glue-through-its-native-connector/)
 
 ### Ingesting Data with Amazon Kinesis Firehose
 Amazon Kinesis Firehose allows you to load streaming data directly into OpenSearch. It can continuously capture and transform data in real-time before loading it into OpenSearch
