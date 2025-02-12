@@ -154,9 +154,13 @@ This behavior highlights the importance of **initialization** and **explicit nul
 ## Best Practices to Handle NULL and Empty Strings
 
 ✅ **Define NULL Handling at Data Ingestion:** Standardize whether missing values should be `NULL` or empty strings or defaulted to a fixed value.
+
 ✅ **Use `NULLIF(column, '')` to convert empty strings to NULL where needed.**
+
 ✅ **Check for `NULL` explicitly using `IS NULL` or `IS NOT NULL`.**
+
 ✅ **Check for `EMPTY STRING ('') ` explicitly using `IS ''`
+
 ✅ **Normalize missing data before joins and aggregations.**
 
 
