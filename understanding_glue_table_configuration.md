@@ -18,7 +18,7 @@ AWS Glue is a powerful, serverless data integration service that enables you to 
 
 ### **JsonSerDe**
 - Example:     org.openx.data.jsonserde.JsonSerDe
-- A SerDe (Serializer/Deserializer) for parsing  the records.
+- A SerDe (Serializer/Deserializer) for parsing  the records. This is who do... mapping of input records to target table schema happens. handles missing columns or malformed records etc.
 - Glue uses **org.openx.data.jsonserde.JsonSerDe** to handle JSON.
 
 ---
