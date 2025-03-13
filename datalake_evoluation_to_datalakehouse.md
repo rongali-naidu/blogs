@@ -1,4 +1,4 @@
-# How Our Data Lake evolved into a Data Lakehouse
+# How our Data Lake evolved into a Data Lakehouse
 
 ![Alt text](images/lakehouse_architecture.jpg)
 
