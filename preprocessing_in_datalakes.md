@@ -26,7 +26,7 @@ To mitigate potential issues and facilitate seamless schema-on-read operations, 
 
 **Parquet Files:**
 
-- **Schema Definition:** Since Parquet is a columnar storage format that enforces schema-on-write, define the schema explicitly during data transformation to ensure compatibility with downstream applications.
+- **Schema Definition:** Since Parquet contains the schema as part of the file metadata, it comes under schema-on-write category. Just listing it here since this is the default file format for datalake.
 
 **Best Practices for Data Ingestion**
 
