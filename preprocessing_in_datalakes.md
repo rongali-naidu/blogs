@@ -6,7 +6,7 @@ AWS Glue Crawlers assist in automating the schema inference process by scanning 
 
 **Challenges with Inconsistent Data**
 
-When data contains inconsistencies or anomalies that deviate from the inferred schema, query engines may encounter errors. For example, if a Glue Crawler infers a schema based on a sample where a column contains numeric data, but subsequent records contain strings in the same column, Athena queries may fail due to type mismatches. This scenario underscores the importance of ensuring data consistency before ingestion. citeturn0search8
+When data contains inconsistencies or anomalies that deviate from the inferred schema, query engines may encounter errors. For example, if a Glue Crawler infers a schema based on a sample where a column contains numeric data, but subsequent records contain strings in the same column, Athena queries may fail due to type mismatches. This scenario underscores the importance of ensuring data consistency before ingestion. 
 
 **Minimal Preprocessing Guidelines**
 
