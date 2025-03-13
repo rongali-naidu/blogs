@@ -10,11 +10,8 @@ Consider a scenario where JSON data is ingested into Amazon S3, followed by runn
 
 So, conclusion is that pre-processing is required even for the data lake data ingestion. The level of pre-processing is influenced by the flexibility of query engines like Amazon Athena in handling datasets with varying schemas
 
-**Challenges with Inconsistent Data**
 
-When data contains inconsistencies or anomalies that deviate from the inferred schema, query engines may encounter errors. For example, if a Glue Crawler infers a schema based on a sample where a column contains numeric data, but subsequent records contain strings in the same column, Athena queries may fail due to type mismatches. This scenario underscores the importance of ensuring data consistency before ingestion. 
-
-**Minimal Preprocessing Guidelines**
+**Preprocessing Guidelines**
 
 To mitigate potential issues and facilitate seamless schema-on-read operations, consider the following preprocessing steps tailored to common data formats:
 
