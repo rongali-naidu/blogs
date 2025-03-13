@@ -60,7 +60,7 @@ By integrating these advanced table formats and optimizing our architecture, our
 | Component                  | Data Lake (Original)         | Data Lakehouse (Current)           |
 |----------------------------|------------------------------|------------------------------------|
 | **Storage**                | Amazon S3                   | Amazon S3 (with Iceberg & Hudi)   |
-| **File Formats**           | Parquet, JSON, CSV          | Iceberg, Hudi (ACID support) ,S3 Tables, Parquet, JSON, CSV     |
+| **File Formats**           | Parquet, JSON, CSV , Text Files         | Iceberg, Hudi (ACID support) ,S3 Tables, Parquet, JSON, CSV , Text Files     |
 | **Transactions**           | Insert, Replace                        | Full ACID (Insert, Update, Delete), Replace|
 | **Query Engines**          | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight)      |
 | **Governance & Compliance**| Lake Formation              | Lake Formation+ GDPR privacy compliant|
