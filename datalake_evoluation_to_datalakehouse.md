@@ -54,7 +54,7 @@ This transition enabled us to:
 - Perform **upserts** (update or insert) and **deletes** directly on S3 data.
 - Meet **privacy compliance** like GDPR
 
-### Phase 3: Transforming into a Data Lakehouse
+### Current state of our Data Lakehouse
 By integrating these advanced table formats and optimizing our architecture, our Data Lake evolved into a **Data Lakehouse**. Here’s how our setup looks today:
 
 | Component                  | Data Lake (Original)         | Data Lakehouse (Current)           |
