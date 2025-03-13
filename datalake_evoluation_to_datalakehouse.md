@@ -6,7 +6,7 @@ Image Source: [AWS Blog](https://aws.amazon.com/blogs/big-data/harness-the-power
 
 ## Data Lake vs. Data Lakehouse
 
-There is no stricter defintions for the Data Lake or Data Lakehouse. I have taken general understanding of these terms based on how various companies defined these terms. For broader understanding on where  Datalake stands with respect to Data warehouse refer this [data-lake]( https://aws.amazon.com/what-is/data-lake/) AWS doc
+There is no stricter defintions for the Data Lake or Data Lakehouse. I have taken general understanding of these terms based on how various companies defined these terms. For broader understanding on where  Datalake stands with respect to Data warehouse refer this AWS [Data-lake]( https://aws.amazon.com/what-is/data-lake/) doc
 
 ### What is a Data Lake?
 A **Data Lake** is a centralized repository designed to store large volumes of structured, semi-structured, and unstructured data. It allows organizations to collect and retain raw data in its native format without the need for immediate transformation.
