@@ -2,7 +2,7 @@ The core principle of a data lake is its **schema-on-read** architecture, which 
 
 **The Role of AWS Glue Crawlers**
 
-AWS Glue Crawlers assist in automating the schema inference process by scanning data in Amazon S3 and creating corresponding metadata in the AWS Glue Data Catalog. They classify data to determine its format and schema, grouping it into tables or partitions, and writing metadata to the Data Catalog. However, Glue Crawlers have limitations, such as reading only the first 1 MB or up to a maximum of 10 MB of data to infer the schema. If the initial sample does not represent the entire dataset accurately, the inferred schema may be incorrect, leading to query failures in Athena or Spark. citeturn0search4
+AWS Glue Crawlers assist in automating the schema inference process by scanning data in Amazon S3 and creating corresponding metadata in the AWS Glue Data Catalog. They classify data to determine its format and schema, grouping it into tables or partitions, and writing metadata to the Data Catalog. However, Glue Crawlers have limitations, such as using sampling rows for coming up with the schema. If the initial sample does not represent the entire dataset accurately, the inferred schema may be incorrect, leading to query failures in Athena or Spark. 
 
 **Challenges with Inconsistent Data**
 
