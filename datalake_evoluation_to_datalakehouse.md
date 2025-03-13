@@ -64,6 +64,7 @@ By integrating these advanced table formats and optimizing our architecture, our
 | **Transactions**           | Insert, Replace                        | Full ACID (Insert, Update, Delete), Replace|
 | **Query Engines**          | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight)      |
 | **Governance & Compliance**| Lake Formation              | Lake Formation+ GDPR privacy compliant|
+| **Nature of the data**| Raw Data, Cleaned Data              | Processed Data, Raw Data, Cleaned Data    |
 
 
 
