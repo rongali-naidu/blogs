@@ -1,8 +1,12 @@
 # How Our Data Lake Evolved into a Data Lakehouse
 
-![Alt text](images/lakehouse_architecture.jpeg)
+![Alt text](images/lakehouse_architecture.jpg)
+
+Image Source: [AWS Blog](https://aws.amazon.com/blogs/big-data/harness-the-power-of-your-data-with-aws-analytics/)
 
 ## Understanding the Basics: Data Lake vs. Data Lakehouse
+
+There is no stricter defintions for the Data Lake or Data Lakehouse. I have taken general understanding of these terms based on how various companies defined these terms. 
 
 ### What is a Data Lake?
 A **Data Lake** is a centralized repository designed to store large volumes of structured, semi-structured, and unstructured data. It allows organizations to collect and retain raw data in its native format without the need for immediate transformation.
@@ -57,7 +61,7 @@ By integrating these advanced table formats and optimizing our architecture, our
 |----------------------------|------------------------------|------------------------------------|
 | **Storage**                | Amazon S3                   | Amazon S3 (with Iceberg & Hudi)   |
 | **File Formats**           | Parquet, JSON, CSV          | Iceberg, Hudi (ACID support) ,S3 Tables, Parquet, JSON, CSV     |
-| **Transactions**           | None                        | Full ACID (Insert, Update, Delete)|
+| **Transactions**           | Insert, Replace                        | Full ACID (Insert, Update, Delete), Replace|
 | **Query Engines**          | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight | AWS Athena, AWS EMR, AWS Glue ETL, AWS Redshift, AWS SPectrum, AWS Quicksight)      |
 | **Governance & Compliance**| Lake Formation              | Lake Formation+ GDPR privacy compliant|
 
