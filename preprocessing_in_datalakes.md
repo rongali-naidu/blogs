@@ -34,7 +34,7 @@ To mitigate potential issues and facilitate seamless schema-on-read operations, 
 
 - **Schema Evolution Management:** Establish procedures to handle schema changes gracefully, updating metadata repositories accordingly to reflect the latest schema definitions. Glue Crawler provides flexible configuration options to manage this aspect.
 
-- **Comprehensive Sampling:** Configure Glue Crawlers to process larger or more representative samples of the dataset to improve the accuracy of schema inference. citeturn0search6
+- **Comprehensive Sampling:** Configure Glue Crawlers to process larger or more representative samples of the dataset to improve the accuracy of schema inference.
 
 **Conclusion**
 
