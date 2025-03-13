@@ -1,5 +1,7 @@
 # How Our Data Lake Evolved into a Data Lakehouse
 
+![Alt text](images/lakehouse_architecture.jpeg)
+
 ## Understanding the Basics: Data Lake vs. Data Lakehouse
 
 ### What is a Data Lake?
