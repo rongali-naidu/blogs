@@ -22,7 +22,7 @@ To mitigate potential issues and facilitate seamless schema-on-read operations, 
 
 - **Standardize Key Naming:** Avoid special characters and spaces in key names. Adhere to consistent naming conventions, such as camelCase or snake_case, to ensure compatibility with query engines.
 
-- **Line Delimitation:** Store each JSON record on a separate line (newline-delimited JSON) to facilitate efficient processing by tools like Athena and Spark. citeturn0search7
+- **Line Delimitation:** Store each JSON record on a separate line (newline-delimited JSON) to facilitate efficient processing by tools like Athena and Spark. 
 
 **Parquet Files:**
 
