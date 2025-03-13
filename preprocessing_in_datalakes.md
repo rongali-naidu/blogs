@@ -1,8 +1,14 @@
-The core principle of a data lake is its **schema-on-read** architecture, which allows for the storage of data in its raw form, deferring schema application until data retrieval or analysis. This flexibility enables organizations to ingest diverse datasets without immediate structuring. However, this does not imply that data can be ingested without any consideration for structure or quality. Minimal preprocessing is essential to ensure that query engines like Amazon Athena and Apache Spark can effectively interpret and analyze the data.
+# Does a Data Lake Require Pre-processing?
 
-**The Role of AWS Glue Crawlers**
+In my early experiences with data warehousing, I became accustomed to the structured approach of staging and processing layers. These layers are integral to the ETL (Extract, Transform, Load) process, ensuring that data is cleansed, transformed, and loaded into the warehouse in a consistent and reliable manner.
 
-AWS Glue Crawlers assist in automating the schema inference process by scanning data in Amazon S3 and creating corresponding metadata in the AWS Glue Data Catalog. They classify data to determine its format and schema, grouping it into tables or partitions, and writing metadata to the Data Catalog. However, Glue Crawlers have limitations, such as using sampling rows for coming up with the schema. If the initial sample does not represent the entire dataset accurately, the inferred schema may be incorrect, leading to query failures in Athena or Spark. 
+Transitioning to data lakes, I initially perceived them as flexible repositories where raw data could be ingested without much preprocessing, leveraging their **schema-on-read** architecture. However, this assumption proved to be a misconception. Some preprocessing is essential to ensure that query engines like Amazon Athena and Apache Spark can effectively interpret and analyze the data.
+
+**A Real-World Example**
+
+Consider a scenario where JSON data is ingested into Amazon S3, followed by running an AWS Glue crawler to create a table with a complex nested JSON schema. While these tasks can be completed swiftly, issues may arise during querying. For instance, Athena might throw an error like "HIVE_BAD_DATA: Error Parsing a column in the table," indicating that some rows do not match the schema defined by the Glue crawler. Specifically, a nested column expected to be of a certain type (e.g., a struct) might contain a different type (e.g., a string), leading to such errors. Identifying and rectifying these discrepancies can be challenging, underscoring the need for preprocessing to ensure data consistency.
+
+So, conclusion is that pre-processing is required even for the data lake data ingestion. The level of pre-processing is influenced by the flexibility of query engines like Amazon Athena in handling datasets with varying schemas
 
 **Challenges with Inconsistent Data**
 
