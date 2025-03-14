@@ -90,7 +90,7 @@ Example (with a batch size of 100):
 SELECT * FROM json_data_table WHERE unique_key_value IN ('key1', 'key2', ..., 'key100');
 ```
 
-Repeat this process. Once you identify a batch containing the problematic record, narrow down the batch to locate the exact record causing the error. In my case, I found the faulty record by the third batch manually.
+Repeat this process. Once you identify a batch containing the problematic record, narrow down with in the batch to locate the exact record causing the error. In my case, I found the faulty record by the third batch manually.
 
 ### Alternative Approach:
 
