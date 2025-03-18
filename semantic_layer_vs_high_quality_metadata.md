@@ -25,6 +25,7 @@ However, as Gen AI reshapes the BI landscape, the necessity of the traditional s
 ### **Gen AI and the Rise of Metadata-Driven BI**
 
 Gen AI introduces a paradigm shift by understanding user intent in natural language and converting it directly into SQL queries. This is made possible by analyzing database schemas and interpreting the meaning of tables and columns through comprehensive metadata.
+For more details on this point, refer my AWS Blog on [Enriching metadata for accurate text-to-SQL generation for Amazon Athena](https://aws.amazon.com/blogs/big-data/enriching-metadata-for-accurate-text-to-sql-generation-for-amazon-athena/)
 
 Rather than relying on a manually curated semantic layer, modern AI-driven tools leverage the richness of metadata to:
 
