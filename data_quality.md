@@ -133,7 +133,8 @@ Modern data systems require continuous monitoring to catch errors in real time a
 
 
 
-### ✅ **Metadata and Data Lineage: Better quality documentation ...Agree every one values but not committed to doing it **
+### ✅ **Metadata and Data Lineage: Better quality documentation 
+Every one values documentation but not committed to doing it regularly
 Metdata helps to know more about what is stored in each dataset.
 Data lineage maps how data moves and transforms through the system.
 
