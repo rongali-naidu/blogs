@@ -1,4 +1,4 @@
-# System Design Patterns Data Engineers Use Most
+# Mastering System Design: Patterns for Modern Data Engineering
 
 System design patterns provide proven solutions to common problems encountered in building scalable and reliable data systems. Data engineers frequently adapt these patterns to handle large-scale data movement, transformation, and analysis. Here are some key patterns and how they apply to data engineering:
 
