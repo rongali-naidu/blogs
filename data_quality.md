@@ -30,7 +30,7 @@ Each phase requires a unique set of checks and processes to ensure that the data
 
 Before data enters a data lake or warehouse, validating its structure and completeness prevents cascading errors downstream. Key checks at this stage include:
 
-### ✅ **Schema Compatibility**
+### **Schema Compatibility**
 Ensuring schema alignment prevents ingestion failures and data corruption.
 
 - **Data Types**: Validate that each column’s data type (e.g., `INT`, `STRING`, `TIMESTAMP`) matches the expected schema, including null constraints and allowed values.
@@ -38,7 +38,7 @@ Ensuring schema alignment prevents ingestion failures and data corruption.
 
 ---
 
-### ✅ **Data Completeness**
+### **Data Completeness**
 
 - **Row Count**: Verify that the entire dataset intended for processing is present.
 - **Mandatory Columns**: Ensure all required columns are both present and populated.
@@ -62,7 +62,7 @@ Ensuring schema alignment prevents ingestion failures and data corruption.
 
 Once data is ingested, maintaining its accuracy and ensuring timely delivery is paramount.
 
-### ✅ **Data Accuracy**
+### **Data Accuracy**
 Processed data should accurately reflect the source.
 
 - **Record Count Accuracy**: Ensure all expected records are processed.
@@ -72,7 +72,7 @@ Processed data should accurately reflect the source.
 ---
 
 
-### ✅ **Processing Timeliness (SLA Monitoring)**
+### **Processing Timeliness (SLA Monitoring)**
 Data is only valuable if it’s available when needed.
 
 - **Latency Tracking**: Monitor and track how long data takes to move through the pipeline.
@@ -127,13 +127,13 @@ Common areas where user-driven validation surfaces issues include:
 
 Modern data systems require continuous monitoring to catch errors in real time and ensure operational reliability. Accurate Metadata and Data Lineage plays critical role in reponding to any data quality issues 
 
-### ✅ **Tracking Delayed Data Processing**
+### **Tracking Delayed Data Processing**
 - **Monitor SLAs**: Implement real-time tracking for every stage of the pipeline.  
 - **Alerting**: Trigger alerts when data falls behind schedule.  
 
 
 
-### ✅ **Metadata and Data Lineage: Better quality documentation 
+### **Metadata and Data Lineage: Better quality documentation 
 Every one values documentation but not committed to doing it regularly
 Metdata helps to know more about what is stored in each dataset.
 Data lineage maps how data moves and transforms through the system.
