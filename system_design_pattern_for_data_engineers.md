@@ -8,7 +8,8 @@ The **Batching Pattern** involves processing data in chunks or batches rather th
 **Example:**
 - **ETL Pipelines:** Periodically extract data from relational databases, apply transformations (e.g., cleaning, joining), and load it into Amazon Redshift or a data lake.
 
-*Note: Change Data Capture (CDC) techniques identify the incremental data we need to extract from the source systems.*
+*Note 1: Change Data Capture (CDC) techniques identify the incremental data we need to extract from the source systems.*
+*Note 2: we hear ELT Pattern but i am not convinced thats its fundamentally different from ETL so not adding it as separate pattern*
 
 ## 2. Event Sourcing Pattern
 
