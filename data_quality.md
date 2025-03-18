@@ -1,4 +1,4 @@
-## What Data Quality Means to Me After 20 Years of Working with Data
+## What Data Quality Means to Me After Years of Working with Data
 
 **Data quality** is a term that gets thrown around a lot, but its meaning varies depending on who you ask.
 
@@ -8,7 +8,7 @@ For **data consumers**—such as **data analysts, business analysts, data scient
 
 For **business stakeholders**, it’s the ability to trust data-driven decisions.
 
-After working with data for 20 years across multiple platforms and industries, I’ve realized that data quality covers the following major categories:
+After working with data for years across multiple platforms and industries, I’ve realized that data quality covers the following major categories:
 
 - **Data Accuracy** – Simply put whatever data we loaded is correct in all aspects. I usually include **Data Validity** (agreeing with the schema), **Data Integrity** (maintaining relationships across fact and dimension tables), and **Data Uniqueness** (ensuring no duplicates) under Data Accuracy for simplicity.
 - **Data Completeness** – Data is complete. This means we capture all data from source systems, load the entire dataset without omissions, and include all columns required by consumers.
