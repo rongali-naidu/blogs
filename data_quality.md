@@ -55,8 +55,7 @@ Ensuring schema alignment prevents ingestion failures and data corruption.
 
 ### **Does This Mean I’ve Done Enough?**
 
-- **Probably not…** Its good beginning but doesnt ensure right data quality as systems keep changing. Alarms will safe gaurd us from this but it is reactive approach. Evaluating if [ deepq-based-data-quality](https://aws.amazon.com/blogs/big-data/test-data-quality-at-scale-with-deequ/) minimizes the reaction time and cost effective. 
-
+- **Probably not…** Probably not… While these practices are a solid foundation, they don’t fully guarantee data quality as systems evolve and change. Alarms provide a safety net—but they are inherently reactive. Is there a better alternative? Tools like  [Deequ](https://aws.amazon.com/blogs/big-data/test-data-quality-at-scale-with-deequ/) offer a proactive approach by running comprehensive data quality checks before ingestion. But will this truly outperform reactive monitoring? If your ingestion tool and data lake already enforce schema validation, Deequ may add limited value for basic checks. However, it shines when tackling more complex validations—like detecting anomalies, data distribution drift, schema evolutuon (detecting new colums), ensuring data completeness, and validating business rules beyond standard schema constraints. It does come with trade-offs—increased compute costs and potential delays in processing. Therefore, the decision to implement Deequ (or similar tools) should weigh the benefits of deeper, proactive checks against the associated operational overhead.
 ---
 
 ## 2. Data Quality During Processing
@@ -88,7 +87,8 @@ Data is only valuable if it’s available when needed.
 - **Alarms and Alerts**: Implement alarms for pipeline delays
 
 
-
+### **Does This Mean I’ve Done Enough?**
+- Most of this depends on the Orchestration tools , Query engine and other tech stack we work with and the features they support. 
 
 ## 3. After Data Processing – Validation Through the User's Lens
 
@@ -119,7 +119,7 @@ Common areas where user-driven validation surfaces issues include:
 
 ### **Does This Mean I’ve Done Enough?**
 
-- **Not really…** No matter how robust our checks are, **users’ lenses** will always reveal new data challenges. Proactive monitoring is crucial—but so is embracing **user feedback** as a core part of the **data quality** process.
+- There is always scope to improve… No matter how robust our checks are, users’ lenses will always reveal new data discrepancies that slip through. Proactive monitoring is crucial—but so is embracing user feedback as a core part of the data quality process. Establishing a feedback loop with data consumers and implementing cross-system reconciliation ensures a more holistic, user-centered approach to data quality.
 
 ---
 
