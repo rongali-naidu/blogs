@@ -1,10 +1,11 @@
 ### From Data Engineering to Data Science: My Journey of Understanding Models and Data Drift
 
 ### Note on Data Engineering:
-Data Engineering is about building robust data architectures for organizations.
+Data Engineering is about building robust data architectures for organizations and comes under the broader umbrell of building Data Warehouse/Data Lakes. 
 It involves acquiring data from various systems (RDBMS, NoSQL, Streaming) in various formats (Text, CSV, JSON, Parquet), performing cleaning and transformation, and loading it into data lakes or databases using layered ETL/ELT patterns. This is achieved with the help of orchestration tools (like Apache Airflow) or ETL tools (like Informatica) and data processing engines (Big Data engines like Spark or RDBMS).
 Data modeling follows denormalization-based techniques like star and snowflake schemas.
-While ETL tools, databases, data processing engines, storage systems, data scale, and business domains vary, the core concepts remain consistent and form the foundations of data engineering.
+While ETL tools, databases, data formats, data processing engines, storage systems, data scale, and business domains vary, the core concepts remain consistent and form the foundations of data engineering.
+When I started with Data Warehousing projects, my journey began as a DW Engineer (a combination of ETL and BI enginner) with Ralph Kimball’s books and blogs guiding me on DW concepts (data modeling and ETL Design), Informatica as the ETL tool, Oracle as the DW database, and Cognos as the reporting tool. It’s been 20 years, and while ETL tools/Orchestration tools, databases, data formats, data processing engines, storage systems, data scale, and business domains vary, the core concepts remain consistent and form the foundations of data engineering ... so the essence keep learning and adapting ... some unlearning bound to happen.
 
 #### Introduction
 Working as a data engineer for several years alongside data scientists and applied scientists has been an eye-opening journey. I started off focusing purely on data pipelines and ETL processes, but over time, I found myself drawn to understanding how the models I was helping deploy actually worked. One concept that particularly caught my attention was **data drift**—the way models can slowly break down over time as data changes. In this blog, I’ll share my learnings and break down the core ideas behind data science models and data drift.
