@@ -8,7 +8,8 @@ Over the years, my role evolved from building **Data Warehouses** to working on 
 
 ![image](../main/images/patent.jpg)
 
-Various Tools and Technologies used over the years
+Tools and Technologies I've learned Over the Years
+
 - **ETL Tools**: Informatica, SSIS, DataStage, PL/SQL, OWB, ODI  
 - **Reporting Tools**: QuickSight, Cognos, OBIEE, Essbase, SSRS  
 - **Databases**: Oracle, SQL Server, Redshift, Postgres  
