@@ -117,6 +117,6 @@ If we revisit the details I mentioned earlier under "The Core of Data Engineerin
 
 **The Bottom Line:**  
 
-Master the fundamentals and stay grounded in them, but always keep learning new technologies and incorporating them into your solutions. 
+Master the fundamentals and stay grounded in them, but always keep learning new technologies and incorporate them when needed into your solutions. However, be cautious not to introduce new tools or technologies just to make the solution look modern - ensure it is driven by a genuine need and backed by a cost-benefit analysis
      
 ---
