@@ -2,7 +2,7 @@
 
 ### ✅ Introduction
 
-Over the years, I’ve moved from building ETL pipelines to designing Data Warehouses, and eventually to setting up Data Lakes. While working on Data Lakes, I found myself thinking more deeply about overall data architecture and how everything fits together.
+Over the years, I’ve moved from building ETL pipelines to designing Data Warehouses, and eventually to setting up Data Lakes. While working on Data Lakes Design, I found myself thinking more deeply about overall data architecture and how everything fits together.
 
 Recently, I wrote a Data Strategy document where data architecture was just one part of the bigger picture. While writing it, I had to pause and ask myself some fundamental questions — not just about technology, but also about how data supports business goals. I didn’t want to rely only on the experience and intuition I’ve built over time, so I also looked at several industry references to see what areas they covered.
 
