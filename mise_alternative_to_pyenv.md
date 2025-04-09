@@ -1,4 +1,4 @@
-### `mise` – A Alternative to `pyenv` and `nvm`
+### `mise` – An Alternative to `pyenv` and `nvm`
 
 I usually work with **Python for data pipelines** and **Node.js for TypeScript-based AWS CDK** development. So my daily setup often includes:
 
