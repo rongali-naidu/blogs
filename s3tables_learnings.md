@@ -1,4 +1,4 @@
-## 🚀 AWS S3 Table Buckets – A Deep Dive into Federated Catalogs & Data Access
+## 🚀 AWS S3 Table Buckets – More Federated Catalogs (or More Silos for Unifying :))
 
 ### 🧱 What's New in Amazon S3
 
