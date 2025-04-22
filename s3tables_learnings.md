@@ -1,9 +1,8 @@
 ## Exploring AWS S3 Tables: Federated Catalogs, Lake Formation Integration, and Access Challenges
 
-This week, i got chance to get hands-on on the new AWS S3 Tables. Following are my observations and learnings.
+This week, I had the opportunity to get hands-on with the new **AWS S3 Tables**. Here are my observations and key learnings from that experience.
 
-Here is a brife note on [Amazon S3 Tables](https://aws.amazon.com/blogs/aws/new-amazon-s3-tables-storage-optimized-for-analytics-workloads/): Amazon S3 Table give you storage that is optimized for tabular data such as daily purchase transactions, streaming sensor data, and ad impressions in Apache Iceberg format, for easy queries using popular query engines like Amazon Athena, Amazon EMR, and Apache Spark. When compared to self-managed table storage, you can expect up to 3x faster query performance and up to 10x more transactions per second, along with the operational efficiency that is part-and-parcel when you use a fully managed service
-
+To start with a brief overview : [Amazon S3 Tables](https://aws.amazon.com/blogs/aws/new-amazon-s3-tables-storage-optimized-for-analytics-workloads/) gives you storage that is optimized for tabular data such as daily purchase transactions, streaming sensor data, and ad impressions in Apache Iceberg format, for easy queries using popular query engines like Amazon Athena, Amazon EMR, and Apache Spark. When compared to self-managed table storage, you can expect up to 3x faster query performance and up to 10x more transactions per second, along with the operational efficiency that is part-and-parcel when you use a fully managed service
 
 
 ### Key AWS Changes to supports  S3-Tables
