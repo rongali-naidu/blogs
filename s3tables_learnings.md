@@ -1,4 +1,4 @@
-## AWS S3-Tables and related Federated Catalogs
+## Exploring AWS S3 Tables: Federated Catalogs, Lake Formation Integration, and Access Challenges
 
 This week, i got chance to get hands-on on the new AWS S3 Tables. Following are my observations and learnings.
 
