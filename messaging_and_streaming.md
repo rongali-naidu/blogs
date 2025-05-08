@@ -120,7 +120,7 @@ When deciding between **Kinesis Streams** and **SNS** for event streaming before
 
 
 
-### ⚙️ SNS + Lambda vs. SQS + Lambda
+### SNS + Lambda vs. SQS + Lambda
 
 | Feature             | SNS + Lambda                | SQS + Lambda                        |
 | ------------------- | --------------------------- | ----------------------------------- |
