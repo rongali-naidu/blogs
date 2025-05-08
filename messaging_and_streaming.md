@@ -21,25 +21,24 @@ Whether you're a **Software Engineer** or a **Data Engineer**, understanding the
   * **Message Broker** :A component or Software  that acts as a middleman between producers and consumers. These Brokers could use any of the following Messaging Patterns or Mix of the patterns. Ex : Apache ActiveMQ , RabbitMQ, AWS SQS, AWS SNS ,Apache Kafka, AWS Kinesis Stream etc
   * **Messaging Patterns**
     * **Message Queues**: Provide a **1:1 delivery model** — one producer, one consumer. This is typical for task processing or work distribution. Ex: SQS,RabbitMQ
-    * **Publish-Subscribe (Pub/Sub) Systems**: Provide a **1\:many delivery model** — one producer, many consumers. This is typical for broadcasting events or triggering multiple downstream actions.Ex: SNS, 
-    * **Event (Data) Streams**: Represents a **continuous flow of data in real time** which is usually replayable log of events, typically used in **real-time data processing and analytics**. One of the key expectations of event streams is the ability to **store and replay events** over a short retention period (e.g., 1 to 7 days), enabling reprocessing, parallel consumption, and time-windowed analysis. Ex: Kafka, Kinesis Stream etc
-  * **Messaging Protocols**
+    * **Publish-Subscribe (Pub/Sub)**: Provide a **1\:many delivery model** — one producer, many consumers. This is typical for broadcasting events or triggering multiple downstream actions.Ex: SNS, 
+    * **Event (Data) Streams**: Represents a **continuous flow of data in real time** which is usually replayable log of events, typically used in **real-time data processing and analytics**. One of the key expectations of event streams is the ability to **store and replay events** over a short retention period (e.g., 1 to 7 days), enabling reprocessing, parallel consumption, and time-windowed analysis. Ex: Kafka, Kinesis Stream etc.
+  * **Message Queues** and **Publish-Subscribe (Pub/Sub)** are primarily designed for **service integration** in software systems. 
+  * **Event Streams** are built from the ground up for **real-time analytical processing**, with built-in **durability, replayability, and high-throughput** capabilities.
+  * While both **Message Queues** and **Pub/Sub systems** can carry streams of events . with support from tools like **Firehose**, **Lambda**, or **streaming ETL**, they are increasingly being integrated into   **real-time analytics platforms**. You may wonder "why we need separate Event Stream or Streaming Data Platforms?" . I asnwered this under chosing **Kinesis Streams** VS **SNS* for Event streaming before its collected through Firehose for analytics
+* **Messaging Protocols**
     * Protocols define how producers and consumers communicate with brokers.
     * AMQP (Advanced Message Queuing Protocol) → Used by RabbitMQ, ActiveMQ
     * MQTT (Message Queuing Telemetry Transport) → Used in IoT & real-time messaging
     * Kafka Protocol → Custom binary protocol used by Kafka clients
     * HTTP/HTTPS → Used by SNS, SQS, Kinesis Streams
-  * **Messaging Format**
+* **Messaging Format**
     * Different formats are used.
     * SQS/SNS/Kinesis Streams usaully use binary format (base64) for exchanging the data.
 
 
 
-* **Message Systems vs. Event Streams**
 
-  * **Message Systems** are primarily designed for **service integration** in software systems. 
-  * **Event Streams** are built from the ground up for **real-time analytical processing**, with built-in **durability, replayability, and high-throughput** capabilities.
-  * While both **Message Queues** and **Pub/Sub systems** can carry streams of events . with support from tools like **Firehose**, **Lambda**, or **streaming ETL**, they are increasingly being integrated into   **real-time analytics platforms**. You may wonder "why we need separate Event Stream or Streaming Data Platforms?" . I asnwered this under chosing **Kinesis Streams** VS **SNS* for Event streaming before its collected through Firehose for analytics
 
 
 ### **Key Characteristics of Messaging Systems**
