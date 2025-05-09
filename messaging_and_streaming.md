@@ -97,7 +97,7 @@ Whether you're a **Software Engineer** or a **Data Engineer**, understanding the
 
 
 
-### Chosing **Kinesis Streams** VS **SNS* for Event streaming before its collected through Firehose for analytics?
+### Chosing **Kinesis Streams** vs **SNS** for Event streaming before data is collected through Firehose for analytics?
 
 When deciding between **Kinesis Streams** and **SNS** for event streaming before collecting the data through **Firehose** for analytics, it's important to consider the specific characteristics and use cases of each service:
 
