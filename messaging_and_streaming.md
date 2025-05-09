@@ -18,7 +18,7 @@ Whether you're a **Software Engineer** or a **Data Engineer**, understanding the
 * **Message Systems** 
 
   * **Message Systems** : Umbrella term for systems that allow services or components to communicate by sending (publisher) and receiving messages asynchronously (subscirber or consumer) .
-  * **Message Broker** :A component or Software  that acts as a middleman between producers and consumers. These Brokers could use any of the following Messaging Patterns or Mix of the patterns. Ex : Apache ActiveMQ , RabbitMQ, AWS SQS, AWS SNS ,Apache Kafka, AWS Kinesis Stream etc
+  * **Message Broker** :A component or Software  that acts as a middleman between producers and consumers. These Brokers could use any of the following Messaging Patterns or Mix of the patterns. Ex : Apache ActiveMQ , RabbitMQ, AWS SQS, AWS SNS ,Apache Kafka, AWS Kinesis Stream etc.Amazon MQ : Fully managed open source message broker service that lets customers to choose between Apache ActiveMQ and RabitMQ
   * **Messaging Patterns**
     * **Message Queues**: Provide a **1:1 delivery model** — one producer, one consumer. This is typical for task processing or work distribution. Ex: SQS,RabbitMQ
     * **Publish-Subscribe (Pub/Sub)**: Provide a **1\:many delivery model** — one producer, many consumers. This is typical for broadcasting events or triggering multiple downstream actions.Ex: SNS, 
