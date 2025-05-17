@@ -5,7 +5,24 @@ While patterns in **time series data** are typically time-dependent (like trends
 
 Here are some common types of patterns you’ll encounter:
 
-### 1. Correlations
+### Data Distribution
+Data Distribution describes how data is spread across possible values of individual vairable or column. It helps set expectations for what is considered "normal" behavior in the data.
+
+**Why Data Distribution Matters:**
+It forms the "normal behavior" baseline.
+Helps in identifying outliers, trends, clusters, correlations, and anomalies.
+Influences the choice of models and algorithms.
+
+**Examples of Data Distributions:**
+
+Normal Distribution (Bell Curve):
+Example: Heights of people in a population.
+
+Uniform Distribution:
+Example: Rolling a fair die - each number has equal probability.
+
+
+### Correlations
 
 A **correlation** indicates how strongly two variables are related and whether the relationship is positive or negative.
 
@@ -17,7 +34,7 @@ In sales data, higher **advertising spend** often correlates with increased **sa
 
 
 
-### 2. Clusters
+### Clusters
 
 **Clustering** groups data points into clusters based on similarities in their features.
 
@@ -33,7 +50,7 @@ E-commerce users might be clustered into:
   This helps in targeted marketing strategies.
 
 
-### 3. Associations
+### Associations
 
 **Association rules** uncover relationships where the presence of one item implies the presence of another.
 
