@@ -60,7 +60,6 @@ Capturing and maintaining information about your data, including technical and b
 
 **Example:** In AWS Glue, you can maintain a **data catalog** to store metadata that tracks the schema and source of datasets for better transparency.
 
----
 
 ### 4. **Data Cataloging**
 
@@ -72,9 +71,8 @@ Creating searchable catalogs to make data easier to find and understand.
 
 **Example:** A financial institution uses **AWS Glue Data Catalog** to allow data scientists to search for customer transaction datasets based on metadata tags.
 
-### 5. **Data Access Permissions**
 
-### 6. **Data Privacy & Compliance Management**
+### 5. **Data Privacy & Compliance Management**
 
 Ensuring compliance with legal frameworks and protecting sensitive data.
 
@@ -85,7 +83,7 @@ Ensuring compliance with legal frameworks and protecting sensitive data.
 
 
 
-### 7. **Data Usage Monitoring & Audits**
+### 6. **Data Usage Monitoring & Audits**
 
 Tracking how data is accessed, used, and shared.
 
