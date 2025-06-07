@@ -81,9 +81,8 @@ As you move through your career, the nature of your contribution shifts:
 | ------------------------------- | ------------------------ | ------------------ |
 | Bug Fixes                    | Solving breakages        | Tactical           |
 | ETL for one dataset          | Implementing logic       | Tactical           |
-| Tech feature selection       | Using tool capabilities  | Tactical           |
-| Reusable framework           | Scales across teams      | Strategic          |
-| Data architecture influence | Org-wide design impact   | Strategic          |
+| Tools and Famework Selection       | Scales across teams      | Strategic          |
+| Data architecture  | Org-wide design impact   | Strategic          |
 | Data Strategy              | Mapping Data Architecture to Business Goal | Strategic          |
 
 Tactical work builds **technical depth**. Strategic thinking builds **influence and direction**.
