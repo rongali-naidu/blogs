@@ -26,21 +26,34 @@ After working with data for years across multiple platforms and industries, I’
      * Record count matching between source and raw zone.
      * Ensures Data is available for all columns required by the dowsntream consumers of the dataset (Analytics, Data Scince)
     
-- **Data Consistency** – Consistency ensures no contradictions exist within or across datasets and systems. I include **Data Integrity** (maintaining relationships between tables) as a sub-categoy of Data Consistency
+- **Data Consistency** – Consistency ensures no contradictions exist within or across datasets and systems.
    * At Source Systems:
-     * Referential integrity between entities (e.g., orders link to valid customers).
+     * Referential integrity between entities (e.g., orders link to valid customers). [Note: this is an overlap with the Data Integrity dimension of Data quality]
      * Consistent rules (e.g., status enums are standardized).
    * At Data Lake / Warehouse:
      * Cross-source comparisons (e.g., same product name wherever its is present).
      * Consistency of metrics across reports (e.g., revenue totals aligns base datasets, agregated datasets).
      * Timezone handling, Currency Handling, and data type standardization during ingestion.
+    
+- **Data Uniqueness** – No duplicate records or keys where uniqueness is required. This is required for master data management. Master data is usually a dimension in Data Lake/Datawarehouse.
+   * At Source Systems: Unique constraints and validation on keys.
+   * At Data Lake / Warehouse:Deduplication, record matching, identity resolution
+ 
+- **Data Integrity** – Maintaining correct relationships across data entities (foreign keys, dimensional relationships).
+   * At Source Systems: Referential integrity enforcement.
+   * At Data Lake / Warehouse:  Validations ensuring integrity across facts and dimension tables.
        
- - **Data Format Validation** –  Ensures that data values adhere to the correct syntax and structure. This could overlap with Data Accurarcy and Data Consistency. When format validation fails, the data value is essentially invalid and thus inaccurate since it doesn’t correctly represent the intended information
+ - **Data Validity** – Ensures that data values adhere to all rules that define whether the data is valid, including correct syntax (format), allowed values, logical consistency, and business constraints. Data validity overlaps with Data Accuracy and Data Consistency since invalid data cannot be accurate or consisten
    
-   * Example : 
-     * Email addresses follow a valid email pattern
+   * Format validation is a key part of validity, focusing on syntax and structure. For example:
+     * Email addresses follow a valid pattern
      * Dates are in YYYY-MM-DD format
      * Numeric fields contain only digits
+
+   * Other validity checks include:
+     * Values fall within allowed ranges or categories (e.g., status codes)
+     * Dates are logical (e.g., no February 30)
+     * Referential integrity between related fields
 
    * At Source Systems:
      * Front-end validations (e.g., email regex)
@@ -55,20 +68,23 @@ After working with data for years across multiple platforms and industries, I’
     * At Data Lake / Warehouse:
      * Data is ingested and processed and made available in the curated datasets used by the downstream consumers as per SLA
 
-- **Why Both Layers Matter**
+- **Why Data Quality ar both Layers Matter**
    * Source Systems:The first line of defense. They’re closest to the business process and user input. Errors caught here are cheapest to fix.
    * Data Lake / Warehouse:The final line of defense. They catch issues missed upstream and monitor quality at scale across systems.
    * Best practice: Don’t rely solely on downstream checks. Build in **layered, redundant validation at every handoff** — especially between systems.
 
 - **Summary Table: Where to Validate Each Quality Dimension**
 
-| DQ Dimension          | At Source System                                 | At Data Lake / Warehouse                         |
-| --------------------- | ------------------------------------------------ | ------------------------------------------------ |
-| **Accuracy**          | Ensure correctness of values entered             | Verify values match source input (no corruption) |
-| **Completeness**      | Enforce required fields; no skipped records      | Row, column, and file-level completeness checks  |
-| **Consistency**       | Consistent business rules, no referential breaks | Cross-system reconciliation and schema alignment |
-| **Format Validation** | Front-end/API/DB-level structural validation     | Regex checks, malformed record detection         |
-| **Availability (SLA)** | Ensure data is published or emitted on time                        | Ensure ingestion and delivery to downstream systems meets expectations |
+| DQ Dimension           | At Source System                                               | At Data Lake / Warehouse                                         |
+|------------------------|----------------------------------------------------------------|------------------------------------------------------------------|
+| **Accuracy**           | Ensure correctness of values entered                           | Verify values match source input (no corruption)                 |
+| **Completeness**       | Enforce required fields; no skipped records                    | Row, column, and file-level completeness checks                  |
+| **Consistency**        | Consistent business rules, no referential breaks               | Cross-system reconciliation and schema alignment                 |
+| **Uniqueness**         | Unique constraints and key validation                          | Deduplication, record matching, identity resolution              |
+| **Integrity**          | Enforce referential integrity (e.g., foreign key constraints)  | Validate relationships across facts and dimensions               |
+| **Validity**           | Validate formats, ranges, allowed values, business constraints | Check data conforms to schema, enums, and domain logic           |
+| **Availability (SLA)** | Ensure data is published or emitted on time                    | Ensure ingestion and delivery to downstream systems meets SLA    |
+
 
 | **Category**                  | **Targets**                                   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
