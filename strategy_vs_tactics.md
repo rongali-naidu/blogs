@@ -1,4 +1,4 @@
-**Title: Strategy vs. Tactics in Data Engineering: Clarifying the Confusion**
+**Tactical approach vs Strategic approach in Data Engineering: Clarifying the Confusion**
 
 **Context**
 
@@ -20,20 +20,20 @@ Let’s start with a high-level distinction:
 
 
 
-### 🏠 The Documents We See — And What They Represent
+### The Documents We See — And What They Represent
 
-#### 📄 Data Strategy Document
+#### Data Strategy Document
 
 * Aligns with business goals (e.g., faster decision-making, data privacy compliance, AI readiness)
 * Covers overall Data Architecture, Team structure, and Governance
 
 
-#### 🏧 Data Architecture Document
+#### Data Architecture Document
 
 * Defines system-wide design: e.g., Lakehouse architecture, tool choices, Storage and Compute options, Reporting and Data Science Tools Integration, Future Data Growth and Scaling options
 
 
-#### ⚙️ Pipeline-Specific Design Doc
+#### Pipeline-Specific Design Doc
 
 * Details how a specific job is built (e.g., "DynamoDB to S3 export using Glue and Iceberg")
 * Answers “how this particular solution works”
@@ -43,14 +43,14 @@ Let’s start with a high-level distinction:
 
 #### Real-World Scenario: Your team runs batch ETL pipelines which uses Redshift Datawarehouse, but now you see **many  ETL jobs piling up in a queue**, delaying downstream data availability. Stakeholders are frustrated. The ETL queue is the bottleneck.
 
-#### Tactical Fixes:
+#### Tactical (Approach) Fixes:
 We could several tactical fixes depending on the context
 
 * Temporarily increase compute power or cluster size
 * Temporary Suspend the low-priority/Adhoc ETL jobs giving compute resources to  critical datasets
 * Quick relief for today’s ETL backlog but doesn’t fix the root cause or scale long term
 
-#### 🛍️ Strategic Fixes:
+#### Strategic (Approach) Fixes:
 
 * Use Compute specific or ETL Tool specific options for categorizing the pipelines into groups from high priority to low priority and set the rules to assign compute resources to the job  on priority basis
 * Evaludate Data Growth and set up auto-scaling options
@@ -71,16 +71,6 @@ Strategic decisions in data engineering don’t just impact infrastructure — t
 * Better data quality improves trust in the data , business decisions takesn based on the data and decreases compliance risks
 
 
-### Organizational Change & Risk Management
-
-Transitioning from tactical execution to strategic enablement isn’t just technical — it’s organizational.
-
-#### Common Challenges:
-
-* Not tieing to longer-term enterprise goals
-* Lack of cross-team alignment
-* Resistance to change from data consumers
-* Tech Effort in replacing legacy systems
 
 
 ### Strategic Thinking and Career Growth
@@ -99,3 +89,13 @@ As you move through your career, the nature of your contribution shifts:
 Tactical work builds **technical depth**. Strategic thinking builds **influence and direction**.
 
 
+### Organizational Change & Risk Management
+
+Transitioning from tactical execution to strategic enablement isn’t just technical — it’s organizational.
+
+#### Common Challenges:
+
+* Not tieing to longer-term enterprise goals
+* Lack of cross-team alignment
+* Resistance to change from data consumers
+* Tech Effort in replacing legacy systems
