@@ -14,6 +14,8 @@ After working with data for years across multiple platforms and industries, I’
    * At Source Systems: Application logic (e.g., input validation, dropdowns instead of free text) ensures correct values are captured.
      * Examples: Correct customer address, accurate order quantity, valid timestamps.
    * At Data Lake / Warehouse: Accuracy means matching what was received from the source, with no corruption or transformation error during ingestion or processing. accuracy is usually interpreted as "did we receive what the source emitted?"
+     * We usually verify this as part of Unit testing.
+     * For validating as part of DQ Monitoring, we need to query both Source data and Datalake/Datawarehouse data together. We could use DB Links, Data Sharing etc for querying them together.
 
      
 - **Data Completeness** – Completeness ensures all expected data is present — all rows, fields, and values.
