@@ -1,7 +1,5 @@
 ## What Years of Working with Data Have Taught Me About Data Quality
 
-
-
 **Data quality** is a term that gets thrown around a lot, but its meaning varies depending on who you ask.
 
 For a **data engineer**, it’s about ensuring pipelines run accurately and on time, datasets have the complete data at the required grain, and all necessary attributes have expected values.
@@ -12,10 +10,65 @@ For **business stakeholders**, it’s the ability to trust data-driven decisions
 
 After working with data for years across multiple platforms and industries, I’ve realized that data quality covers the following major categories:
 
-- **Data Accuracy** – Simply put whatever data we loaded is correct in all aspects. I usually include **Data Validity** (agreeing with the schema), **Data Integrity** (maintaining relationships across fact and dimension tables), and **Data Uniqueness** (ensuring no duplicates) under Data Accuracy for simplicity.
-- **Data Completeness** – Data is complete. This means we capture all data from source systems, load the entire dataset without omissions, and include all columns required by consumers.
-- **Data Consistency with Other Systems** – Data must align with and reflect the information in source systems and other integrated platforms.
-- **Data Availability as per SLA** – Data is timely and delivered according to the agreed Service Level Agreements (SLAs). Some use cases require real-time delivery, while others may allow for daily batch updates.
+- **Data Accuracy** – Accuracy refers to how closely the data reflects the real-world value or event it represents . Simply put whatever data we loaded is correct in all aspects.
+   * At Source Systems: Application logic (e.g., input validation, dropdowns instead of free text) ensures correct values are captured.
+     * Examples: Correct customer address, accurate order quantity, valid timestamps.
+   * At Data Lake / Warehouse: Accuracy means matching what was received from the source, with no corruption or transformation error during ingestion or processing. accuracy is usually interpreted as "did we receive what the source emitted?"
+   * I usually include **Data Validity** (agreeing with the schema),  and **Data Uniqueness** (ensuring no duplicates) under Data Accuracy for simplicity.
+     
+- **Data Completeness** – Completeness ensures all expected data is present — all rows, fields, and values.
+   * At Source Systems:
+     * Required fields enforced (e.g., no NULLs in customer_id)
+     * All records expected in a transaction or API call are submitted.
+   * At Data Lake / Warehouse:
+     * Checks for missing files, truncated rows, or empty partitions.
+     * Column-level null checks in staging and curated zones.
+     * Record count matching between source and raw zone.
+     * Ensures Data is available for all columns required by the dowsntream consumers of the dataset (Analytics, Data Scince)
+    
+- **Data Consistency** – Consistency ensures no contradictions exist within or across datasets and systems. I include **Data Integrity** (maintaining relationships between tables) as a sub-categoy of Data Consistency
+   * At Source Systems:
+     * Referential integrity between entities (e.g., orders link to valid customers).
+     * Consistent rules (e.g., status enums are standardized).
+   * At Data Lake / Warehouse:
+     * Cross-source comparisons (e.g., same product name wherever its is present).
+     * Consistency of metrics across reports (e.g., revenue totals aligns base datasets, agregated datasets).
+     * Timezone handling, Currency Handling, and data type standardization during ingestion.
+       
+ - **Data Format Validation** –  Ensures that data values adhere to the correct syntax and structure. This could overlap with Data Accurarcy and Data Consistency. When format validation fails, the data value is essentially invalid and thus inaccurate since it doesn’t correctly represent the intended information
+   
+   * Example : 
+     * Email addresses follow a valid email pattern
+     * Dates are in YYYY-MM-DD format
+     * Numeric fields contain only digits
+
+   * At Source Systems:
+     * Front-end validations (e.g., email regex)
+     * API schema contracts
+     * Database constraints (e.g., date formats, non-numeric checks)
+   * At Data Lake / Warehouse:
+     * It’s ideal to validate format upstream. Validating emails or phone numbers downstream often signals poor data hygiene at the source      
+
+- **Data Availability as per SLA  (Service Level Agreement)** – Data is timely and delivered according to the agreed Service Level Agreements (SLAs). Some use cases require real-time delivery, while others may allow for daily batch updates.
+   * At Source Systems:
+     * Data is published as per SLA contracts
+    * At Data Lake / Warehouse:
+     * Data is ingested and processed and made available in the curated datasets used by the downstream consumers as per SLA
+
+- **Why Both Layers Matter**
+   * Source Systems:The first line of defense. They’re closest to the business process and user input. Errors caught here are cheapest to fix.
+   * Data Lake / Warehouse:The final line of defense. They catch issues missed upstream and monitor quality at scale across systems.
+   * Best practice: Don’t rely solely on downstream checks. Build in **layered, redundant validation at every handoff** — especially between systems.
+
+- **Summary Table: Where to Validate Each Quality Dimension**
+
+| DQ Dimension          | At Source System                                 | At Data Lake / Warehouse                         |
+| --------------------- | ------------------------------------------------ | ------------------------------------------------ |
+| **Accuracy**          | Ensure correctness of values entered             | Verify values match source input (no corruption) |
+| **Completeness**      | Enforce required fields; no skipped records      | Row, column, and file-level completeness checks  |
+| **Consistency**       | Consistent business rules, no referential breaks | Cross-system reconciliation and schema alignment |
+| **Format Validation** | Front-end/API/DB-level structural validation     | Regex checks, malformed record detection         |
+| **Availability (SLA)** | Ensure data is published or emitted on time                        | Ensure ingestion and delivery to downstream systems meets expectations |
 
 | **Category**                  | **Targets**                                   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
