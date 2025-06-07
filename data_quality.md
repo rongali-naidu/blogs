@@ -14,8 +14,7 @@ After working with data for years across multiple platforms and industries, I’
    * At Source Systems: Application logic (e.g., input validation, dropdowns instead of free text) ensures correct values are captured.
      * Examples: Correct customer address, accurate order quantity, valid timestamps.
    * At Data Lake / Warehouse: Accuracy means matching what was received from the source, with no corruption or transformation error during ingestion or processing. accuracy is usually interpreted as "did we receive what the source emitted?"
-     * We usually verify this as part of Unit testing.
-     * For validating as part of DQ Monitoring, we need to query both Source data and Datalake/Datawarehouse data together. We could use DB Links, Data Sharing etc for querying them together.
+     * We usually verify this as part of Unit testing.For validating as part of DQ Monitoring, we need to query both Source data and Datalake/Datawarehouse data together. We could use DB Links, Data Sharing etc for querying them together.
 
      
 - **Data Completeness** – Completeness ensures all expected data is present — all rows, fields, and values.
@@ -111,96 +110,27 @@ While both unit testing and DQ monitoring focus on data reliability, they serve 
 
 | **Category**                  | **Targets**                                   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Schema (Structural) Validation**     | Completeness, Validity, Uniqueness, Integrity | Enforces structure and formatting rules using:<br>• **Data Type Conformance  (Validity)** — Match types (e.g., int, string, timestamp)<br>• **Null Checks (Completeness)** — Required fields must not be null<br>• **Uniqueness / PK Checks(Uniqueness/Duplicates)** — Prevent duplicate key entries<br>• **Referential Integrity(Integrity)** — Validate FK relationships (e.g., `customer_id` exists)<br>• **Format Validation(Validity)** — Check specific patterns:<br> – Dates (`YYYY-MM-DD`, ISO 8601)<br> – Currency (`$99.99`, `€1.000,00`)<br> – Time zones (`+05:30`, `UTC`) |
+| **Schema and Data Validation**     | Accurarcy, Completeness, Validity, Uniqueness, Integrity | Enforces structure and formatting rules using:<br>• **Data Type Conformance  (Validity)** — Match types (e.g., int, string, timestamp)<br>• **Null Checks (Completeness)** — Required fields must not be null<br>• **Uniqueness / PK Checks(Uniqueness/Duplicates)** — Prevent duplicate key entries<br>• **Referential Integrity(Integrity)** — Validate FK relationships (e.g., `customer_id` exists)<br>• **Format Validation(Validity)** — Check specific patterns:<br> – Dates (`YYYY-MM-DD`, ISO 8601)<br> – Currency (`$99.99`, `€1.000,00`)<br> – Time zones (`+05:30`, `UTC`)<br>• **Row Count**: Verify that the entire dataset intended for processing is present<br>• **Source Coverage**: Confirm all expected data sources are contributing to the dataset. For example, when integrating data from multiple systems, it’s easy to overlook missing records from one of the system |
 | **Business Rule Validation**  | Consistency                                   | Business/domain rules to catch cross-field inconsistencies:<br>• `order_amount > 0`<br>• `status IN ('SHIPPED', 'CANCELLED')`<br>• `start_date < end_date`<br>• Revenue drop shouldn't exceed 20%<br>Implemented via SQL, Python, dbt tests, or Great Expectations. <br>•metric values consistent across various granular datasets (daily, weekly, monthly)                                                                                                                                                                                                                                                                                                                                |
 | **Data Profiling**            | Accuracy, Validity                            | Examines column-level stats:<br>• min, max, avg, std dev<br>• null counts, distinct values, cardinality<br>• frequency distributions<br>Used to detect type mismatches, misclassified fields, or outliers. Often the **first step** in understanding unknown data.                                                                                                                                                                                                                                                                                                                                   |
 | **Anomaly Detection**         | Accuracy, Trend Stability                     | Detects deviations using statistical models or ML:<br>• Volume spikes/drops<br>• Distribution drift<br>• New/unseen value combinations<br>Complements rule-based checks with adaptive insights.                                                                                                                                                                                                                                                                                                                                                                                                      |
                                                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                 
-My approach to data quality revolves around three critical phases:
+                                                                                                                                                                                                                                                                     
+## Data Quality Approaches at different Data Life Cycles:
+- **Data Ingestion** – Schema and Data Validation.
+    * Schema and data validation can be performed before loading into raw datasets in the data lake/staging layer or later during processing of raw data.
+    * While pipeline monitoring may catch failures reactively, explicit DQ checks at ingestion help proactively prevent partial or corrupted loads that could mislead downstream consumers. They also support automated fallback actions like quarantine or alerting.
+    * Catching issues late often requires costly reruns and cross-team coordination. Validating early acts as a protective buffer, minimizing downstream impact and improving overall data reliability.
+    * Note : If your data ingestion tool (ETL, Orchestation tools) and data lake/data warehouse enforce schema validation, Explicity DQ Checks through tools like [Deequ](https://aws.amazon.com/blogs/big-data/test-data-quality-at-scale-with-deequ/)  before data ingestion might give limited value for basic checks. However, it shines when tackling more complex validations—like detecting anomalies, data distribution drift (required for ML models monitoring), schema evolutuon (detecting new colums), ensuring data completeness, and validating business rules beyond standard schema constraints. It does come with trade-offs—increased compute costs and potential delays in processing. Therefore, the decision to implement Deequ (or similar tools) should weigh the benefits of deeper, proactive checks against the associated computational and operational overhead.
 
-1. **During Data Ingestion** – Ensuring data integrity and schema compatibility when ingesting data. Approaches vary—some teams validate data before loading it into the **data lake/staging layer**, while others load raw data first and perform checks afterward.
-2. **During Data Processing** – Monitoring data accuracy, consistency, and ensuring pipelines meet **SLAs**.
-3. **After Data Processing – Validation Through the User's Lens** – Ensuring the processed data meets **business expectations** and addressing gaps uncovered by **data consumers**.
-
-Each phase requires a unique set of checks and processes to ensure that the data remains **accurate**, **complete**, and **timely**. Let’s explore these phases in depth.
-
-
----
-
-## 1. Data Quality Before Ingesting Data
-
-Before data enters a data lake or warehouse, validating its structure and completeness prevents cascading errors downstream. Key checks at this stage include:
-
-### **Schema Compatibility**
-Ensuring schema alignment prevents ingestion failures and data corruption.
-
-- **Data Types**: Validate that each column’s data type (e.g., `INT`, `STRING`, `TIMESTAMP`) matches the expected schema, including null constraints and allowed values.
-- **Format Consistency**: Enforce standardized formats for timestamps (e.g., **ISO 8601**, UTC vs. local), currency, and other structured data—especially when merging data from multiple systems.
-
----
-
-### **Data Completeness**
-
-- **Row Count**: Verify that the entire dataset intended for processing is present.
-- **Mandatory Columns**: Ensure all required columns are both present and populated.
-- **Source Coverage**: Confirm all expected data sources are contributing to the dataset. For example, when integrating data from multiple systems, it’s easy to overlook missing records if pipeline scheduling is inconsistent.
-
----
-
-### **How I Address This in My Work:**
-
-- **Thorough Testing**: I rigorously test pipelines during development and validate data in production for a few days post-deployment. 
-- **Alarms and Alerts**: Implement alarms for conditions like zero records or pipeline failures. For example, schema mismatches typically cause loading errors and alerts to the team.
-
----
-
-### **Does This Mean I’ve Done Enough?**
-
-- **Probably not…** Probably not… While these practices are a solid foundation, they don’t fully guarantee data quality as systems evolve and change. Alarms provide a safety net—but they are inherently reactive. Is there a better alternative? Tools like  [Deequ](https://aws.amazon.com/blogs/big-data/test-data-quality-at-scale-with-deequ/) offer a proactive approach by running comprehensive data quality checks before ingestion. But will this truly outperform reactive monitoring? If your ingestion tool and data lake already enforce schema validation, Deequ may add limited value for basic checks. However, it shines when tackling more complex validations—like detecting anomalies, data distribution drift, schema evolutuon (detecting new colums), ensuring data completeness, and validating business rules beyond standard schema constraints. It does come with trade-offs—increased compute costs and potential delays in processing. Therefore, the decision to implement Deequ (or similar tools) should weigh the benefits of deeper, proactive checks against the associated operational overhead.
----
-
-## 2. Data Quality During Processing
-
-Once data is ingested, maintaining its accuracy and ensuring timely delivery is paramount.
-
-### **Data Accuracy**
-Processed data should accurately reflect the source.
-
-- **Record Count Accuracy**: Ensure all expected records are processed.
-- **Column-Level Consistency**: Validate that derived values (e.g., calculated fields) are computed correctly.
-- **Referential Integrity**: Enforce foreign key checks to maintain relationships between datasets.
-- **Duplicate Detection** : Ensure uniqueness through defined primary keys. Some databases (e.g., **Redshift**) do not enforce uniqueness by default, requiring additional validation.For fact tables or event-based data lacking a clear primary key, enforce alternative unique identifiers..
----
+- **During Data Processing** – Data availability.
+- **Post Data Processing** – Ensuring the processed data meets **business expectations** (or **data consumers**). We use mix of Business Rule Validation, Data Profiling and Anomaly Detection DQ Approaches
 
 
-### **Processing Timeliness (SLA Monitoring)**
-Data is only valuable if it’s available when needed.
-
-- **Latency Tracking**: Monitor and track how long data takes to move through the pipeline.
-- **SLA Compliance**: Ensure data is delivered according to agreed-upon timelines.
-
----
-
-### **How I Address This in My Work:**
-
-- **Deduplication Strategies**: I design loading strategies to prevent duplicates and implement logic to identify and process the latest record when needed.
-- **Pre-Deployment Testing**: Validate all scenarios—including edge cases—before deploying pipelines.
-- **Alarms and Alerts**: Implement alarms for pipeline delays
 
 
-### **Does This Mean I’ve Done Enough?**
-- Most of this depends on the Orchestration tools , Query engine and other tech stack we work with and the features they support. 
 
-## 3. After Data Processing – Validation Through the User's Lens
-
-Once data is processed and made available, the final judgment of **data quality** often rests in the hands of **data consumers**—whether it’s a **data analyst**, **business analyst**, **data scientist**, or **business intelligence engineer**.
-They expect all the aspects we validate during data ingestion and data processing i,e
-
-- **Data Accuracry**
-- **Data Completeness**
-- **Data Consistency with other systems including source systems- **
-- **Data Availability as per SLA defined**
+## Does it mean we wont get any Data Quality issues reported?
 
 
 While data engineers can implement technical checks, it’s the **users** interacting with reports and analyses who often identify **gaps, inconsistencies, or missing data points**. Their validation is shaped by how they interpret and apply the data to solve business problems.
@@ -212,26 +142,6 @@ Common areas where user-driven validation surfaces issues include:
 - **Edge Case Detection**: Users working on **ad hoc** analyses are more likely to surface outliers or gaps that automated checks miss—like missing regions in a geographic report or discrepancies across time zones.
 
 ---
-
-### **How I Address This in My Work:**
-
-- **Running pre-defined rules on schedule**: The rules are based on our understanding of the data, learnings from previous data issues etc. Its an extension to running referential integrity check across the facts and dimensions post completing the batch load. Now that we have real-time data pipelines (aka Streaming pipeline), we need more tweaks to make it relevant.
-- **Anomaly Reporting Pipelines**: Implementing anomaly reporting mechanisms helps surface hidden issues faster but needs more sophisticated anomaly detection logic to minimize false alarms. 
-
-
-### **Does This Mean I’ve Done Enough?**
-
-- There is always scope to improve… No matter how robust our checks are, users’ lenses will always reveal new data discrepancies that slip through. Proactive monitoring is crucial—but so is embracing user feedback as a core part of the data quality process. Establishing a feedback loop with data consumers and implementing cross-system reconciliation ensures a more holistic, user-centered approach to data quality.
-
----
-
-## What’s Needed for Proactive Data Quality Management?
-
-Modern data systems require continuous monitoring to catch errors in real time and ensure operational reliability. Accurate Metadata and Data Lineage plays critical role in reponding to any data quality issues 
-
-### **Tracking Delayed Data Processing**
-- **Monitor SLAs**: Implement real-time tracking for every stage of the pipeline.  
-- **Alerting**: Trigger alerts when data falls behind schedule.  
 
 
 
