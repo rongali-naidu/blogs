@@ -1,6 +1,6 @@
 ## Key Essence of Various Data Strategy References
 
-### ✅ Introduction
+### Introduction
 
 Over the years, I’ve moved from building ETL pipelines to designing Data Warehouses, and eventually to setting up Data Lakes. While working on Data Lakes Design, I found myself thinking more deeply about overall data architecture and how everything fits together.
 
@@ -8,7 +8,7 @@ Recently, I wrote a Data Strategy document where data architecture was just one 
 
 In this post, I’m sharing the approach I followed, the key points I focused on, and some of the helpful references I explored along the way
 
-### ✅ My Data Strategy Essence
+### My Data Strategy Essence
 
 **One-liner:** *"Establish a trusted, data-driven culture by aligning business goals with analytics, data scince and AI, supported by strong data governance and scalable infrastructure. Everything else is about aligning people, processes, tools, technology, and terminology"*
 
@@ -17,7 +17,7 @@ A successful data strategy begins with a deep understanding of the business data
 At the core, the strategy is to deliver **high-quality data** that accurately reflects real-world business activities — data that is timely, centralized, and readily accessible to all personas across the organization: Data Scientists, Business Intelligence Engineers (BIEs), Business Analysts, and others.
 Having rigght Data Governance process to ensure data quality, data availabity, data permissions, data privacy compliance.
 
-📌 Data Collection and Processing Approach:
+Data Collection and Processing Approach:
 
 * Ingest data into the **Data Lake** as the first step for flexible, large-scale storage.
 * Move curated and structured data into the **Data Warehouse** for high-performance analytics and standardized reporting.
@@ -39,7 +39,7 @@ While we've developed a strong intuition on what a data strategy should cover, i
 
 Various Aspects covered in the above references
 
-### ✅ **1. Mission & Objectives (Business Goals)**
+### **1. Mission & Objectives (Business Goals)**
 
 
 - Define how data supports tracking the **business goals** (e.g., revenue growth, customer satisfaction, innovation).
@@ -48,42 +48,42 @@ Various Aspects covered in the above references
 
 ---
 
-### ✅ **2. People & Structure**
+### **2. People & Structure**
 - Define **data roles** and responsibilities:  
   - *Data Engineers, Data Scientists, BIEs, Analysts, Data Stewards, etc.*
 - Align **organizational structure** (centralized, decentralized, or hybrid) to business and data needs.
 
 ---
 
-### ✅ **3. Data Literacy & Culture**
+### **3. Data Literacy & Culture**
 - Plan for **data education** and **literacy programs** across teams.
 - Encourage **cross-functional data collaboration**.
 - Build a culture that treats **data as a strategic asset**.
 
 ---
 
-### ✅ **4. Data Lifecycle Capabilities**
+### **4. Data Lifecycle Capabilities**
 
-#### 🔹 **Data Collection**
+#### **Data Collection**
 - Identify **data sources** (internal & external).
 - Select appropriate **data ingestion mechanisms and tools** based on source type, frequency, and latency needs.
 - Plan for **real-time ingestion where required by business use cases** (e.g., operational dashboards, fraud detection, personalization).
 
-#### 🔹 **Data Processing & Transformation**
+#### **Data Processing & Transformation**
 - Define **ETL/ELT processes** and tooling.
 - **standardize data preparation**.
 
-#### 🔹 **Data Storage & Architecture**
+#### **Data Storage & Architecture**
 - Architect **scalable storage and compute solutions** (data lakes, warehouses,).
 - Ensure **performance**, **cost optimization**, and **security**.
 
-#### 🔹 **Data Access & Sharing**
+#### **Data Access & Sharing**
 - Implement **data cataloging and discovery**.
 
 
 ---
 
-### ✅ **5. Data Governance & Compliance**
+### **5. Data Governance & Compliance**
 - Establish **data quality standards**.
 - Define **metadata management**, **lineage**, and **stewardship**.
 - Manage **access controls** and **sharing policies**.
@@ -91,7 +91,7 @@ Various Aspects covered in the above references
 
 ---
 
-### ✅ **6. Analytics & AI/ML Enablement**
+### **6. Analytics & AI/ML Enablement**
 - Outline strategy for supporting AI and ML Use cases along with Analytical use cases (i.e Monetizing Data).
 - Define **ML readiness**, including:
   - Feature stores
@@ -101,14 +101,14 @@ Various Aspects covered in the above references
 
 ---
 
-### ✅ **7. Tools & Technology**
+### **7. Tools & Technology**
 - List current and planned tools for:
   - Data ingestion, storage, processing, analytics, governance, and visualization.
 - Evaluate based on **business needs**, **scalability**, and **compliance**.
 
 ---
 
-### ✅ **8. Review & Improvement Plan**
+### **8. Review & Improvement Plan**
 - Align data strategy to **funded business initiatives**.
 - Periodic Reviews for adapting the data strategy to evolving business needs and priorities
 - Create a **prioritized implementation roadmap**.
