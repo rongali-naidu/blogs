@@ -14,7 +14,7 @@ After working with data for years across multiple platforms and industries, I’
    * At Source Systems: Application logic (e.g., input validation, dropdowns instead of free text) ensures correct values are captured.
      * Examples: Correct customer address, accurate order quantity, valid timestamps.
    * At Data Lake / Warehouse: Accuracy means matching what was received from the source, with no corruption or transformation error during ingestion or processing. accuracy is usually interpreted as "did we receive what the source emitted?"
-   * I usually include **Data Validity** (agreeing with the schema),  and **Data Uniqueness** (ensuring no duplicates) under Data Accuracy for simplicity.
+
      
 - **Data Completeness** – Completeness ensures all expected data is present — all rows, fields, and values.
    * At Source Systems:
