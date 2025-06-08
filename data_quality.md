@@ -110,10 +110,10 @@ While both unit testing and DQ monitoring focus on data reliability, they serve 
 
 | **Category**                  | **Targets**                                   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | ----------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Schema and Data Validation**     | Accurarcy, Completeness, Validity, Uniqueness, Integrity | Enforces structure and formatting rules using:<br>• **Data Type Conformance  (Validity)** — Match types (e.g., int, string, timestamp)<br>• **Null Checks (Completeness)** — Required fields must not be null<br>• **Uniqueness / PK Checks(Uniqueness/Duplicates)** — Prevent duplicate key entries<br>• **Referential Integrity(Integrity)** — Validate FK relationships (e.g., `customer_id` exists)<br>• **Format Validation(Validity)** — Check specific patterns:<br> – Dates (`YYYY-MM-DD`, ISO 8601)<br> – Currency (`$99.99`, `€1.000,00`)<br> – Time zones (`+05:30`, `UTC`)<br>• **Row Count**: Verify that the entire dataset intended for processing is present<br>• **Source Coverage**: Confirm all expected data sources are contributing to the dataset. For example, when integrating data from multiple systems, it’s easy to overlook missing records from one of the system |
+| **Schema and Data Validation**     | Accurarcy, Completeness, Validity, Uniqueness, Integrity | Enforces structure and formatting rules using:<br>• **Data Type Conformance  (Validity)** — Match types (e.g., int, string, timestamp)<br>• **Null Checks (Completeness)** — Required fields must not be null<br>• **Uniqueness / PK Checks(Uniqueness/Duplicates)** — Prevent duplicate key entries<br>• **Referential Integrity(Integrity)** — Validate FK relationships (e.g., `customer_id` exists)<br>• **Format Validation(Validity)** — Check specific patterns:<br> – Dates (`YYYY-MM-DD`, ISO 8601)<br> – Currency (`$99.99`, `€1.000,00`)<br> – Time zones (`+05:30`, `UTC`)<br>• **Row Count**: Verify that the entire dataset intended for processing is present<br>• **Different Sources Coverage**: Confirm all expected data sources are contributing to the dataset. For example, when integrating data from multiple systems, it’s easy to overlook missing records from one of the system )<br>• **Schema evolutuon** : detecting new colums|
 | **Business Rule Validation**  | Consistency    Accuracy, Validity                                 | Business/domain rules to catch cross-field inconsistencies:<br>• `order_amount > 0`<br>• `status IN ('SHIPPED', 'CANCELLED')`<br>• `start_date < end_date`<br>• Revenue drop shouldn't exceed 20%<br>Implemented via SQL, Python, dbt tests, or Great Expectations. <br>•metric values consistent across various granular datasets (daily, weekly, monthly)                                                                                                                                                                                                                                                                                                                                |
-| **Data Profiling**            | Accuracy, Validity                            | Examines column-level stats:<br>• min, max, avg, std dev<br>• null counts, distinct values, cardinality<br>• frequency distributions<br>Used to detect type mismatches, misclassified fields, or outliers. Often the **first step** in understanding unknown data.                                                                                                                                                                                                                                                                                                                                   |
-| **Anomaly Detection**         | Accuracy, Trend Stability                     | Detects deviations using statistical models or ML:<br>• Volume spikes/drops<br>• Distribution drift<br>• New/unseen value combinations<br>Complements rule-based checks with adaptive insights.                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Data Profiling**            | Accuracy, Validity                            | Examines column-level stats:<br>• min, max, avg, std dev<br>• null counts, distinct values, cardinality<br>• New/unseen value combinations. Often the **first step** in understanding unknown data.                                                                                                                                                                                                                                                                                                                                   |
+| **Anomaly Detection**         | Accuracy, Trend Stability                     | Detects deviations using statistical models or ML:<br>• Volume spikes/drops<br>• Distribution drift (relevant for ML Models monitoring and it doesnt come strictly Anomaly Detection <br><br>Complements rule-based checks with adaptive insights.                                                                                                                                                                                                                                                                                                                                                                                                      |
                                                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                                                      
 ## Data Quality Approaches at different Data Life Cycles:
@@ -143,6 +143,52 @@ Common areas where user-driven validation surfaces issues include:
 
 
 
+## Can we measure Data quality?
+
+Even though we describe Data Quality among various dimensions, there is no accepted defintion for measuring the data quality. Here is an alternative to quantify the Data Quality metric
+
+### Data Quality Definitions tables 
+
+Table 1: `dq_rules`
+| **Rule ID** | **Table Name**     | **DQ Dimension** | **Rule Description / Logic**                                                  | **Threshold (Optional)** | **Weight** |
+| ----------- | ------------------ | ---------------- | ----------------------------------------------------------------------------- | ------------------------ | ---------- |
+| `R001`      | `customer`         | Completeness     | `customer_id IS NOT NULL`                                                     | `< 1% nulls`             | 1         |
+| `R002`      | `customer`           | Accuracy         | `order_total >= 0`                                                            | `= 0 violations`         | 1          |
+| `R003`      | `customer`         | Uniqueness       | `customer_id` must be unique                                                  | `= 0 duplicates`         | 10         |
+| `R004`      | `customer`           | Validity         | `email LIKE '%@%.%'`                                                          | `< 0.5% invalid`         | 1          |
+| `R005`      | `customer`           | Consistency      | `status = 'SHIPPED'` must have `shipped_date IS NOT NULL`                     | `= 0 violations`         | 1          |
+| `R006`      | `customer`           | Integrity        | `customer_id` must exist in `customer` table                                  | `= 0 FK failures`        | 1          |
+| `R007`      | `customer`       | Timeliness / SLA | `MAX(updated_at)` should be within last 2 hours                               | `< 2 hrs delay`          | 2          |
+
+
+Table 2: `dq_rule_runs`
+
+This is your **runtime results** table, logging the outcome of each rule per run.
+|**rule_id** | **dq_run_date** | **dq_status** | **violation_count** | **total_records\_checked** | **violation_percent** | 
+|------------ | ------------ | ---------- | -------------------- | --------------------------- | ---------------------- | 
+|`R001`       | `2024-06-01` | SUCCESS    | 12                   | 10000                       | 0.12%                  |
+|`R002`       | `2024-06-01` | FAILED     | 36                   | 10000                       | 0.36%                  | 
+
+
+
+
+DQ Score Logic (Example)
+
+```sql
+WITH dq_runs AS (
+  SELECT rule_id, dq_status
+  FROM dq_results
+  WHERE 
+	dq_rule_runs='2024-06-01'
+)
+SELECT
+	q_rules.table_name,
+    ROUND(SUM(CASE WHEN dq_status='SUCCESS' THEN weight ELSE 0 END) * 100.0 / SUM(weight), 2) AS dq_score
+FROM dq_runs
+	join dq_rules on dq_runs.rule_id= dq_rules.rule_id
+GROUP BY 
+	dq_rules.table_name
+```
 
 
 ### **Metadata and Data Lineage: Better quality documentation 
