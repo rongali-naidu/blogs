@@ -146,6 +146,8 @@ Common areas where user-driven validation surfaces issues include:
 
 
 ### **Metadata and Data Lineage: Better quality documentation 
+--Note : This section should be moved to Data Governance
+
 Every one values documentation but not committed to doing it regularly
 Metdata helps to know more about what is stored in each dataset.
 Data lineage maps how data moves and transforms through the system.
