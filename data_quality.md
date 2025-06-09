@@ -69,7 +69,7 @@ After working with data for years across multiple platforms and industries, I’
     * At Data Lake / Warehouse:
      * Data is ingested and processed and made available in the curated datasets used by the downstream consumers as per SLA
 
-- **Why Data Quality ar both Layers Matter**
+- **Why Data Quality at both Layers Matter**
    * Source Systems:The first line of defense. They’re closest to the business process and user input. Errors caught here are cheapest to fix.
    * Data Lake / Warehouse:The final line of defense. They catch issues missed upstream and monitor quality at scale across systems.
    * Best practice: Don’t rely solely on downstream checks. Build in **layered, redundant validation at every handoff** — especially between systems.
