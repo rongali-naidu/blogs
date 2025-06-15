@@ -86,18 +86,20 @@ After working with data for years across multiple platforms and industries, I’
 | **Validity**           | Validate formats, ranges, allowed values, business constraints | Check data conforms to schema, enums, and domain logic           |
 | **Availability (SLA)** | Ensure data is published or emitted on time                    | Ensure ingestion and delivery to downstream systems meets SLA    |
 
-## Unit Testing vs DQ Monitoring: Different Purposes
+## DQ Monitoring vs Unit Testing vs Data Cleaning/Transformation
 
-While both unit testing and DQ monitoring focus on data reliability, they serve **complementary but distinct purposes** across the data pipeline lifecycle.
+Even perfect unit tests and data cleaning rules are built on known assumptions — usually based on the initial data analysis done before designing the ETL pipeline or schema.
+But when data patterns change — and they inevitably will — those assumptions break.
+That’s why Data Quality Monitoring is essential: it’s the dynamic safety net that catches issues you didn’t plan or test for.
 
-| Aspect       | Unit Testing of Datasets/Pipelines                                                                              | Data Quality (DQ) Monitoring                                                                                                              |
-| ------------ | --------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| **What**     | Schema checks, column types, business rules, edge cases, join behavior, partitioning logic                      | Monitors real-time/batch data for accuracy, completeness, uniqueness, freshness, etc.  
-| **When**     | During development or before deployment; also during code changes                                               | Continuously in production                                                                                                                |
-| **Why**      | Catch logic/schema issues early and validate transformation logic                                               | Detect unexpected issues in live data (e.g., pipeline failures, data drift, upstream changes)                                             |
-| **Where**    | Manual, In CI/CD workflows                                                     | In production environments, often integrated with alerting and monitoring tools                                                           |
-| **Examples** | Validate derived column logic <br> - Row Count validation between source and target of the pipeline | - Detect nulls in historically populated columns <br> - Warn on duplicate IDs appearing |
-
+| Aspect                           | Unit Testing of Datasets/Pipelines                                                         | Data Quality (DQ) Monitoring                                                                               | Data Cleaning & Transformation                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **What**                         | Schema checks, column types, business rules, edge cases, join behavior, partitioning logic | Monitors real-time/batch data for accuracy, completeness, uniqueness, freshness, etc.                      | Applies rules to correct, standardize, or transform data (e.g., deduplication, type casting, formatting)         |
+| **When**                         | During development or before deployment; also during code changes                          | Continuously in production                                                                                 | During ingestion, transformation, or enrichment steps                                                            |
+| **Why**                          | Catch logic/schema issues early and validate transformation logic                          | Detect unexpected issues in live data (e.g., pipeline failures, data drift, upstream changes)              | Ensure raw data is made usable, consistent, and ready for downstream analytics or ML                             |
+| **Where**                        | Manual, in CI/CD workflows                                                                 | In production environments, often integrated with alerting and monitoring tools                            | In ETL/ELT jobs, data wrangling scripts, enrichment pipelines, or staging zones                                  |
+| **Examples**                     | - Validate derived column logic <br> - Row count validation between source and target      | - Detect nulls in historically populated columns <br> - Warn on duplicate IDs <br> - Alert on schema drift | - Standardize date formats <br> - Remove special characters <br> - Impute missing values <br> - Normalize values |
+| **Adaptability to Data Changes** | Valid only as long as assumptions hold; requires code updates on change                    | Detects previously unseen or evolving data issues (e.g., new null patterns, format changes, data drift)    | Based on fixed, predefined rules (e.g., `NVL`, `fillna`, type casting); may become outdated as data evolves      |
 
 
 ## DQ Approaches 
