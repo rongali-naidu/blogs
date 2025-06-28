@@ -155,6 +155,7 @@ These systems:
 * Internally use **WAL or binlog-based decoding** under the hood.
 * Push data directly to analytical stores like **Redshift** in near real time.
 * Offer out-of-the-box reliability, scaling, and schema evolution handling.
+* [**More details on how Aurora Zero-ETL works**](https://aws.amazon.com/blogs/database/amazon-aurora-postgresql-zero-etl-integration-with-amazon-redshift-is-generally-available/)*  
 
 | Feature                | Logical Replication | AWS DMS | Aurora Zero-ETL        |
 | ---------------------- | ------------------- | ------- | ---------------------- |
