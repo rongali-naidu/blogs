@@ -80,9 +80,9 @@ Build a system that provides **complete data lineage visibility** — from the m
 
 | Layer                        | Targets & Examples                                                    |
 | ---------------------------- | --------------------------------------------------------------------- |
-| **Application Code**         | Java, Python, Node services (e.g., orderService writes to PostgreSQL) |
+| **Application Code**         | Java, Python, etc |
 | **Stored Procedures (OLTP)** | PostgreSQL, SQL Server, Oracle PL/SQL                                 |
-| **NoSQL Datastores**         | MongoDB, DynamoDB — read/write operations                             |
+| **NoSQL Datastores**         | DynamoDB — read/write operations                             |
 | **Event Systems**            | Kafka, SNS/SQS — track messages that carry data                       |
 | **ETL Pipelines**            | Glue, Airflow, Spark                                                  |
 | **Feature Store Code**       | Python                                                    |
