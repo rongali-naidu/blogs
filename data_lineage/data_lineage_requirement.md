@@ -87,7 +87,7 @@ Build a system that provides **complete data lineage visibility** — from the m
 | **ETL Pipelines**            | Glue, Airflow, Spark                                                  |
 | **Feature Store Code**       | Python                                                    |
 | **BI/Reporting**             | QuickSight, Power BI  ,Tableau                                       |
-| **Data Catalogs**            | Hive, Glue Catalog                                                    |
+| **Data Catalogs**            | Glue Catalog                                                    |
 
 
 
@@ -97,7 +97,7 @@ Build a system that provides **complete data lineage visibility** — from the m
 
 * [ ] Parse code from application repositories (Java, Python, etc.) to identify:
 
-  * Specific Code points (Functions/Package names)  has data generation steps
+  * Specific Code points (Functions/Package names) that has data generation steps
   * SQL queries (via JDBC/ORM/Raw SQL)
   * NoSQL insert/update/delete operations
   * API endpoints writing to DBs
@@ -129,7 +129,7 @@ Build a system that provides **complete data lineage visibility** — from the m
 * [ ] IDE plugins to show data flow impact
 * [ ] APIs for injecting lineage via CI/CD or app instrumentation
 
----
+
 
 ### 6. Tooling Options for Extended Coverage
 
