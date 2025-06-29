@@ -28,9 +28,36 @@ More details here:
 
 
 
+#### ETL Tools
+
+| Tool                | Strengths                                   | Limitations                                    |
+| ------------------- | ------------------------------------------- | ---------------------------------------------- |
+| **Airflow**         | Task-level DAG visual; supports OpenLineage | No column-level or SQL parsing by default      |
+| **AWS Glue**        | Job/table-level lineage in Data Catalog     | No transformation-level visibility             |
+| **QuickSight** | Basic lineage           | No visual lineage or query introspection    |
 
 
+#### BI/Reporting Tools
 
+| Tool           | Strengths                                  | Limitations                                 |
+| -------------- | ------------------------------------------ | ------------------------------------------- |
+| **QuickSight** | Basic lineage           | No visual lineage or query introspection    |
+| **Tableau**    | Data source → workbook lineage via Catalog | No SQL parsing; black-box under the surface |
+| **Power BI**   | Dataset/report lineage in Service          | Doesn’t reach into backend sources          |
+| **Looker**     | Structured LookML lineage                  | Doesn’t trace into external databases       |
+
+
+###  Does AI make Unified Data Lineage implementation Easy?
+AI could significantly lowers the barrier. Instead of spending months building custom parsers, probes, and metadata enhancers, teams can leverage AI
+
+
+| Capability                     | Custom Engineering for Data Lineage                                 | AI-Assisted Approach                                                                                              |
+|-------------------------------|----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **SQL/Code Parsing**           | Custom-built parsers for SQL, Spark, Hive, Java, etc.                | LLMs  can interpret and extract lineage from SQL queries and application code.          |
+| **Application Logic Analysis** | Runtime instrumentation within services to trace queries             | AI models can analyze app code and config files to infer lineage without deep instrumentation.                    |
+| **Metadata Gaps**              | Controlled metadata curation with enforced schema policies           | AI can enhance metadata definitions and infer missing lineage using context, comments, logs, and schema patterns. |
+| **PII Tagging & Propagation**  | Manual tagging with metadata classification policies                 | AI can auto-detect and tag sensitive fields using field names, code context, and usage behavior.                  |
+| **Data Discovery**             | Unified metadata catalogs with custom-built search and lineage views | AI-powered natural language search and Q&A over metadata, lineage, and schema to simulate rich discovery.         |
 
 ## Title: **End-to-End Data Lineage and Privacy-Aware Metadata System**
 
