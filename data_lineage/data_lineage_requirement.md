@@ -86,7 +86,7 @@ Build a system that provides **complete data lineage visibility** — from the m
 | **Event Systems**            | Kafka, SNS/SQS — track messages that carry data                       |
 | **ETL Pipelines**            | Glue, Airflow, Spark                                                  |
 | **Feature Store Code**       | Python                                                    |
-| **BI/Reporting**             | QuickSight, Power BI  ,Tableau                                       |
+| **BI/Reporting**             | Data sources and Dataset details from QuickSight, Power BI  ,Tableau                                       |
 | **Data Catalogs**            | Glue Catalog                                                    |
 
 
