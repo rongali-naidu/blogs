@@ -1,5 +1,5 @@
 
-# Top Database Performance Concerns: Index Fragmentation and Stale Statistics
+# Optimizing SQL Server: Fixing Index Fragmentation and Stale Statistics
 
 ## PART 1: Index Fragmentation
 
