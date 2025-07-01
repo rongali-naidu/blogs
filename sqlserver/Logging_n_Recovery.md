@@ -181,3 +181,163 @@ DBCC MEMORYSTATUS -- or use extended events
 * **Dirty pages** may be flushed before COMMIT, so UNDO is critical
 * **Crash recovery** is entirely driven by **log records** and checkpoint metadata
 
+
+
+## ✅ At a High Level: What Happens at Checkpoint?
+
+When SQL Server runs a **checkpoint**, it performs the following steps:
+
+1. **Flushes all dirty data pages** to disk
+2. **Flushes log buffer** to ensure log records are durable
+3. Writes a **Checkpoint Log Record** to the transaction log (`.ldf`) with metadata:
+
+   * `Checkpoint LSN`
+   * **Active Transaction Table**
+   * **Dirty Page Table**
+
+This metadata is **crucial for recovery** — it tells SQL Server:
+
+> “Here is a known-consistent state. If we crash, start scanning the log from this point forward.”
+
+---
+
+## 📘 What is Written in the Checkpoint Log Record?
+
+The **Checkpoint Log Record** (internal type: `LOP_BEGIN_CKPT`) includes:
+
+### 1. ✅ **Checkpoint LSN**
+
+* Marks the point in the log where checkpoint begins
+* Stored in **boot page** of the database (`page_id = 9`)
+* Used by recovery to determine where to start scanning on restart
+
+### 2. 📋 **Active Transaction Table**
+
+* List of **in-progress transactions** at checkpoint time
+* Includes:
+
+  * `TransactionID`
+  * `FirstLSN` (where txn began)
+  * `LastLSN` (most recent log record for the txn)
+* Used during crash recovery **UNDO phase** to rollback any uncommitted transactions
+
+### 3. 💾 **Dirty Page Table**
+
+* List of **dirty buffer pages** (in memory but not yet flushed) at checkpoint time
+* Includes:
+
+  * `PageID`
+  * `Recovery LSN` (the oldest LSN that dirtied the page)
+* Used during crash recovery **REDO phase** to determine what pages may need to be redone
+
+---
+
+## 📍 Where Are These Tables Maintained Internally?
+
+These structures live in **SQL Server’s memory** and are used during crash recovery:
+
+| Table                        | Maintained In                                   | Purpose                                                              |
+| ---------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- |
+| **Active Transaction Table** | Transaction Manager (internal memory structure) | Track all open/incomplete transactions                               |
+| **Dirty Page Table**         | Buffer Manager                                  | Track which pages are dirty, and which log record first dirtied them |
+
+✅ They are **not user-accessible tables**, but SQL Server serializes them and writes them into the log record during a checkpoint.
+
+---
+
+## 📌 How Dirty Page Table Maps PageID to LSN
+
+Each page in the buffer pool is associated with:
+
+* **PageID** (file\_id + page\_number)
+* **Recovery LSN** (the LSN of the **first log record** that made the page dirty)
+
+This Recovery LSN is crucial:
+
+> If page was dirtied at LSN 105, then to **fully redo the page**, SQL Server needs to reapply all log records starting from LSN 105.
+
+📌 So when a checkpoint occurs, SQL Server:
+
+* Iterates through all dirty pages in memory
+* Extracts their `PageID` and `Recovery LSN`
+* Serializes this into the **Dirty Page Table**, which is embedded in the **Checkpoint Log Record**
+
+---
+
+## 🔍 How Are These Log Entries Structured?
+
+You can’t directly read this raw structure from the `.ldf`, but internally, SQL Server writes a `LOP_BEGIN_CKPT` log record with:
+
+```text
+{
+  CheckpointLSN: 125,
+  ActiveTransactions: [
+    { TxnID: 51, BeginLSN: 100, LastLSN: 122 },
+    { TxnID: 52, BeginLSN: 104, LastLSN: 123 }
+  ],
+  DirtyPageTable: [
+    { PageID: (1:204), RecoveryLSN: 109 },
+    { PageID: (1:237), RecoveryLSN: 113 }
+  ]
+}
+```
+
+> Internally, this metadata is written as a **structured blob** in the log record, not a SQL-readable format. But this is how SQL Server reconstructs state on recovery.
+
+---
+
+## 🧠 How Does SQL Server Use This During Crash Recovery?
+
+### 1. 🔎 **Analysis Phase**
+
+* Start from **Checkpoint LSN** in the `LOP_BEGIN_CKPT` record
+* Rebuild:
+
+  * Active Transaction Table
+  * Dirty Page Table
+
+### 2. 🔁 **Redo Phase**
+
+* Use Dirty Page Table to determine:
+
+  * Which pages may not be up-to-date on disk
+  * From which LSN to start applying log records
+
+### 3. 🔃 **Undo Phase**
+
+* Use Active Transaction Table to find uncommitted transactions
+* Walk **backward** through their log chains and **undo** changes
+
+---
+
+## 🧪 DMV Insight (for live systems)
+
+You can query the recovery-related info like this:
+
+```sql
+SELECT 
+  database_id,
+  recovery_model_desc,
+  last_log_backup_lsn,
+  checkpoint_lsn,
+  redo_start_lsn,
+  redo_start_fork_guid,
+  redo_target_lsn
+FROM sys.dm_database_recovery_status;
+```
+
+This shows what LSNs SQL Server will use in recovery.
+
+---
+
+## ✅ Summary
+
+| Component                    | Description                                                |
+| ---------------------------- | ---------------------------------------------------------- |
+| **Checkpoint LSN**           | Starting point for recovery                                |
+| **Active Transaction Table** | Tracks uncommitted transactions (TxnID, BeginLSN, LastLSN) |
+| **Dirty Page Table**         | Tracks PageID and earliest LSN that dirtied the page       |
+| **Log Entry Written**        | Serialized into `LOP_BEGIN_CKPT` log record                |
+| **Used During Recovery**     | To REDO committed and UNDO uncommitted work post-crash     |
+
+
