@@ -29,16 +29,6 @@ That made me curious:
 
 Turns out, it's **HyperLogLog** — a brilliant probabilistic algorithm not only used in Spark, but also in PostgreSQL, Redshift, BigQuery, Flink, etc
 
-This curiosity led me down the path of understanding:
-
-* How it evolved (from Flajolet-Martin to LogLog to HyperLogLog)
-* The intuition behind the math
-* What makes it work at scale
-* And why it’s a game-changer for approximate computing
-
-Here’s everything I learned — explained step-by-step, with examples and insights — so you too can appreciate the beauty behind `approx_count_distinct`.
-
-Let me know if you want me to append the next section (`Evolution of HLL`) right after this for seamless flow.
 
 
 ### The Evolution: From Flajolet-Martin to HyperLogLog
