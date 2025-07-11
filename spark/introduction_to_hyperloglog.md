@@ -1,4 +1,4 @@
-## Introduction: probabilistic algorithms for counting 
+## The Math and Magic of HyperLogLog: Algorithm behind ApproxCountDistinct
 
 Let’s say you want to:
 
