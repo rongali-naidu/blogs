@@ -183,7 +183,7 @@ Estimate = \~4.72 → close, acceptable within error bounds
 
 ## HyperLogLog++ and Enhancements
 
-Google later proposed ]**HyperLogLog++**](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf) with the following improvements:
+Google later proposed [**HyperLogLog++**](https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/40671.pdf) with the following improvements:
 
 * **Sparse representation** for small cardinalities.
 * **Bias correction** using empirical tuning curves.
