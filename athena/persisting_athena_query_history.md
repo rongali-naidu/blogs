@@ -30,14 +30,14 @@ Following details are relevant for Quicksight datasets that uses Athena engine.
 }
 ```
 
-    * QuickSight currently embeds the above shown UUIDs in Athena queries.
-        * Quicksight session identifier (i.e UUID right after the "QuickSight" keyword)
-        * entityId (aka  is dashboard-id)
-        * sheetId
-        * visualID
-        * More details on these UUIDs .
-    * For SPICE Data refresh related queries, Quicksight sends just session identifier. It will be helpful if quicksight includes dataset identifier in the SPICE refresh related queries. If dashboards or visuals uses datasets which uses SPICE, Quicksight doesnt send any other Athena queries except SPICE dataset refresh.
-    * Steps for getting the dashboard related ids from the Quicksight UI
+* QuickSight currently embeds the above shown UUIDs in Athena queries.
+  * Quicksight session identifier (i.e UUID right after the "QuickSight" keyword)
+  * entityId (aka  is dashboard-id)
+  * sheetId
+  * visualID
+  * More details on [these UUIDs](https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DashboardVisualId.html)
+* For SPICE Data refresh related queries, Quicksight sends just session identifier. It will be helpful if quicksight includes dataset identifier in the SPICE refresh related queries. If dashboards or visuals uses datasets which uses SPICE, Quicksight doesnt send any other Athena queries except SPICE dataset refresh.
+* Steps for getting the dashboard related ids from the Quicksight UI
         * For getting these UUIDs, Open a Dashboard → select a sheet --> select a visual → Menu Options → Embed Visual → Expands IDS for Developers
         *
 
