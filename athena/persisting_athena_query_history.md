@@ -220,6 +220,8 @@ def lambda_handler(event, context):
 
 ## Athena Lambda Role Permissions
 
+Substitute the value for <S3_BUCKET_ARN>
+
 ```json
 {
     "Version": "2012-10-17",
