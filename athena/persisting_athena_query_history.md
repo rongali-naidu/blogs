@@ -44,7 +44,7 @@ Following details are relevant for Quicksight datasets that uses Athena engine.
 
 ## Solution Overview
 
-[Solution](../images/PersistingAthenaQueryHistoryDtls_Solution.png)
+![Solution](../images/PersistingAthenaQueryHistoryDtls_Solution.png)
 
 * This solution uses Athena APIs to extract Athena Query Execution History, with the goal of capturing query metadata for operational insights, cost attribution, and potential data quality triage.
 * The code runs as an AWS Lambda function, scheduled daily using an Amazon EventBridge Rule.
