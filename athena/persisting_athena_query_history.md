@@ -167,7 +167,7 @@ def lambda_handler(event, context):
 
                         if submission_time >= end_time:
                             continue  # Too new
-                        elif   not FULL_REFRESH and ssubmission_time < start_time:
+                        elif   not FULL_REFRESH and submission_time < start_time:
                             next_token = None   # for breaking while loop
                             break  # for breaking qid-loop
 
