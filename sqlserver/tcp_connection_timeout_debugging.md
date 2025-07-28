@@ -1,3 +1,5 @@
+# From SQL Logs to Packet Captures: My First Network Debugging to Trace Lost DB Connections
+
 ## Introduction
 
 ### Context
