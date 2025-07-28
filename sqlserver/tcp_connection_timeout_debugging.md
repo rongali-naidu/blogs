@@ -38,7 +38,7 @@ That’s where **packet tracing and analysis tools** come in—they allow you to
 * Requests are being sent.
 * Responses are being received.
 * Or packets are being dropped, delayed, or blocked.
-* came to know about tcpdump, pktmon, and Wireshark tools for this analysi
+* came to know about tcpdump, pktmon, and Wireshark tools for this analysis
 
 
 
