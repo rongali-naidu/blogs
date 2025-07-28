@@ -1,18 +1,53 @@
 ## Introduction
 
-In today’s distributed systems, transient connectivity issues between services or databases can cause sporadic 500 errors, leading to disrupted user experience or failed background jobs. Recently, we faced such an issue where some services were failing with 500 errors caused by **dial timeouts**. This blog walks through how we used network packet analysis tools like `tcpdump`, `Wireshark`, and Windows `pktmon` to identify the root cause — a failure in the TCP handshake process and TLS negotiation.
+### Context
+
+Recently, I transitioned into a Database Engineer role**, and one of my first challenges was debugging a tricky issue in the **integration layer**—the component responsible for fetching data from **SQL Server** and feeding it to the **frontend UI applications**.
+
+The logs revealed **500 errors** and **timeout errors**, but the root cause wasn’t immediately clear. A timeout could mean:
+
+* An **SQL timeout error**
+* A **Lambda timeout** (if serverless functions are involved)
+* Or something else entirely—**any component between the frontend and the database**, including **network infrastructure**, could be timing out.
+
+### It wasn’t easy.
+
+I had to connect **multiple concepts**:
+
+* How do clients actually connect to the database?
+* How can we **track incoming connections** to SQL Server?
+* How can we determine if a **query is reaching the database at all**?
+
+### In our case...
+
+With the help of **SQL Server’s system tables and utilities**, we confirmed that **no client-related SQL queries** were even reaching the database during the error periods.
+
+This shifted our focus: the **problem was not inside SQL Server**, but **somewhere between the client and the database**.
+
+---
+
+### **The Real Challenge? Understanding What’s Actually Happening on the Network.**
+
+To solve this, we had to go **beyond the application and database layers** and start exploring the **network level**.
+
+That’s where **packet tracing and analysis tools** come in—they allow you to **see the actual data traffic** between systems and understand whether:
+
+* Connections are being established.
+* Requests are being sent.
+* Responses are being received.
+* Or packets are being dropped, delayed, or blocked.
+* came to know about tcpdump, pktmon, and Wireshark tools for this analysi
 
 
-## Background: The Issue
 
-We observed intermittent **HTTP 500 errors** in our services, specifically during connections to our backend database. Upon investigation, these errors were tied to **dial timeouts** — a scenario where a client tries to establish a TCP connection but fails before it can complete the handshake.
+##  **What Are tcpdump, pktmon, and Wireshark?**
 
-### Key Observations:
+| Tool          | Description                                                                                                                                      | Interface |
+| ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------- |
+| **tcpdump**   | A **command-line tool** to capture and display raw network packets in real time. Lightweight and used commonly on **Linux/Unix systems**.        | CLI       |
+| **pktmon**    | A **Windows built-in tool** for capturing and monitoring network traffic and packet flow, especially useful for **Windows environments**.        | CLI       |
+| **Wireshark** | A **graphical tool** that visually shows network traffic and allows deep **protocol inspection**. Excellent for learning and detailed debugging. | GUI       |
 
-* Failures occurred **before the query** could even reach the database.
-* Retry attempts also failed.
-* Logs indicated issues initiating **SYN/ACK** exchange.
-* TLS handshake wasn’t initiated — suggesting the TCP connection never fully formed.
 
 ---
 
@@ -168,44 +203,6 @@ Two main contributors to the dial timeouts:
 * **Health Checks**: Remove unhealthy IPs from DNS rotation dynamically.
 * **Packet Monitoring**: Detect SYN failures early via network tools.
 
----
-
-## Resolution Steps
-
-* Tuned **DNS TTL** and failover scripts to remove unresponsive IPs faster.
-* Added **retry with backoff** logic in the client.
-* Introduced **packet-level monitoring** to detect SYN failures proactively.
-
----
-
-## Interpreting Packet Captures in Wireshark
-
-| Purpose                   | Filter Example                                    |
-| ------------------------- | ------------------------------------------------- |
-| View TCP handshakes       | `tcp.flags.syn == 1 and tcp.flags.ack == 0`       |
-| View TLS ClientHello      | `ssl.handshake.type == 1`                         |
-| Filter traffic to IP/Port | `ip.addr == 10.1.2.3 and tcp.port == 5432`        |
-| Identify retransmissions  | Look for `[TCP Retransmission]` in packet details |
-
----
-
-## Sample Packet Capture Case
-
-> SYN was sent to IP `10.0.1.5`, port 5432. No SYN-ACK returned. Successful attempt connected to `10.0.1.7`. DNS resolved to both.
-
----
-
-## Reader Exercise: Simulate Dial Timeout
-
-```bash
-sudo iptables -A OUTPUT -p tcp --dport 5432 -j DROP
-psql -h yourdbhost -U youruser -d yourdb
-sudo tcpdump -i eth0 port 5432
-```
-
-Observe SYN retries without SYN-ACK.
-
----
 
 ## Command Cheatsheet
 
@@ -230,13 +227,5 @@ Observe SYN retries without SYN-ACK.
 * [RedHat tcpdump Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/monitoring_and_automation/tcpdump_monitoring-and-automation)
 * [TLS Handshake Overview](https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/)
 
----
 
-## Key Takeaways
-
-* **Dial timeouts** happen when TCP handshake fails — no SYN-ACK, no TLS.
-* **Packet capture tools** like tcpdump, pktmon, and Wireshark reveal root causes.
-* **Failover behavior** and **stale DNS entries** can trigger silent dial timeouts.
-* **Timeouts and pooling** must be tuned for resiliency.
-* Network issues can look like 500 errors — dig deeper with packet captures.
 
