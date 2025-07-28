@@ -4,7 +4,7 @@
 
 ### Context
 
-Recently, I transitioned into a Database Engineer role**, and one of my first challenges was debugging a tricky issue in the **integration layer**—the component responsible for fetching data from **SQL Server** and feeding it to the **frontend UI applications**.
+Recently, I transitioned into a Database Engineer role, and one of my first challenges was debugging a tricky issue in the **integration layer**—the component responsible for fetching data from **SQL Server** and feeding it to the **frontend UI applications**.
 
 The logs revealed **500 errors** and **timeout errors**, but the root cause wasn’t immediately clear. A timeout could mean:
 
