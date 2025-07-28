@@ -201,9 +201,7 @@ Two main contributors to the dial timeouts:
 
 * **Connection Pooling**: Reuse existing connections.
 * **Exponential Backoff**: Implement smarter retry strategies.
-* **DNS TTL Management**: Set appropriate TTLs for failover-sensitive services.
-* **Health Checks**: Remove unhealthy IPs from DNS rotation dynamically.
-* **Packet Monitoring**: Detect SYN failures early via network tools.
+
 
 
 ## Command Cheatsheet
