@@ -174,6 +174,7 @@ A table with a hash partitioning strategy:
 | Redshift   | Distribution Key ,Sort Key       | Hash partitioning + sharding across cluster nodes . Sort Key is for Clustering within each partition or slice                                                    |
 | Athena     | Partitioning, Buckets | Partitioning on columns; Bucketing (hash grouping) often within partitions to improve joins and scans |
 | Oracle     | Partitioning , Nested Partitioning         | Logical partitions; can be placed on different tablespaces                                            |
+| SQL Server     | Partitioning         | Uses Partition Functions and Partition Schemes to achieve the desired partitioning                                           |
 | PostgreSQL | Partitioning, CLUSTER | Partitioned tables; CLUSTER for data ordering                                                         |
 | Hive/Spark | Partition + Buckets   | Partitioning = directories; Bucketing = hash-based grouping, often within partitions                  |
 | MongoDB    | Shards                | Each shard is a separate server; hash or range partitioning                                           |
