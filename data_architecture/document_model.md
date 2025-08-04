@@ -19,11 +19,6 @@ Generally, document model based systems are implemented using DynamoDB or MongoD
 
 In traditional relational databases, each record is stored as a row with fixed columns.
 
-**Relational Example:**
-
-| user\_id | name  | age |
-| -------- | ----- | --- |
-| u123     | Alice | 30  |
 
 In the **document model**, the same record would be stored as:
 
