@@ -119,7 +119,9 @@ In modern data lakes, JSON is everywhere:
 
 AWS Athena allows you to run SQL queries directly on JSON files stored in S3.
 
-**Query JSON Fields:**
+**Query JSON Fields: String Data type**
+
+In this example, lets assume that `data` column is stored as string.
 
 ```sql
 SELECT json_extract_scalar(data, '$.user_id') AS user_id,
@@ -138,6 +140,47 @@ SELECT json_extract_scalar(data, '$.user_id') AS user_id,
 FROM raw_json_table,
      UNNEST(cast(json_parse(json_extract(data, '$.orders')) AS array<json>)) AS t(order);
 ```
+
+
+
+**Query JSON Fields: STRUCT Data type**
+
+Here the `data` column is stored as `struct` data type,
+
+```sql
+CREATE EXTERNAL TABLE user_events (
+  data struct<
+    user_id:string,
+    name:string,
+    age:int,
+    skills:array<string>,
+    orders:array<struct<
+      order_id:int,
+      product:string,
+      qty:int
+    >>
+  >
+)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
+STORED AS PARQUET
+LOCATION 's3://your-bucket/path/';
+```
+
+
+```sql
+SELECT
+  data.user_id AS user_id,
+  data.name AS name,
+  data.age AS age,
+  data.skills[1] AS first_skill,
+  order.order_id,
+  order.product,
+  order.qty
+FROM user_events
+CROSS JOIN UNNEST(data.orders) AS t(order)
+WHERE data.age > 25;
+```
+
 
 **Tip:** We can use **CTAS** (Create Table As Select) in Athena to convert JSON into **Parquet** for faster querying.
 
