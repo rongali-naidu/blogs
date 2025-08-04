@@ -29,7 +29,7 @@ Some broader partitioning concepts provide the following high-level categorizati
 
    *Example*: `hash(user_id) % N` determines the partition number.
 
-4. **Round Robin**: The idea is to split the data so that each partition has equal data using a round robin method.
+4. **Round Robin**: distributes data evenly across partitions by assigning rows sequentially in a circular (round robin) fashion. It is often used when there is no natural partitioning key or when you want to ensure an even distribution of data without regard to specific column values.However, this approach may not help much for query pruning or performance optimization, especially if queries filter on specific columns, because the data is spread without any logical grouping. Round robin works best when tables are accessed independently and joins or selective queries on partition keys are not a major concern.
 
 5. **Composite (Nested) Partitioning**: A partition can itself be partitioned further using a different partitioning technique. This allows combining multiple partitioning strategies to organize data hierarchically.
 
@@ -171,12 +171,11 @@ A table with a hash partitioning strategy:
 
 | Platform   | Term Used             | Meaning                                                                                               |
 | ---------- | --------------------- | ----------------------------------------------------------------------------------------------------- |
-| Redshift   | Distribution Key      | Hash partitioning + sharding across cluster nodes                                                     |
-| Redshift   | Sort Key              | Clustering within each partition or slice                                                             |
+| Redshift   | Distribution Key ,Sort Key       | Hash partitioning + sharding across cluster nodes . Sort Key is for Clustering within each partition or slice                                                    |
+| Athena     | Partitioning, Buckets | Partitioning on columns; Bucketing (hash grouping) often within partitions to improve joins and scans |
 | Oracle     | Partitioning , Nested Partitioning         | Logical partitions; can be placed on different tablespaces                                            |
 | PostgreSQL | Partitioning, CLUSTER | Partitioned tables; CLUSTER for data ordering                                                         |
 | Hive/Spark | Partition + Buckets   | Partitioning = directories; Bucketing = hash-based grouping, often within partitions                  |
-| Athena     | Partitioning, Buckets | Partitioning on columns; Bucketing (hash grouping) often within partitions to improve joins and scans |
 | MongoDB    | Shards                | Each shard is a separate server; hash or range partitioning                                           |
 | DynamoDB   | Partitions (internal) | Hash partitioning with auto-sharding across nodes                                                     |
 
