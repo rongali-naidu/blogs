@@ -1,4 +1,4 @@
-# **From Text-to-SQL to a Data AI Agent: How MCP Powers AI-Driven Data Analysis**
+# **AI-Powered Data Analysis: From Text-to-SQL to Multi-Tool Agents**
 
 In my [previous post](https://medium.com/@rongalinaidu/basic-text-to-sql-for-amazon-athena-metatadata-enrichment-8fb41c019ee5), I built a simple **Text-to-SQL** pipeline for Amazon Athena.
 It worked like this:
