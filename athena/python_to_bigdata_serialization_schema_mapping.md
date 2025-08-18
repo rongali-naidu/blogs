@@ -1,4 +1,4 @@
-# Bridging Python CSV Skills to Spark and Athena Internals: InputFormat, SerDe & OutputFormat
+# For Python Developers: Bridging CSV Handling to Spark & Athena Internals
 
 ## Introduction
 
