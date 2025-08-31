@@ -92,7 +92,7 @@ One of WSL’s superpowers is its **seamless file system integration**.
   This lists the contents of your Windows `C:\Users\yourName` directory.
 
 * From Windows (Windows → Linux):
-  WSL stores its Linux filesystem separately. For example, files in `/home/rongalin` live inside WSL’s virtual hard disk.
+  WSL stores its Linux filesystem separately. For example, files in `/home/yourName` live inside WSL’s virtual hard disk.
   You can access these Linux files from Windows Explorer or Run (`Win + R`) using:
 
   ```
