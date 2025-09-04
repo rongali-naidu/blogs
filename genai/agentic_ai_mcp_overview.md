@@ -19,7 +19,7 @@ This allows agents to dynamically decide **what tool to call**, **how many steps
 
 ---
 
-## 🔹 What Is an Agent?
+## What Is an Agent?
 
 An **Agent** is an adaptive system that uses a **Large Language Model (LLM)** to dynamically plan and execute steps, unlike hardcoded logic.
 
@@ -95,7 +95,7 @@ This ensures the plan is **machine-readable and type-safe**, and frameworks like
 
 ---
 
-## 🔹 The Fuzzy Judgment: How Does the LLM Know When It’s Done?
+## The Fuzzy Judgment: How Does the LLM Know When It’s Done?
 
 Unlike rule-based flows, agents rely on the LLM’s *internal reasoning*:
 
