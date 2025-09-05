@@ -149,4 +149,5 @@ So **conclusion**: all large language models (LLMs) use tokens instead of words 
 
 * OpenAI `tiktoken` (BPE): [GitHub](https://github.com/openai/tiktoken)
 * Claude / SentencePiece: [GitHub](https://github.com/google/sentencepiece)
+* Hugging Face [GPT-2 Tokenizer](https://huggingface.co/transformers/model_doc/gpt2.html#tokenizer)
 
