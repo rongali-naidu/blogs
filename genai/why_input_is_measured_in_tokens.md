@@ -1,4 +1,4 @@
-# Why LLMs Count Tokens, Not Words — And Why It Matters
+# Why LLMs Input is measured in Tokens, Not Words — And Why It Matters
 
 We often hear LLM usage limits in **tokens**. So, it’s natural to ask: why can’t they specify limits in terms of words?
 This question led me to understand **what a token is**, and in the process, I also discovered that the same text can be converted into tokens in different ways by different LLMs.
