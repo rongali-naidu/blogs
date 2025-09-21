@@ -1,6 +1,6 @@
-# Understanding Kafka, Events, Logs, and Data — A Beginner’s Guide
+# Understanding Modern Data Systems - A Beginner’s Guide
 
-Modern data systems are full of confusing terminology. If you’re new to Kafka, it’s easy to get lost in terms like **log, message, event, audit, data, streaming, batching, CDC, messaging systems, and event systems**. This guide will clarify all of these and explain how Kafka fits in.
+Modern data systems are full of confusing terminology. This blog is written while trying to understand Kafka basics. If you’re new to Kafka, it’s easy to get lost in terms like **log, message, event, audit, data, streaming, batching, CDC, messaging systems, and event systems**. This guide will clarify all of these and explain how Kafka fits in.
 
 ---
 
