@@ -25,7 +25,7 @@ So, **Data Transformation** is a broad umbrella and can include:
 * **Data anonymization / masking / tokenization** (e.g., transforming sensitive PII fields for compliance with GDPR or HIPAA)
 * **Data compression / encoding** (e.g., base64 encoding binary blobs, dictionary encoding categorical values for efficiency)
 
-Different terms are often used for these steps — serialization, encoding, marshalling, casting, enrichment, feature engineering, etc. At the end of the day, they are all forms of *data transformation*, serving one goal: **making data usable in the next system of the pipeline**.
+Different terms are often used for these steps — data cleaning, data aggregation, serialization, encoding, marshalling, casting, enrichment, feature engineering, etc. At the end of the day, they are all forms of *data transformation*, serving one goal: **making data usable in the next system of the pipeline**.
 
 ---
 
