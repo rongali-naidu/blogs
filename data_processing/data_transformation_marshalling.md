@@ -1,4 +1,4 @@
-# Data Transformation : Part 1: Marshalling & Unmarshalling in AWS SDK for JavaScript
+# Data Transformation : Part 1: Marshalling & Unmarshalling
 
 ## What is Data Transformation?
 
@@ -29,10 +29,14 @@ Different terms are often used for these steps — serialization, encoding, mars
 
 ---
 
-## Marshalling & Unmarshalling (AWS SDK for JavaScript)
+## Marshalling & Unmarshalling
 
-One specialized form of data transformation you’ll encounter when working with DynamoDB in Node.js/JavaScript applications is **marshalling/unmarshalling**.
 
+* **Marshalling**: Converting an in-memory data structure or object into a format suitable for storage or transmission.
+* **Unmarshalling**: Reconstructing the original data structure or object from that stored or transmitted format.
+* Essentially, it's **serialization / deserialization**, but “marshalling” is often used in contexts where data is being sent **between systems**.
+
+Here, I am focusing specifically on **Marshalling & Unmarshalling in AWS SDK for JavaScript**. We use this when working with **DynamoDB in Node.js/JavaScript applications**.
 Why is this needed? Because there are **two different representations of the same data**:
 
 ### 1. **Your app world (plain JavaScript objects)**
