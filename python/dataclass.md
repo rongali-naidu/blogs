@@ -74,8 +74,38 @@ class Car:
     year: int = 2024   # default value
 ```
 
+### Why do we need `__post_init__`?
+
+The `@dataclass` decorator automatically generates an `__init__` for you.
+So if you want to run *custom initialization logic*, you can’t just overwrite `__init__` (otherwise you lose the auto-generated features).
+
+Instead, you use `__post_init__`.
+
 ---
 
-👉 So in short:
-`from dataclasses import dataclass` lets you write **clean, concise data-holding classes** with less code.
+### Example
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Product:
+    name: str
+    price: float
+    discounted_price: float = 0.0
+
+    def __post_init__(self):
+        # Automatically calculate discounted price after initialization
+        self.discounted_price = self.price * 0.9
+```
+
+Usage:
+
+```python
+p = Product("Laptop", 1000)
+print(p)  
+# Product(name='Laptop', price=1000, discounted_price=900.0)
+```
+
+
 
