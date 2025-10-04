@@ -56,11 +56,16 @@ Analytics is more than just reporting numbers — it represents a **continuum of
 
 ### **Summary View of Analytics Levels**
 
-| **Analytics Type** | **Level of Maturity** | **Core Question**  | **Objective**                       | **Example Use Case**              |
-| ------------------ | --------------------- | ------------------ | ----------------------------------- | --------------------------------- |
-| Descriptive        | Foundational          | What happened?     | Understand past performance         | Monthly sales dashboard           |
-| Diagnostic         | Intermediate          | Why did it happen? | Identify causes and correlations    | Root cause of churn increase      |
-| Predictive         | Advanced              | What will happen?  | Anticipate future outcomes          | Demand forecasting                |
-| Prescriptive       | Optimization          | What should we do? | Recommend optimal actions           | Inventory or pricing optimization |
-| Cognitive          | Cutting-edge          | How can it adapt?  | Enable self-learning and automation | Intelligent anomaly correction    |
+**Note:** High-quality, structured data is the foundation for all analytics levels. **Data Engineers (DE)** ensure proper data collection, cleaning, and preparation for enabling Descriptive, Diagnostic, Predictive, Prescriptive, and Cognitive analytics.
+
+
+| **Analytics Type**         | **Level of Maturity** | **Core Question**  | **Objective**                       | **Example Use Case**              | **Roles & Responsibilities**                                                                                                                                                       |
+| -------------------------- | --------------------- | ------------------ | ----------------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Descriptive Analytics**  | Foundational          | What happened?     | Understand past performance         | Monthly sales dashboard           | **BI Engineer (BIE):** Build dashboards and visualizations <br> **Business Analyst (BA):** Interpret reports and KPIs                                                              |
+| **Diagnostic Analytics**   | Intermediate          | Why did it happen? | Identify causes and correlations    | Root cause of churn increase      | **Business Analyst (BA):** Analyze trends, perform drill-downs <br> **Data Analyst:** Explore datasets, identify correlations, support root-cause analysis                         |
+| **Predictive Analytics**   | Advanced              | What will happen?  | Anticipate future outcomes          | Demand forecasting                | **Data Scientist (ML/Stats/AI):** Develop predictive models, select features, validate models <br> **ML Engineer:** Deploy models into production                                  |
+| **Prescriptive Analytics** | Optimization          | What should we do? | Recommend optimal actions           | Inventory or pricing optimization | **Operations Research Scientist / Decision Scientist:** Build optimization models, decision engines, scenario analysis <br> **Data Scientist:** Support model input and evaluation |
+| **Cognitive Analytics**    | Cutting-edge          | How can it adapt?  | Enable self-learning and automation | Intelligent anomaly correction    | **AI/ML Research Scientist:** Design autonomous systems, reinforcement learning <br> **AI Engineer / LLM Specialist:** Build self-learning pipelines, adaptive AI agents   |
+
+
 
