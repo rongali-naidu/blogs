@@ -75,6 +75,6 @@ Regardless of the mechanism, the key goal remains the same: **all significant da
 
 ### **Summary**
 
-> **“Treat All Data as Events”** is a modern data management principle that unifies systems integration and data platform ingestion through real-time, event-driven data flows.
+> **“Unified Event-Driven Architecture For Systems and Analytics”** is a modern data management principle that unifies systems integration and data platform ingestion through real-time, event-driven data flows.
 > It shifts data delivery from **pull-based**, reactive patterns to **push-based**, proactive mechanisms — ensuring data consistency, timeliness, and scalability across the enterprise.
 
