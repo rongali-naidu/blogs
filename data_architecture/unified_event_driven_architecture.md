@@ -51,6 +51,8 @@ The **preferred implementation** of this principle is for **applications and ser
 
 This ensures that event semantics are **domain-aware**, the event contracts are **explicit and well-governed**, and systems are **built with data sharing and analytics-readiness in mind from the start**.
 
+I am also planning to give other suitable names like EDMI : Event-Driven Data Mesh Integration
+
 #### **Alternative Approaches**
 
 When direct event publishing is not feasible due to technical or architectural constraints, other mechanisms can still uphold this principle, such as:
