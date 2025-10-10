@@ -1,4 +1,4 @@
-## **Unified Event-Driven Architecture For Systems and Analytics**
+## **Event-Driven Data Mesh Architecture For Systems and Analytics**
 
 ### **Problem Statement**
 
