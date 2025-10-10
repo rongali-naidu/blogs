@@ -1,4 +1,4 @@
-## **Event-Driven Data Mesh Architecture For Systems and Analytics**
+## **Event-Driven Data Mesh Architecture For Systems Integration and Analytics**
 
 ### **Problem Statement**
 
