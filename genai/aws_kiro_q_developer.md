@@ -1,5 +1,5 @@
 
-# Understanding AWS Q Developer, Q CLI, CodeWhisperer, and Kiro — Simplified
+# Understanding AWS Q Developer, Q CLI, CodeWhisperer, and Kiro
 
 Amazon (via AWS) now offers multiple AI-assisted tools for developers. To make sense of them, here’s a comparison of **Q Developer**, **Q CLI**, **CodeWhisperer**, and the newer **Kiro** — what they do, how they relate, and where they differ.
 
