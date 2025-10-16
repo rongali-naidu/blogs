@@ -171,8 +171,7 @@ In modern data platforms, **messaging systems** like Kafka or Kinesis are the **
                    ▼
           [ BI Dashboards / ML Models ]
 ```
-
-💡 *The messaging layer is the new bridge where system and data integration meet.*
+*The messaging layer is the new bridge where system and data integration meet.*
 
 ---
 
