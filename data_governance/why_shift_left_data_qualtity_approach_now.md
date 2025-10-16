@@ -1,5 +1,5 @@
 
-# Why Shift-Left Data Architecture is More Relevant Today
+# Why Shift-Left in Data Quality became Relevant?
 
 In modern data architectures, the concept of **shift-left**—borrowed from DevOps and testing—has become increasingly important. Shift-left emphasizes moving data quality, validation, and governance activities as close as possible to the point where data is generated, rather than waiting until after the data lands in a data lake or warehouse. Catching issues early improves trustworthiness, reduces downstream rework, and accelerates analytics.
 
