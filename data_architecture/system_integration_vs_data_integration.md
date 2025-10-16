@@ -18,7 +18,7 @@ The goal: ensure that when something happens in one system, others can respond a
 
 ### Common Integration Approaches
 
-#### 🕓 Synchronous Integration — REST APIs
+#### Synchronous Integration — REST APIs
 
 * **How it works:** One system directly calls another’s API and waits for a response.
 * **Example:** A CRM calls the ERP system via REST API to create an order or check inventory.
