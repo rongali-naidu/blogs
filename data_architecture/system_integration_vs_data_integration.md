@@ -24,7 +24,7 @@ The goal: ensure that when something happens in one system, others can respond a
 * **Example:** A CRM calls the ERP system via REST API to create an order or check inventory.
 * **When to use:** Real-time requests that require confirmation (e.g., “Did this transaction succeed?”).
 
-💡 **Technologies:** REST, GraphQL, gRPC, SOAP (legacy)
+**Technologies:** REST, GraphQL, gRPC, SOAP (legacy)
 
 ---
 
@@ -34,7 +34,7 @@ The goal: ensure that when something happens in one system, others can respond a
 * **Example:** Once an order is placed, the order service emits an event. The inventory, billing, and analytics services each consume it independently.
 * **When to use:** Decoupled, scalable systems that can tolerate latency between producer and consumer.
 
-💡 **Technologies:** Kafka, AWS EventBridge, RabbitMQ, SQS/SNS
+**Technologies:** Kafka, AWS EventBridge, RabbitMQ, SQS/SNS
 
 ---
 
@@ -49,9 +49,7 @@ They ensure reliable event delivery, buffering, and scalability — forming the 
 | **Topic-based**  | Publish-subscribe, many consumers read same message | Event streams (Kafka topics, SNS topics)              |
 | **Stream-based** | Continuous sequence of immutable records            | Clickstream analytics, IoT telemetry (Kafka, Kinesis) |
 
-💡 *These systems aren’t just pipes; they are the circulatory system of modern enterprises.*
 
----
 
 ## Event-Driven Architecture (EDA) — From Messaging to Reactivity
 
@@ -72,7 +70,7 @@ In EDA:
 
 EDA allows systems to evolve independently — reducing coupling while maintaining coordination through shared events.
 
-💡 *EDA turns data change into a trigger for action — it’s how modern systems “think.”*
+*EDA turns data change into a trigger for action — it’s how modern systems “think.”*
 
 ---
 
@@ -86,7 +84,7 @@ If system integration connects **applications**, data integration connects **dat
 * Transformed for consistency (cleaning, joining)
 * Loaded into a **Data Warehouse** like Redshift, Snowflake, or BigQuery
 
-💡 Traditionally, ETL was **batch-oriented** — running nightly or hourly jobs.
+Traditionally, ETL was **batch-oriented** — running nightly or hourly jobs.
 
 ---
 
@@ -104,7 +102,7 @@ Data streaming continuously ingests and processes events — often using the **s
 | **Process** | Transform or enrich data in-flight       | Apache Flink, Spark Streaming, Kinesis Analytics |
 | **Store**   | Deliver data to data lake or warehouse   | S3, Redshift, Delta Lake, Snowflake              |
 
-💡 *Real-time pipelines are effectively “event consumers” from the system integration world.*
+*Real-time pipelines are effectively “event consumers” from the system integration world.*
 
 ---
 
@@ -142,12 +140,12 @@ The result: a **unified event fabric**, where the same event powers both busines
 
 This convergence has several benefits:
 
-* 📈 Real-time analytics with zero duplication
-* 🧩 Simplified architecture (one messaging backbone)
-* ⚡ Faster response to business events
-* 🔁 Alignment between operational and analytical data models
+* Real-time analytics with zero duplication
+* Simplified architecture (one messaging backbone)
+* Faster response to business events
+* Alignment between operational and analytical data models
 
-💡 In modern data platforms, **messaging systems** like Kafka or Kinesis are the **bridge** — not just between services, but between **systems and data**.
+In modern data platforms, **messaging systems** like Kafka or Kinesis are the **bridge** — not just between services, but between **systems and data**.
 
 ---
 
