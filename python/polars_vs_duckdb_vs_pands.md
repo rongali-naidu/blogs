@@ -257,24 +257,72 @@ duckdb.query("SELECT region, SUM(sales) FROM pl_df GROUP BY region").to_df()
 
 
 
-## Performance Snapshot (1 Million Rows CSV)
+### Performance testing
 
-| Operation            | **Pandas** | **Polars** | **DuckDB** |
-| -------------------- | ---------- | ---------- | ---------- |
-| Read CSV             | ~2.5 s     | **0.4 s**  | 0.6 s      |
-| GroupBy Sum          | ~1.2 s     | **0.1 s**  | 0.2 s      |
-| Filter + Aggregation | ~1.8 s     | **0.2 s**  | 0.25 s     |
-| Memory Usage         | High       | **Low**    | Low        |
+```sh
+pip install polars duckdb pandas
 
+```
+```python
+import pandas as pd
+import numpy as np
 
+N = 1_000_000
+df = pd.DataFrame({
+    "order_id": np.arange(N),
+    "region": np.random.choice(["East", "West", "South", "North"], size=N),
+    "sales": np.random.randint(10, 1000, size=N)
+})
 
-## When to Use Each
+df.to_csv("sales.csv", index=False)
+df.to_parquet("sales.parquet")  # optional Parquet for DuckDB / Polars
+```
 
-| Scenario                                     | Recommended Tool              | Why                                       |
-| -------------------------------------------- | ----------------------------- | ----------------------------------------- |
-| **Small datasets (<1M rows)**                | 🐍 **Pandas**                 | Easiest to use, best ecosystem support    |
-| **Medium–large analytics pipelines**         | ⚡ **Polars**                  | Rust performance, lazy query optimization |
-| **SQL-based analytics / data lake querying** | 🦆 **DuckDB**                 | Embedded SQL OLAP engine                  |
-| **ETL & in-memory dashboards**               | ⚡ **Polars** or 🦆 **DuckDB** | Fast, concurrent, low-memory              |
-| **Ad-hoc joins across Parquet files**        | 🦆 **DuckDB**                 | SQL-friendly, no ETL required             |
+```python
+
+import pandas as pd
+import polars as pl
+import duckdb
+import time
+
+# --- Pandas ---
+start = time.time()
+pdf = pd.read_csv("sales.csv")
+pandas_result = pdf.groupby("region")["sales"].sum()
+print("Pandas Result:\n", pandas_result)
+print("Pandas Time:", time.time() - start)
+
+# --- Polars ---
+start = time.time()
+pl_df = pl.read_csv("sales.csv")
+polars_result = pl_df.groupby("region").agg(pl.col("sales").sum())
+print("Polars Result:\n", polars_result)
+print("Polars Time:", time.time() - start)
+
+# --- DuckDB ---
+start = time.time()
+duck_result = duckdb.query("""
+    SELECT region, SUM(sales) AS total_sales
+    FROM 'sales.csv'
+    GROUP BY region
+""").to_df()
+print("DuckDB Result:\n", duck_result)
+print("DuckDB Time:", time.time() - start)
+```
+```python
+import sys, platform, os
+import pandas as pd, polars as pl, duckdb
+import psutil
+
+print("Python:", sys.version)
+print("Pandas:", pd.__version__)
+print("Polars:", pl.__version__)
+print("DuckDB:", duckdb.__version__)
+print("Platform:", platform.platform())
+print("Processor:", platform.processor())
+print("CPU Cores:", os.cpu_count())
+print("Physical cores:", psutil.cpu_count(logical=False))
+print("Logical cores:", psutil.cpu_count(logical=True))
+print("Total RAM (GB):", round(psutil.virtual_memory().total / 1e9, 2))
+```
 
