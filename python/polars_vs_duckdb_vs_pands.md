@@ -257,7 +257,7 @@ duckdb.query("SELECT region, SUM(sales) FROM pl_df GROUP BY region").to_df()
 
 
 
-### Performance testing
+## Performance testing
 
 ```sh
 pip install polars duckdb pandas
@@ -325,4 +325,23 @@ print("Physical cores:", psutil.cpu_count(logical=False))
 print("Logical cores:", psutil.cpu_count(logical=True))
 print("Total RAM (GB):", round(psutil.virtual_memory().total / 1e9, 2))
 ```
+
+| Engine     | Runtime (s) |
+| ---------- | ----------- |
+| **Pandas** | 0.76        |
+| **Polars** | 0.38        |
+| **DuckDB** | 0.84        |
+
+| Metric             | Value                                               |
+| ------------------ | --------------------------------------------------- |
+| **Python Version** | 3.11.3 (64-bit)                                     |
+| **Pandas Version** | 2.1.4                                               |
+| **Polars Version** | 1.34.0                                              |
+| **DuckDB Version** | 1.4.1                                               |
+| **Platform**       | Windows 10                             |
+| **Processor**      | Intel64 Family  |
+| **Physical Cores** | 4                                                   |
+| **Logical Cores**  | 8                                                   |
+| **RAM**            | 16.84 GB                                            |
+
 
