@@ -155,8 +155,7 @@ By distinguishing these two, organizations can better communicate both **trustwo
 | **Primary Focus** | Accuracy, completeness, reliability | Transformation, standardization, enrichment |
 | **Core Question** | “How good is the data?”             | “How ready is the data for analysis?”       |
 | **Scope**         | Applies to all data (raw → gold)    | Defines data maturity across layers         |
-| **Owner**         | Domain / Data Steward               | Data Engineering / Product Team             |
-| **Output**        | Quality score or compliance status  | Readiness tier (Bronze, Silver, Gold)       |
+| **Output**        | Quality score   | Analytical Readiness tier (Bronze, Silver, Gold)       |
 
 This distinction clarifies responsibilities and improves discoverability:
 Consumers can quickly understand **how much effort is needed** to use a dataset — while still trusting its accuracy and completeness.
