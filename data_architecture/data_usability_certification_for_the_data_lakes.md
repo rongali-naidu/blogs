@@ -1,6 +1,12 @@
 
 # Data Lake’s Data Certifications: Bridging Traditional Warehousing with Lakehouse, Medallion, and Data Mesh
 
+### Introduction: Data Usability Certification
+
+As organizations embrace modern data architectures, it’s no longer enough to know if data is “good.” Analysts and business users also need to know how ready data is for consumption.
+
+In this blog, I introduce the concept of Data Usability Certification — a way to signal a dataset’s readiness, transformation, and curation level in the data lake. I’ll explain how it differs from Data Quality Certification, and how it connects to data mesh principles and the Medallion Data Architecture, bridging traditional data warehousing practices with modern, domain-driven approaches.
+
 ### **Traditional Data Warehousing: Core Principles**
 
 Traditional data warehouses focus on **making data analytics-ready** through structured design and curated processing. Key concepts include:
@@ -51,9 +57,8 @@ There is a clear need for **standardized signals of dataset readiness and usabil
 
 ---
 
-### **Introducing Data Certifications**
+### **Data Quality  Vs Data Usability **
 
-To address this, we introduce **two complementary certifications**:
 
 #### **Data Quality Certification**
 
@@ -68,7 +73,6 @@ To address this, we introduce **two complementary certifications**:
 * Focus: **transformation, cleaning, standardization, enrichment**
 * Mirrors **stage, fact, and dimension tables** of traditional warehouses and the **bronze, silver, gold layers** of the **Medallion architecture**.
 * Answers the question: *“How ready is the data for analysis or consumption?”*
-
 
 
 ### **Linking the Medallion Architecture**
