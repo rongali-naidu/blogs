@@ -71,6 +71,40 @@ There’s a clear need for a **standardized signal of dataset readiness and usab
 
 ---
 
+### **Understanding Data Quality and Data Usability**
+
+Before introducing certifications, it’s important to clarify what **Data Quality** and **Data Usability** mean in a broader context.
+These two concepts are often discussed together but serve **distinct purposes** in the data ecosystem.
+
+#### **Data Quality**
+
+**Data Quality** represents how well data meets defined standards of **accuracy, completeness, consistency, timeliness, and validity**.
+It answers the question: *“Can I trust this data?”*
+
+High-quality data is:
+
+* **Accurate:** Correct and free of errors.
+* **Complete:** Contains all required information.
+* **Consistent:** Uniform across systems and time.
+* **Timely:** Up to date and available when needed.
+* **Reliable:** Produced through dependable, auditable processes.
+
+Importantly, **data quality applies across all forms of data** — raw, curated, or aggregated. Even raw data can be *accurate and trustworthy*, even if it’s not yet ready for analysis.
+
+#### **Data Usability**
+
+**Data Usability** focuses on how easily data can be **used for analytical purposes**.
+It answers the question: *“How ready is this data for use?”*
+
+Highly usable data is:
+
+* **Standardized:** Structured and modeled for consistent understanding.
+* **Enriched:** Joined, cleaned, and contextualized for analysis.
+
+While data quality ensures *trust*, data usability ensures *readiness and analytical value*. Together, they define how effectively data can support decision-making.
+
+---
+
 ### **Introducing Data Certifications**
 
 To address this gap, I propose two complementary certifications:
@@ -127,6 +161,3 @@ By distinguishing these two, organizations can better communicate both **trustwo
 This distinction clarifies responsibilities and improves discoverability:
 Consumers can quickly understand **how much effort is needed** to use a dataset — while still trusting its accuracy and completeness.
 
-
-Would you like me to create a **diagram** to visually represent this concept — showing the *Bronze–Silver–Gold layers* alongside *Data Quality as a vertical dimension across all layers*?
-It would make the blog more visually engaging and clarify your “partial agreement” point beautifully.
