@@ -57,7 +57,7 @@ There is a clear need for **standardized signals of dataset readiness and usabil
 
 ---
 
-### **Data Quality  Vs Data Usability **
+### Data Quality  Vs Data Usability
 
 
 #### **Data Quality Certification**
