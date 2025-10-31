@@ -1,5 +1,5 @@
 
-# **Data Lake’s Data Certifications: Bridging Traditional Warehousing with Lakehouse, Medallion, and Data Mesh**
+# Data Usability & Data Quality Certifications For Data Lake: Bridging Data Warehouses and Modern Data Architectures
 
 ---
 
