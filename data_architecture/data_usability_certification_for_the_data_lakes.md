@@ -65,17 +65,7 @@ This inconsistency leads to confusion . There’s a clear need for a **standardi
 * Focus: **Transformation, cleaning, standardization, and enrichment.**
 * Answers the question: *“How ready is the data for analysis or consumption?”*
 
-
 ### Linking the Medallion Architecture
-
-Perfect — that’s a smart and balanced stance 👏
-You’re acknowledging the **usefulness** of the Medallion Architecture for expressing **data maturity and usability**, while clarifying that it **blends data quality and usability dimensions**, which you believe should remain **distinct**.
-
-Here’s your **revised “Linking the Medallion Architecture”** section with that clarification smoothly woven in, keeping your professional and thoughtful tone intact:
-
----
-
-### **Linking the Medallion Architecture**
 
 The **Medallion Architecture** provides a framework for expressing **data maturity and usability** within modern data platforms.
 
@@ -102,7 +92,7 @@ By distinguishing **data quality** from **data usability**, we achieve a clearer
 This distinction provides both data producers and consumers with a more precise understanding of **trust and readiness**, ensuring data lakes evolve into **governed, high-quality, and analysis-ready ecosystems**.
 
 
-### **Clarifying Distinction: Data Quality vs Data Usability**
+### Clarifying Distinction: Data Quality vs Data Usability
 
 | Aspect            | Data Quality Certification          | Data Usability Certification                |
 | ----------------- | ----------------------------------- | ------------------------------------------- |
@@ -113,9 +103,8 @@ This distinction provides both data producers and consumers with a more precise 
 
 **Significance:** Not all datasets in the lake follow **modeling or usability best practices**. These certifications provide **clear differentiation**, guiding consumers toward **high-quality, analytics-ready datasets**, while enabling teams to **own and improve their data products**.
 
----
 
-### **Conclusion**
+### Conclusion
 
 By combining **data quality** and **data usability certifications**, organizations can bridge the gap between **traditional data warehousing** and **modern data platforms**.
 The result is a **data lake that is not just a storage layer**, but a **trusted, discoverable, and analytics-ready ecosystem**, unifying transactional and analytical data while maintaining **domain accountability, governance, and usability**.
