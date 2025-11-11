@@ -6,7 +6,7 @@ This article is a follow-up to my previous post [Data Quality Frameworks: The Mo
 
 In that piece, I explored how Data Quality (DQ) frameworks have evolved to fill the enforcement gap left by traditional database schemas in today’s distributed data environments.
 
-Here, I’ll take a step back to answer a more fundamental question: **What exactly is Data Quality, and can we measure it consistently?**
+Here, I’ll take a step back to answer a more fundamental question: What exactly is Data Quality, and can we measure it consistently enough to remove the subjectivity around the term?
 
 In modern data-driven enterprises, **Data Quality (DQ)** has taken on a new level of significance. As organizations shift from monolithic databases to distributed **data lakes, warehouses, and data mesh architectures**, the old assumptions about schema enforcement and centralized validation no longer hold true.
 
