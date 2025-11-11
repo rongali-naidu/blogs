@@ -1,7 +1,7 @@
 # 🧭 Key Aspects to Check Before Accepting a “Data-Driven” Conclusion
 
-I came to know about Darrell Huff’s *How to Lie with Statistics* as part of my PG Diploma in Applied Statistics. While statistics serve as a useful and powerful way to summarize vast data, they can also be misleading if not carefully examined. 
-The book highlights several key aspects to keep in mind before accepting any “data-driven” conclusion:
+Is your "Data-Driven" Decision Truly Data-Driven?
+While statistics serve as a useful and powerful way to summarize vast data, they can also be misleading if not carefully examined.Darrell Huff's "How to Lie with Statistics" book highlights following key aspects to keep in mind before accepting any "data-driven" conclusion
 
 ---
 
