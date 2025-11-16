@@ -82,12 +82,13 @@ This article reviews key anomaly detection concepts, summarizes commonly used AD
 * **Rule-based**: Hard thresholds from business rules.
 
   * *Example*: Flag all transactions > \$10,000.
+  * Two Successive Bank Account Transactions in two distinctly geographies in gap of 5 mins
 * **Heuristic-based**: Approximate rules derived from domain knowledge.
 
   * *Example*: Flag if spending > 3× user’s average.
 
 ### Statistical Models
-
+Helps to provide adoptive thresholds compared to the Rule based techniques
 * **Distribution-based**: Model data distribution (mean, std dev, Z-score, IQR).
 * **Time-series**: Capture trends & seasonality.
 
@@ -114,7 +115,10 @@ This article reviews key anomaly detection concepts, summarizes commonly used AD
 
 ### Deep Learning Time-Series Models
 
-* **LSTM & LSTM Autoencoders**: Capture sequence patterns, use reconstruction error.
+* **LSTM & LSTM Autoencoders**: Capture sequence patterns, use reconstruction error. * Recurrent Neural Networks capable of learning temporal dependencies across sequences. LSTMs can remember patterns over multiple steps, enabling detection of suspicious behavior that may not be obvious from a single event  
+    * Example : LSTM on session sequences ( a series of events for a single user session : login attempt from a identified devices+browser(user-agent)/location → play video → pause → logout), recognizes the normal normal pattern so help in identifying credential-stuffing ( a type of attack where attackers use leaked usernames/passwords to try logging in across many accounts. ) rings ( groups of coordinated login attempts, often automated, targeting multiple accounts. ) that rotate IPs, devices, and user agents
+
+
 * **DeepAR**: LSTM-based forecasting, trained across multiple series.
 
 ### Other
