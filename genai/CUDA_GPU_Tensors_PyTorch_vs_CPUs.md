@@ -1,5 +1,22 @@
 # From CPUs to GPUs: Parallelism, Tensors, CUDA, PyTorch & Big Data Analogy
 
+## Introduction
+
+During my bachelor’s degree, I studied the 8086 microprocessor—its architecture, registers, ALU, memory interactions, and assembly instructions. That experience grounded me in how computer operations translate into processor behavior at the electronic circuit level.
+
+After entering the software industry, my work shifted into the data engineering and database domain—designing, querying, and optimizing systems that used **RDBMS** and later **Big Data ecosystems** like Hadoop and Spark. That transition taught me how scaling data and computation fundamentally changes system architecture and execution models.
+
+As the AI and ML revolution accelerated, especially with deep learning, I wanted to understand what makes **GPUs**, **CUDA**, **tensors**, and **PyTorch** so central. To make sense of it, I naturally connected back to what I already knew: CPU architecture, instruction execution, and parallel data processing.
+
+In that journey, I realized something interesting—there is a strong analogy between:
+
+* the transition from **CPUs → GPUs**, and
+* the shift from **RDBMS → Big Data processing**
+
+Both transitions were driven by the need for scale—more data, more computation, and more parallelism. This blog is an attempt to connect those worlds and explain GPU computing in a way that feels familiar to anyone who has worked with traditional CPUs or large-scale data sys
+
+In this blog, tried to explain at high level CPU vs GPU architectures, how parallelism works, and how it connects to high-level frameworks like PyTorch and Big Data processing.
+
 ## 1. CPU vs GPU: Key Differences
 
 ### CPU Architecture
