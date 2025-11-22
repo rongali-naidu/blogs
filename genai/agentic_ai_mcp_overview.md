@@ -148,6 +148,7 @@ The agent stops because the **LLM set `status` to `done`** and the Pydantic mode
 
 ## Introducing the Model Context Protocol (MCP)
 
+
 The **Model Context Protocol (MCP)** is a universal standard for connecting LLMs to external data sources and tools securely and dynamically. It solves the **N×M integration problem**: every model previously needed a custom adapter for every tool.
 
 ### MCP Architecture Overview
@@ -156,6 +157,8 @@ The **Model Context Protocol (MCP)** is a universal standard for connecting LLMs
 2. **MCP Host** – Runtime environment running agents (e.g., IDE plugin, chat app, orchestrator).
 3. **MCP Client** – Bridge that speaks MCP protocol, discovers servers, and routes tool calls.
 4. **MCP Server** – Tool or data integration (e.g., GitHub, Jira, Snowflake) exposing tools and schemas to clients.
+
+Refer this : https://github.com/punkpeye/awesome-mcp-servers
 
 **Flow Example:**
 LLM → MCP Client → MCP Server → Results → LLM → Agent → User
