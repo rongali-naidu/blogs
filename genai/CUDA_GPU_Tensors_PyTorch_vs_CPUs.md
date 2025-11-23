@@ -4,16 +4,13 @@
 
 Two LinkedIn posts recently piqued my curiosity—one about **NVIDIA’s CUDA** and another about **Google owning the full AI stack**.
 
-Before diving into technical details, here’s a bit of context: during my bachelor’s, I studied the **8086 microprocessor**—its architecture, registers, ALU, memory interactions, and assembly instructions. That gave me a solid grounding in how instructions translate into processor behavior at the circuit level. Later, my career shifted to **data engineering and databases**, working with RDBMS and eventually **Big Data frameworks** like Hadoop and Spark. This taught me how scaling data and computation fundamentally changes system architecture and execution models.
+Before diving into the details, here’s a little bit of my context: during my bachelor’s, I studied the **8086 microprocessor**—its architecture, registers, ALU, memory interactions, and assembly instructions. That gave me a solid grounding in how instructions translate into processor behavior at the circuit level. Later, my career shifted to **data engineering and databases**, working with RDBMS and eventually **Big Data frameworks** like Hadoop and Spark. This taught me how scaling data and computation fundamentally changes system architecture and execution models.
 
-While learning about **GPUs/TPUs, CUDA, tensors, and PyTorch/TensorFlow**, I noticed an interesting analogy:
+This blog is my attempt to gather basic detals on **CPU vs GPU/TPU architectures** and explain how they relate to high-level frameworks like **PyTorch and TensorFlow**. Also wanted to share an interesting analogy i observed while gathering details about **CPU vs GPU/TPU architectures**. T
 
 * The transition from **CPUs → GPUs** parallels
 * The shift from **RDBMS → Big Data processing**
-
 Both transitions are driven by **scale**—more data, more computation, and more parallelism.
-
-This blog is my attempt to gather basic detals on **CPU vs GPU/TPU architectures** and explain how they relate to high-level frameworks like **PyTorch and TensorFlow**.
 
 ## 1. CPU vs GPU: Key Differences
 
@@ -26,12 +23,6 @@ A CPU is designed for general-purpose computing with a focus on low-latency exec
 * **Registers:** Small, ultra-fast storage for operands and instructions (e.g., AX, BX in 8086).
 * **Cache Memory:** High-speed memory close to the core to reduce access latency.
 * **RAM Access:** Reads/writes data from main memory when necessary.
-
-**Characteristics:**
-
-* Few powerful cores (1–16 in modern CPUs).
-* Optimized for sequential execution and complex branching.
-* Excellent for logic-heavy tasks and low-latency operations.
 
 Further reading: [CPU Architecture Basics](https://en.wikipedia.org/wiki/Central_processing_unit), [8086 Microprocessor](https://en.wikipedia.org/wiki/Intel_8086)
 
@@ -46,17 +37,8 @@ A **GPU (Graphics Processing Unit)** was originally designed to accelerate rende
 * **Global Memory:** Large, slower memory accessible to all threads across SMs.
 * **Warp Scheduler:** Hardware unit that schedules 32 threads (a warp) to execute instructions simultaneously.
 
-**Characteristics:**
-
-* Thousands of lightweight cores.
-* Optimized for SIMD/SIMT execution (same instruction, multiple data elements).
-* Excellent for tasks like matrix operations, image processing, and neural network computations.
 
 Further reading: [CUDA Programming](https://developer.nvidia.com/cuda-zone) ,[GPU Architecture](https://www.vmware.com/docs/exploring-the-gpu-architecture), 
-
-Here’s a TPU architecture section in the same style and detail as your GPU section:
-
----
 
 ### TPU Architecture
 
@@ -69,15 +51,7 @@ A **TPU (Tensor Processing Unit)** is Google’s custom chip designed specifical
 * **Infeed / Outfeed Queues:** Hardware pipelines that stream data into and out of the TPU efficiently.
 * **Interconnect:** For multi-TPU setups (pods), a high-speed mesh network connects TPU chips for distributed computation.
 
-**Characteristics:**
-
-* Specialized for dense matrix multiplication (neural networks, training, inference).
-* Systolic array design maximizes throughput and efficiency.
-* Fewer general-purpose cores compared to GPUs; heavily optimized for tensor workloads.
-* Works best with fixed-size, tileable tensors for peak performance.
-
 Further reading: [TPU Architecture Overview](https://cloud.google.com/tpu/docs/system-architecture), [Inside Google’s TPU](https://cloud.google.com/blog/products/ai-machine-learning/under-the-hood-of-googles-tensor-processing-units-tpus)
-
 
 ### CUDA Explained
 
@@ -121,7 +95,7 @@ for (int i=0; i<N; i++) {
 ```
 
 * CPU executes **one addition at a time**
-* 
+
 ### Introducing Tensors — The Foundation of Modern GPU Computing
 
 Before understanding CUDA, GPUs, and deep learning frameworks, we must first understand tensors.
@@ -132,27 +106,19 @@ A **tensor** is a generalized multi-dimensional numerical data structure.
 
 ### Why Do We Need Tensors When Matrices Already Exist?
 
-1. **Real AI/ML Data Is Multi-Dimensional**
-   Matrices are only 2D—most real workloads are not.
-   Example: a video → 5D tensor (batch × frames × height × width × channels)
-
-2. **Device Awareness (CPU or GPU)**
+**Device Awareness (CPU or GPU)**
    Tensors internally track whether they live in CPU memory or GPU memory—matrices don’t.
 
-3. **Automatic Differentiation Required for Training**
+**Automatic Differentiation Required for Training**
    Tensors carry gradient history, enabling backpropagation.
    A normal matrix cannot store computation graphs.
 
-4. **Unified Numeric Representation**
+**Unified Numeric Representation**
    Tensors contain metadata: shape, dtype, stride, layout—allowing optimized computation.
 
-5. **Built for Parallelism**
+**Built for Parallelism**
    Tensor libraries efficiently map operations to vectorized CPU instructions or thousands of GPU threads.
 
-**Summary:**
-Matrices are great—but tensors scale numerical computing for machine learning, GPUs, and high-dimensional data.
-
----
 
 ## CUDA, CUDA Kernels & PyTorch — How They Connect
 
@@ -231,9 +197,7 @@ A [TPU (Tensor Processing Unit)](https://cloud.google.com/tpu) is Google’s cus
 * High throughput, low power
 * Available through Google Cloud
 
-Designed specifically for neural networks—not general computing.
-
-Architecture: [https://cloud.google.com/tpu/docs/system-architecture](https://cloud.google.com/tpu/docs/system-architecture)
+Designed specifically for neural networks—not general computing.Architecture: [https://cloud.google.com/tpu/docs/system-architecture](https://cloud.google.com/tpu/docs/system-architecture)
 
 ### What Is XLA?
 
@@ -243,9 +207,7 @@ Architecture: [https://cloud.google.com/tpu/docs/system-architecture](https://cl
 * Generates device-specific machine code
 * Targets CPUs, GPUs, and TPUs
 
-Think of XLA as TensorFlow’s optimization and translation layer.
-
-Architecture: [https://www.tensorflow.org/xla/architecture](https://www.tensorflow.org/xla/architecture)
+Think of XLA as TensorFlow’s optimization and translation layer.Architecture: [https://www.tensorflow.org/xla/architecture](https://www.tensorflow.org/xla/architecture)
 
 ### What Is TensorFlow?
 
@@ -255,9 +217,7 @@ Architecture: [https://www.tensorflow.org/xla/architecture](https://www.tensorfl
 * Runs on CPU, GPU, or TPU
 * Provides high-level APIs like Keras
 
-TensorFlow is the interface—not the hardware.
-
-Guide: [https://www.tensorflow.org/guide](https://www.tensorflow.org/guide)
+TensorFlow is the interface—not the hardware.Guide: [https://www.tensorflow.org/guide](https://www.tensorflow.org/guide)
 
 ### How They Work Together
 
@@ -265,11 +225,9 @@ Guide: [https://www.tensorflow.org/guide](https://www.tensorflow.org/guide)
 2. XLA compiles and optimizes it
 3. The TPU executes the compiled program
 
-You write model code—TensorFlow + XLA handle hardware execution.
+You write model code—TensorFlow + XLA handle hardware execution.TPU usage guide: [https://www.tensorflow.org/guide/tpu](https://www.tensorflow.org/guide/tpu)
 
-TPU usage guide: [https://www.tensorflow.org/guide/tpu](https://www.tensorflow.org/guide/tpu)
 
----
 
 ### One-Sentence Relationship
 
@@ -307,12 +265,6 @@ __global__ void matMul(float *A, float *B, float *C, int N) {
 * Each GPU thread computes **one element of the result matrix**
 * Kernels map threads to tensor elements efficiently
 
-### Rough Timing Estimates
-
-* CPU sequential: ~1 billion operations → ~1 second (simplified)
-* GPU with 1024 cores: ~1 ms – 10 ms
-
----
 ### TPU Implementation
 
 ```
