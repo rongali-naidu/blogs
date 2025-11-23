@@ -1,4 +1,4 @@
-# From CPUs to GPUs/TPUs: Parallelism, Tensors, CUDA, PyTorch/TensforFlow & Big Data Analogy
+# From CPUs to GPUs/TPUs: Parallelism, Tensors, CUDA, PyTorch/TensforFlow
 
 ## Introduction
 
