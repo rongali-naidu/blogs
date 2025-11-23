@@ -329,10 +329,9 @@ Both transitions were driven by the need for scale—more data, more computation
 | -------------------------- | ----------------------------------- | ---------------------------------------------------- |
 | Cores / Workers            | Few, powerful                       | Many, simple                                         |
 | Execution                  | Sequential / limited parallelism    | Massively parallel (SIMD / distributed)              |
-| Best for                   | Complex logic, small-to-medium data | Repeated operations on large datasets                |
-| Hardware/software relation | CPU executes instructions directly  | GPU cores / Hadoop workers execute tasks in parallel |
+| Best for                   | small-to-medium data | large datasets                |
 | Memory                     | Large cache / RAM                   | Shared memory / distributed storage                  |
-| Programming                | SQL / imperative programming        | MapReduce / Spark / CUDA kernel                      |
+
 
 **Example:** Summing a large dataset
 
