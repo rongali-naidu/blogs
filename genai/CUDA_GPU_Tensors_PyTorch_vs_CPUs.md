@@ -106,13 +106,6 @@ Before understanding CUDA, GPUs, and deep learning frameworks, we must first und
 
 A **tensor** is a generalized multi-dimensional numerical data structure.
 
-* **0D tensor** → scalar (`5`)
-* **1D tensor** → vector (`[1, 2, 3]`)
-* **2D tensor** → matrix (tables)
-* **3D tensor** → stacked matrices (e.g., RGB image: height × width × channels)
-* **4D tensor** → batch of images (batch × channel × height × width)
-* **ND tensor** → higher dimensional scientific/ML data
-
 ### Why Do We Need Tensors When Matrices Already Exist?
 
 1. **Real AI/ML Data Is Multi-Dimensional**
