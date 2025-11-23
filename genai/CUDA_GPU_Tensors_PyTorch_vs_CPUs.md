@@ -173,7 +173,7 @@ A single kernel launch can compute millions of additions at once.
 
 ### Where Does PyTorch Fit In?
 
-PyTorch is a **high-level machine learning framework** that:
+(PyTorch)[https://pytorch.org/] is a **high-level machine learning framework** that:
 
 * Creates and stores **tensors**
 * Moves tensors to CPU or GPU: `tensor.to('cuda')`
