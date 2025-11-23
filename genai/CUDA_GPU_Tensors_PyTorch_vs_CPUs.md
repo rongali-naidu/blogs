@@ -74,6 +74,7 @@ So:
 Further reading: [What is CUDA?](https://developer.nvidia.com/cuda-zone)
 
 [CUDA Course](https://github.com/Infatoshi/cuda-course)
+[Nvidia Developer : Accelerating Applications with Parallel Algorithms](https://youtu.be/Sdjn9FOkhnA?si=k1I5wKSLeQGBw8Kk)
 
 
 ## 2. From 8086 to Tensors, CUDA Kernels and PyTorch
