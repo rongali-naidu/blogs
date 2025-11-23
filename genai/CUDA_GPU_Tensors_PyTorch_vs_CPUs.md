@@ -6,7 +6,7 @@ Two LinkedIn posts recently piqued my curiosity—one about **NVIDIA’s CUDA** 
 
 Before diving into the details, here’s a little bit of my context: during my bachelor’s, I studied the **8086 microprocessor**—its architecture, registers, ALU, memory interactions, and assembly instructions. That gave me a solid grounding in how instructions translate into processor behavior at the circuit level. Later, my career shifted to **data engineering and databases**, working with RDBMS and eventually **Big Data frameworks** like Hadoop and Spark. This taught me how scaling data and computation fundamentally changes system architecture and execution models.
 
-This blog is my attempt to gather basic detals on **CPU vs GPU/TPU architectures** and explain how they relate to high-level frameworks like **PyTorch and TensorFlow**. Also wanted to share an interesting analogy i observed while gathering details about **CPU vs GPU/TPU architectures**. T
+This blog is my attempt to gather basic detals on **CPU vs GPU/TPU architectures** and explain how they relate to high-level frameworks like **PyTorch and TensorFlow**. Also wanted to share an interesting analogy i observed while gathering details about **CPU vs GPU/TPU architectures**. 
 
 * The transition from **CPUs → GPUs** parallels
 * The shift from **RDBMS → Big Data processing**
