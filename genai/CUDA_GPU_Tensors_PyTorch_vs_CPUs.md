@@ -323,7 +323,7 @@ Further reading: [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-pr
 * the transition from **CPUs → GPUs**, and
 * the shift from **RDBMS → Big Data processing**
 
-Both transitions were driven by the need for scale—more data, more computation, and more parallelism. This blog is an attempt to connect those worlds and explain GPU computing in a way that feels familiar to anyone who has worked with traditional CPUs or large-scale data sys
+Both transitions were driven by the need for scale—more data, more computation, and more parallelism. 
 
 | Concept                    | CPU / RDBMS                         | GPU / Big Data Processing                            |
 | -------------------------- | ----------------------------------- | ---------------------------------------------------- |
@@ -333,8 +333,4 @@ Both transitions were driven by the need for scale—more data, more computation
 | Memory                     | Large cache / RAM                   | Shared memory / distributed storage                  |
 
 
-**Example:** Summing a large dataset
-
-* RDBMS / CPU: sequential sum → slow
-* GPU / Big Data: parallel sum → fast
 
