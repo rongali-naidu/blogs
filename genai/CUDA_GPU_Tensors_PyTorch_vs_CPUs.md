@@ -8,7 +8,7 @@ After entering the software industry, my work shifted into the data engineering 
 
 As the AI and ML revolution accelerated, especially with deep learning, I wanted to understand what makes **GPUs**, **CUDA**, **tensors**, and **PyTorch** so central. To make sense of it, I naturally connected back to what I already knew: CPU architecture, instruction execution, and parallel data processing.
 
-In that journey, I realized something interesting—there is a strong analogy between:
+In that process, I realized something interesting—there is a strong analogy between:
 
 * the transition from **CPUs → GPUs**, and
 * the shift from **RDBMS → Big Data processing**
@@ -269,6 +269,11 @@ Further reading: [CUDA Programming Guide](https://docs.nvidia.com/cuda/cuda-c-pr
 ---
 
 ## 6. Analogy to Big Data Processing
+
+* the transition from **CPUs → GPUs**, and
+* the shift from **RDBMS → Big Data processing**
+
+Both transitions were driven by the need for scale—more data, more computation, and more parallelism. This blog is an attempt to connect those worlds and explain GPU computing in a way that feels familiar to anyone who has worked with traditional CPUs or large-scale data sys
 
 | Concept                    | CPU / RDBMS                         | GPU / Big Data Processing                            |
 | -------------------------- | ----------------------------------- | ---------------------------------------------------- |
