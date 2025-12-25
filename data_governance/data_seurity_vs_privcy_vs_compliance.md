@@ -59,7 +59,7 @@ It ensures data remains **confidential, accurate, and available** to authorized 
 | **Integrity Protection**              | Uses hashes, checksums, digital signatures, or constraints                                                  | Integrity                          | Hash mismatch alerts system to tampering.                                          |
 | **Monitoring & Logging**              | Tracks access and modifications                                                                             | Confidentiality & Integrity        | Audit logs detect brute-force login attempts.                                      |
 | **Availability Controls**             | Backups, redundancy, failover, DDoS protection                                                              | Availability                       | Replicated databases ensure uptime.                                                |
-| **Masking / Tokenization**            | Obfuscates sensitive data for non-production use                                                            | Confidentiality                    | For non-production testing
+| **Masking / Tokenization**            | Obfuscates sensitive data for non-production use                                                            | Confidentiality                    | Masking and tokenization allow organizations to use sensitive data safely by replacing the real values with obfuscated or tokenized equivalents. This enables teams to develop and test applications without exposing actual personal or payment data, perform analytics and reporting while keeping sensitive fields hidden, and share information with third parties or support teams without revealing real PII, PCI, or PHI.
 
 ---
 
