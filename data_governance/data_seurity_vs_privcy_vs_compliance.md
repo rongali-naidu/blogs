@@ -112,15 +112,14 @@ They define **concrete obligations** for handling data. While many focus on pers
 
 ### Key Regulations (Overview)
 
-| Regulation            | Scope & Focus                           | 
-| --------------------- | --------------------------------------- | 
-| **GDPR (EU)**         | Personal data of EU residents           | 
-| **CCPA / CPRA (USA)** | Privacy rights for California residents | 
-| **HIPAA (USA)**       | Healthcare and medical data             | 
-| **PCI DSS**           | Payment card industry data              | 
-| **DORA (EU)**         | Financial sector ICT systems            | 
-| **SOX (USA)**         | Corporate financial records             | 
-
+| **Regulation**                                                                    | **Scope**                       | **Key Focus**                                                                          |
+| --------------------------------------------------------------------------------- | ------------------------------- | -------------------------------------------------------------------------------------- |
+| **GDPR (General Data Protection Regulation)**                                     | Personal Data (EU & EEA)        | Individual rights and lawful processing of personal data (e.g., Right to be Forgotten) |
+| **CCPA / CPRA (California Consumer Privacy Act / California Privacy Rights Act)** | Personal Data (California, USA) | Consumer privacy rights — access, deletion, opt‑out of sharing/sale                    |
+| **HIPAA (Health Insurance Portability and Accountability Act)**                   | Healthcare Data (USA)           | Privacy and technical security standards for protected health information (PHI)        |
+| **PCI DSS (Payment Card Industry Data Security Standard)**                        | Payments & Cardholder Data      | Security standards (including encryption) for payment card data                        |
+| **DORA (Digital Operational Resilience Act)**                                     | Financial Sector ICT (EU)       | Operational and cyber resilience for financial ICT systems                             |
+| **SOX (Sarbanes–Oxley Act)**                                                      | Financial Reporting (USA)       | Integrity, accuracy, and auditability of corporate financial records                   |
 
 
 ## 4. The Bigger Picture: Data Governance
