@@ -3,8 +3,6 @@
 As organizations increasingly rely on data to drive decisions, products, and services, three terms appear repeatedly in technical and governance discussions: **data security**, **data privacy**, and **regulatory requirements**. 
 This article explains each concept, how they differ and how they overlap
 
----
-
 
 ---
 
