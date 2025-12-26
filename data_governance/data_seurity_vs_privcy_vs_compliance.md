@@ -38,7 +38,7 @@ This article explains each concept, how they differ and how they overlap
 **Data security protects data from unauthorized access, modification, deletion, or disclosure.**
 It ensures data remains **confidential, accurate, and available** to authorized users. While access control is critical, additional mechanisms such as encryption, integrity checks, and monitoring address risks like insider threats, system breaches, or network interception.
 
-**Importantly, data security ensures that encrypted data remains usable for authorized users while remaining unreadable to unauthorized parties.**
+**Importantly, data security ensures that data is available for the authorized users while blocking unauthorized parties.**
 
 ---
 
