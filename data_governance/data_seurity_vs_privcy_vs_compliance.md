@@ -1,7 +1,7 @@
 # Four Pillars of Data Governance : Data Security, Data Privacy, and Regulatory Compliance and Data Quality 
 
 As organizations increasingly rely on data to drive decisions, products, and services, four terms appear repeatedly in technical and data governance discussions: **data security**, **data privacy**, **regulatory compliance** and **data quality**. 
-This article explains these four pillars of the data governance.
+These concepts are related, but they are not the same. Each addresses a different risk dimension of data management. Together, they form the four pillars of effective data governance.
 
 ![Four Pillars of Data Governance](https://github.com/rongali-naidu/blogs/blob/main/images/data_governance.png)
 ---
@@ -127,7 +127,7 @@ Compliance is the state of Data Security and Privacy implementation meeting spec
 
 ### Note on Data Protection
 
-Data Protection is the use of Data Security to meet the requirements of Data Privacy.It is the operational practice of ensuring data is handled safely, stays available, and remains under the control of its rightful owner. While Privacy is the intent and Security is the mechanism, Protection is the implementation.
+Data Protection is not a separate pillar. It is the operational outcome of applying data security controls to enforce data privacy requirements and to comply with relevant data protection regulations and laws
 
 
 ## 4. Data Quality
@@ -141,7 +141,7 @@ Data Quality ensures data is **useful, correct, and formatted properly**. While 
 4. **Uniqueness** – Are there duplicate records where there shouldn’t be?
 5. **Integrity** – Are relationships between entities maintained? [Note: Integrity in DQ context is different from the Integrity in Data Security context]
 6. **Validity** – Do values conform to formats, domains, and rules?
-7. **Availability** – Is data delivered on time and according to SLA?
+7. **Availability (aka Timeliness)** – Is data delivered on time and according to SLA?
 
 ## 5. The Bigger Picture: Data Governance
 
