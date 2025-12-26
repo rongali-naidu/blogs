@@ -5,29 +5,6 @@ This article explains each concept, how they differ and how they overlap
 
 ---
 
-> ### Quick Win: Mental Models (Personal Data Focus – Corrected)
->
-> **Context:** Handling personal data requires organizations to protect it technically, enforce proper usage policies, and comply with laws.
->
-> **1. Healthcare Example**
->
-> * **Data Security** – Hospital IT systems, firewalls, encryption, and access controls ensure only authorized staff can access patient records.
-> * **Data Privacy** – Patients give consent; the hospital enforces policies defining which staff can access data for treatment, billing, or research.
-> * **Regulatory Requirements** – HIPAA auditors ensure compliance with privacy and security laws.
->
-> **2. Online Retail Example**
->
-> * **Data Security** – Secure servers, SSL-encrypted payment pages, and access-controlled databases prevent unauthorized access to customer information.
-> * **Data Privacy** – Customers provide consent; the retailer enforces policies on who can access data for orders, marketing, or analytics.
-> * **Regulatory Requirements** – PCI DSS and GDPR/CCPA audits verify secure and legal handling of customer data.
->
-> **3. Banking Example**
->
-> * **Data Security** – Encryption, multi-factor authentication, monitoring, and firewalls prevent unauthorized access to accounts.
-> * **Data Privacy** – Policies and consent agreements define which third-party services can access financial data for operations, credit checks, or reporting.
-> * **Regulatory Requirements** – Banking regulators ensure compliance with privacy, anti-fraud, and KYC rules.
->
-> **Takeaway:** Security protects data technically, privacy governs proper use and consent, and regulations enforce accountability.
 
 ---
 
@@ -137,4 +114,25 @@ Compliance is the state of Data Security and Privacy implementation meeting spec
 2. **Security** enforces those rules through technical controls.
 3. **Complaince to the Regulations/Laws** provide the framework and accountability for both.
 4. **Data Quality** : Ofcourse a separate topic : Data Quality ensures the data is useful, correct, and formatted properly. While Security ensures the data isn't tampered with (Integrity), Quality ensures the data is accurate and fit for purpose. It is the "Value Layer."
+
+### Quick Win: Mental Models
+**1. Healthcare Example**
+* **Data Security** – Hospital IT systems, firewalls, encryption, and access controls ensure only authorized staff can access patient records.
+* **Data Privacy** – Patients give consent; the hospital enforces policies defining which staff can access data for treatment, billing, or research.
+* **Regulatory Requirements** – HIPAA auditors ensure compliance with privacy and security laws.
+
+**2. Online Retail Example**
+
+* **Data Security** – Secure servers, SSL-encrypted payment pages, and access-controlled databases prevent unauthorized access to customer information.
+* **Data Privacy** – Customers provide consent; the retailer enforces policies on who can access data for orders, marketing, or analytics.
+* **Regulatory Requirements** – PCI DSS and GDPR/CCPA audits verify secure and legal handling of customer data.
+
+**3. Banking Example**
+
+* **Data Security** – Encryption, multi-factor authentication, monitoring, and firewalls prevent unauthorized access to accounts.
+* **Data Privacy** – Policies and consent agreements define which third-party services can access financial data for operations, credit checks, or reporting.
+* **Regulatory Requirements** – Banking regulators ensure compliance with privacy, anti-fraud, and KYC rules.
+
+**Takeaway:** Security protects data technically, privacy governs proper use and consent, and regulations enforce accountability.
+
 
