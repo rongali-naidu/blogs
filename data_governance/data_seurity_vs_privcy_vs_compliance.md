@@ -15,7 +15,7 @@ It ensures data remains **confidential, accurate, and available** to authorized 
 
 **Importantly, data security ensures that data is available for the authorized users while blocking unauthorized parties.**
 
----
+
 
 ### Core Objectives (The CIA Triad)
 
@@ -23,20 +23,20 @@ It ensures data remains **confidential, accurate, and available** to authorized 
 2. **Integrity** – Data remains accurate, complete, and unaltered.
 3. **Availability** – Authorized users can access data when needed.
 
----
+
 
 ### Key Data Security Mechanisms
 
 | Mechanism                             | How It Works                                                                                                | CIA Element(s)                     | Example / Use Case                                                                 |
 | ------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------------- |
-| **Access Control**                    | Authentication (passwords, MFA, IAM roles, Security Tokens etc) and authorization (RBAC (Role Based Access Control)/ABAC (Attribute Based Access Control),FGAC (Fine-Grained Access Control), least privilege)                              | Confidentiality & partly Integrity | Employees can only access relevant records.                                        |
+| **Access Control**                    | - Authentication (passwords, MFA, IAM roles, Security Tokens etc) <br>-Authorization <br> *RBAC (Role Based Access Control)<br> *ABAC (Attribute Based Access Control)<br> *FGAC (Fine-Grained Access Control), least privilege)                              | Confidentiality & partly Integrity | Employees can only access relevant records.                                        |
 | **Encryption (at rest & in transit)** | Converts data into unreadable form for unauthorized users; authorized users can decrypt and use it normally | Confidentiality & partly Integrity | Database encryption protects against stolen backups; TLS protects data in transit. |
 | **Integrity Protection**              | Uses hashes, checksums, digital signatures, or constraints                                                  | Integrity                          | Hash mismatch alerts system to tampering.                                          |
 | **Monitoring & Logging**              | Tracks access and modifications                                                                             | Confidentiality & Integrity        | Audit logs detect brute-force login attempts.                                      |
 | **Availability Controls**             | Backups, redundancy, failover, DDoS protection                                                              | Availability                       | Replicated databases ensure uptime.                                                |
 | **Masking / Tokenization**            | Obfuscates sensitive data for non-production use                                                            | Confidentiality                    | Masking and tokenization allow organizations to use sensitive data safely by replacing the real values with obfuscated or tokenized equivalents. This enables teams to develop and test applications without exposing actual personal or payment data, perform analytics and reporting while keeping sensitive fields hidden, and share information with third parties or support teams without revealing real PII, PCI, or PHI.
 
----
+
 
 ### Why Encryption Is Essential Beyond Access Control
 
@@ -60,8 +60,6 @@ Each enterprise or company will have Data Security Policy document that defines 
 * Logging, monitoring, and incident response  for each data classification level
 * Backup and recovery expectations  for each data classification level
 
-
-
 ## 2. Data Privacy
 
 ### What Is Data Privacy?
@@ -74,8 +72,6 @@ Strong security does not guarantee privacy.
 
 * **Example:** Health data is encrypted (Security) but sold to an advertiser without consent → Privacy violation.
 * **Rule:** Security protects data; Privacy governs its authorized use.
-
-
 
 ### Core Privacy Principles
 
@@ -97,17 +93,14 @@ Each enterprise or company will have Data Privacy Policy document that defines *
 * Data subject rights (access, correction, erasure)
 * Third-party data sharing rules
   
----
 
 ## 3. Compliance
-
 
 ### What Are Regulatory Requirements?
 
 **Regulatory requirements are laws or legally binding standards issued by governments.**
 They define **concrete obligations** for handling data. While many focus on personal data, regulations often extend to financial records, operational resilience, and **data sovereignty** (where data is stored).
 
----
 
 ### Key Regulations (Overview)
 
