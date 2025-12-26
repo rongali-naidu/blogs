@@ -1,7 +1,7 @@
 # Four Pillars of Data Governance : Data Security, Data Privacy, and Regulatory Compliance and Data Quality 
 
 As organizations increasingly rely on data to drive decisions, products, and services, four terms appear repeatedly in technical and data governance discussions: **data security**, **data privacy**, **regulatory compliance** and **data quality**. 
-These concepts are related, but they are not the same. Each addresses a different risk dimension of data management. Together, they form the four pillars of effective data governance.
+These concepts are related and each addresses a different risk dimension of data management. Together, they form the four pillars of effective data governance.
 
 ![Four Pillars of Data Governance](https://github.com/rongali-naidu/blogs/blob/main/images/data_governance.png)
 ---
