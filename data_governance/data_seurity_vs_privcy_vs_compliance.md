@@ -48,15 +48,25 @@ Access control determines **who is allowed** to access data—but it cannot full
 * **Maintains Usability for Authorized Users** – Data is decrypted on access for legitimate use.
 * **Regulatory Compliance** – Many laws (PCI DSS, GDPR, HIPAA) mandate encryption of sensitive data.
 
----
+### Data Security Policy
+
+Each enterprise or company will have Data Security Policy document that defines **how data must be protected** from unauthorized access, modification, or loss.
+
+**Applies to:** * All data (personal, financial, operational, intellectual property etc)
+**Typical coverage:**
+* Data classification levels (public, internal, confidential, restricted) . [AWS Whitepaper on Data-Classification](https://docs.aws.amazon.com/whitepapers/latest/data-classification/data-classification.html)
+* Access control rules (least privilege, MFA) for each data classification level
+* Encryption requirements (at rest / in transit) for each data classification level
+* Logging, monitoring, and incident response  for each data classification level
+* Backup and recovery expectations  for each data classification level
+
+
 
 ## 2. Data Privacy
 
 ### What Is Data Privacy?
 
-**Data privacy concerns personal data**—information relating to identified or identifiable individuals. It governs the **entire lifecycle**, from collection to deletion, and defines the **rights individuals have over their information**.
-
----
+**Data privacy** concerns personal data—information relating to identified or identifiable individuals. It governs the entire data lifecycle, including how personal data is collected, stored, where it is stored, how long it is retained (and when it must be deleted), and the rights individuals have over their data
 
 ### Security vs. Privacy: The Key Distinction
 
@@ -65,7 +75,7 @@ Strong security does not guarantee privacy.
 * **Example:** Health data is encrypted (Security) but sold to an advertiser without consent → Privacy violation.
 * **Rule:** Security protects data; Privacy governs its authorized use.
 
----
+
 
 ### Core Privacy Principles
 
@@ -74,6 +84,19 @@ Strong security does not guarantee privacy.
 * **Storage Limitation:** Delete data once it is no longer needed.
 * **Individual Rights:** Right to be forgotten, right to portability, etc.
 
+
+### Data Privacy Policy
+
+Each enterprise or company will have Data Privacy Policy document that defines **how personal data may be collected, used, shared, retained, and deleted**, and the rights of individuals (customers or employees etc).
+**Applies to:** * Personal data (PII, PHI, PCI, etc.)
+**Typical coverage:**
+* Lawful basis and consent
+* Purpose limitation
+* Data minimization
+* Retention and deletion rules
+* Data subject rights (access, correction, erasure)
+* Third-party data sharing rules
+  
 ---
 
 ## 3. Compliance
@@ -116,7 +139,7 @@ Data Quality ensures data is **useful, correct, and formatted properly**. While 
 2. **Completeness** – Is all expected data present?
 3. **Consistency** – Are there contradictions within or across datasets?
 4. **Uniqueness** – Are there duplicate records where there shouldn’t be?
-5. **Integrity** – Are relationships between entities maintained?
+5. **Integrity** – Are relationships between entities maintained? [Note: Integrity in DQ context is different from the Integrity in Data Security context]
 6. **Validity** – Do values conform to formats, domains, and rules?
 7. **Availability** – Is data delivered on time and according to SLA?
 
