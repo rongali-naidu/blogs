@@ -76,7 +76,8 @@ Strong security does not guarantee privacy.
 
 ---
 
-## 3. Regulatory Requirements
+## 3. Compliance
+
 
 ### What Are Regulatory Requirements?
 
@@ -97,21 +98,35 @@ They define **concrete obligations** for handling data. While many focus on pers
 | **SOX (Sarbanes–Oxley Act)**                                                      | Financial Reporting (USA)       | Integrity, accuracy, and auditability of corporate financial records                   |
 
 
-## 4. Data Protection
-
-Data Protection is the use of Data Security to meet the requirements of Data Privacy.It is the operational practice of ensuring data is handled safely, stays available, and remains under the control of its rightful owner. While Privacy is the intent and Security is the mechanism, Protection is the implementation.
-
-## 5. Regulatory Compliance: The Final Audit
+### Regulatory Compliance: The Final Audit
 
 Compliance is the state of Data Security and Privacy implementation meeting specific Regulatory Requirements. Compliance is the "passed exam" of the data world. It is the process of proving to an external authority (a regulator, a partner, or a customer) that your Data Protection practices are actually working and align with the law.
 
-## 6. The Bigger Picture: Data Governance
+### Note on Data Protection
+
+Data Protection is the use of Data Security to meet the requirements of Data Privacy.It is the operational practice of ensuring data is handled safely, stays available, and remains under the control of its rightful owner. While Privacy is the intent and Security is the mechanism, Protection is the implementation.
+
+
+## 4. Data Quality
+Data Quality ensures data is **useful, correct, and formatted properly**. While Data Security ensures data isn’t tampered with , Quality ensures it is accurate and fit for purpose. It is the “Value Layer.”
+
+**Dimensions of Data Quality:**
+
+1. **Accuracy** – Does the data reflect real-world values correctly?
+2. **Completeness** – Is all expected data present?
+3. **Consistency** – Are there contradictions within or across datasets?
+4. **Uniqueness** – Are there duplicate records where there shouldn’t be?
+5. **Integrity** – Are relationships between entities maintained?
+6. **Validity** – Do values conform to formats, domains, and rules?
+7. **Availability** – Is data delivered on time and according to SLA?
+
+## 5. The Bigger Picture: Data Governance
 
 
 1. **Privacy** defines *what* can be done with data.
 2. **Security** enforces those rules through technical controls.
 3. **Complaince to the Regulations/Laws** provide the framework and accountability for both.
-4. **Data Quality** : Ofcourse a separate topic : Data Quality ensures the data is useful, correct, and formatted properly. While Security ensures the data isn't tampered with (Integrity), Quality ensures the data is accurate and fit for purpose. It is the "Value Layer."
+4. **Data Quality** : Data Quality ensures the data is useful, correct, and formatted properly. 
 
 ### Quick Win: Mental Models
 **1. Healthcare Example**
