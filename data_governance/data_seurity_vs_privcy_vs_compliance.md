@@ -1,4 +1,4 @@
-# Data Security, Data Privacy, and Regulatory Requirements: Understanding the Differences and the Bigger Picture
+# Data Security, Data Privacy, and Regulatory Requirements: Three Pillars of Data Governance
 
 As organizations increasingly rely on data to drive decisions, products, and services, three terms appear repeatedly in technical and governance discussions: **data security**, **data privacy**, and **regulatory requirements**. 
 This article explains each concept, how they differ and how they overlap
