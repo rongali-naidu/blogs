@@ -95,13 +95,16 @@ In a traditional deployment, teams build and operate the entire metastore stack.
 
 ### Components You Manage
 
-* Hive Metastore Service
-* SQL database
-* Apache Spark
+
+* SQL database like PostgreSQL/SQL Server : we use Hive schematool to build the metadata tables inside your SQL Server
+* Hive Metastore Service (HMS) : This process connects to SQL database via JDBC and listens for requests on Port 9083 using the Thrift Protocol.
+* Apache Spark 
 * Hadoop-compatible storage
 * JDBC drivers
 
 ### Spark Connectivity
+
+hive-site.xml  : This is Spark's "GPS." You must place a copy of this file in Spark's /conf directory so it knows where to find the metastore. It has the following property that establishes the primaru link to the HMS
 
 ```text
 hive.metastore.uris = thrift://<metastore-host>:9083
