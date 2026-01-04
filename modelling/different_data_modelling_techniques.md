@@ -72,6 +72,20 @@ CREATE TABLE user_orders (
 ```
 
 
+## **Why Different Data Models Exist**
+
+Modern applications handle **diverse types of data** — such as transactions, events, documents, relationships (e.g., social media), geolocation (maps), and binary data (images/videos).
+
+Different applications also have **different performance requirements**, including latency, throughput, and the number of users, as well as **different access patterns**.
+
+A **single database rarely satisfies all these requirements efficiently**. To address this, **different databases are designed** to support:
+
+* Specific types of data
+* Optimized storage constructs
+* Tailored data access patterns
+
+This is why we have **different data models** — each model is built to handle particular data characteristics, workloads, and performance needs efficiently.
+
 
 ## ** Database Models Overview**
 
