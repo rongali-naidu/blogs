@@ -1,11 +1,9 @@
 
-# **Why Timezone Conversion Should Use IANA Time Zones, Not Just Offsets**
+# **Why we should Use IANA Time Zones, Not Just Offsets**
 
 ## **Introduction: Why Timezone Handling is Tricky**
 
-Handling timezones correctly is one of the most challenging aspects of software development, data pipelines, and analytics. While timestamps may seem simple at first, **Daylight Saving Time (DST)**, historical changes, and regional variations can make accurate time calculations surprisingly complex.
-
-Lets see different ways of capturing the TimeZone information:
+Though the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format is widely recommended for storing timestamps, its timezone support is limited. Handling timezones correctly is one of the most challenging aspects of software development, data pipelines, and analytics—especially when working with data across countries that use different time zone names and observe Daylight Saving Time (DST)
 
 1. **ISO 8601 offsets**: `-08:00`
 
