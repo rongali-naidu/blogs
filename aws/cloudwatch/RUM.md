@@ -5,7 +5,7 @@ Before exploring CloudWatch RUM analytics, it’s important to understand the fo
 
 ## Clickstream Data Analysis
 
-Clickstream data refers to the **sequence of user interactions recorded as events while a user navigates through a website or application**. These interactions are captured within a session and form a chronological record of user activity.
+Clickstream data refers to the **sequence of user interactions recorded as events while a user navigates through a website or application**. These interactions are captured as events within a session and form a chronological record of user activity.These events are typically reconstructed into sessions to analyze user journeys as ordered sequences rather than isolated actions.
 
 A typical clickstream includes:
 
@@ -25,9 +25,8 @@ From this event stream, we can derive meaningful product and business insights s
 
 ## RUM Data Analysis
 
-Real User Monitoring (RUM) focuses on understanding **real-world application experience from the end-user perspective**.
+Real User Monitoring (RUM) focuses on understanding **real-world application experience from the end-user perspective**. RUM data is essentially a clickstream enriched with performance and error telemetry
 
-It combines behavioral signals and technical performance telemetry to evaluate how the application behaves under real usage conditions.
 
 ### Key aspects:
 
