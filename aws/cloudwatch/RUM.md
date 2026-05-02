@@ -1,7 +1,7 @@
 
 #  User Behavior and Experience Analytics Using CloudWatch RUM and Athena
 
-Before understanding Cloudwatch RUM Data Analytics, Lets understand another close concept of Clickstream Data 
+Before exploring CloudWatch RUM analytics, it’s important to understand the foundational concept of clickstream data.
 
 ## Clickstream Data Analysis
 
