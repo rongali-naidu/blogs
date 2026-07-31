@@ -138,7 +138,7 @@ s3://{BUCKET_NAME}/
 │   ├── _cross_schema_joins.json        ← Joins between tables in different schemas
 │   │
 │   ├── {schema_name}/
-│   │   ├── _schema_summary.json        ← Schema-level overview + intra-schema joins
+│   │   ├── _schema_summary.json        ← Schema-level overview (or ontology) + intra-schema joins.
 │   │   ├── {table_name}.json           ← Full table metadata (per-table file)
 │   │   └── {table_name}.json
 │   │
