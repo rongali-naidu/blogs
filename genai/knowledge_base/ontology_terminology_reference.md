@@ -15,7 +15,8 @@
     Also Known As: Entity, Concept, Type, Category
     Example: Employee, Department, Order, Product
     SQL Equivalent: Table
-    Reference: [OWL 2 Primer — Classes and Instances](https://www.w3.org/TR/owl2-primer/#Classes_and_Instances)
+    
+Reference: [OWL 2 Primer — Classes and Instances](https://www.w3.org/TR/owl2-primer/#Classes_and_Instances)
 
 
 ### Instance (Individual)
@@ -24,7 +25,7 @@
     Also Known As: Individual, Entity Instance, Member
     Example: "John Smith" is an instance of Employee; "PERM" is an instance of emp_category
     SQL Equivalent: Row in a table, or a specific allowed value in an enum column
-    Reference: [OWL 2 Primer — Classes and Instances](https://www.w3.org/TR/owl2-primer/#Classes_and_Instances)
+Reference: [OWL 2 Primer — Classes and Instances](https://www.w3.org/TR/owl2-primer/#Classes_and_Instances)
 
 
 ### Data Property
@@ -33,7 +34,7 @@
     Also Known As: Attribute, Field, Characteristic
     Example: Employee has name (string), age (integer), joining_date (date)
     SQL Equivalent: Column with a primitive data type
-    Reference: [OWL 2 Primer — Data Properties](https://www.w3.org/TR/owl2-primer/#Data_Properties)
+Reference: [OWL 2 Primer — Data Properties](https://www.w3.org/TR/owl2-primer/#Data_Properties)
 
 
 ### Object Property
@@ -42,7 +43,7 @@
     Also Known As: Relationship, Association, Link
     Example: Employee "belongs_to" Department; Order "placed_by" Customer
     SQL Equivalent: Foreign Key / JOIN relationship
-    Reference: [OWL 2 Primer — Object Properties](https://www.w3.org/TR/owl2-primer/#Object_Properties)
+Reference: [OWL 2 Primer — Object Properties](https://www.w3.org/TR/owl2-primer/#Object_Properties)
 
 
 ### Annotation
@@ -51,7 +52,7 @@
     Also Known As: Label, Comment, Description, Documentation
     Example: Column COMMENT 'Employee category. Contains TEMP, PERM, CONTR'
     SQL Equivalent: Column/table COMMENT or description
-    Reference: [OWL 2 Primer — Annotation Properties](https://www.w3.org/TR/owl2-primer/#Annotation_Properties)
+Reference: [OWL 2 Primer — Annotation Properties](https://www.w3.org/TR/owl2-primer/#Annotation_Properties)
 
 
 ### Axiom
@@ -60,7 +61,7 @@
     Also Known As: Rule, Assertion, Fact, Truth
     Example: "Every headcount calculation excludes contractors"
     SQL Equivalent: A verified golden query; a business rule enforced in every query
-    Reference: [OWL 2 Primer — Axioms](https://www.w3.org/TR/owl2-primer/#Axioms)
+Reference: [OWL 2 Primer — Axioms](https://www.w3.org/TR/owl2-primer/#Axioms)
 
 
 ### Constraint (Restriction)
@@ -69,7 +70,7 @@
     Also Known As: Restriction, Validation Rule, Invariant
     Example: "age must be between 18 and 70"; "emp_category can only be PERM, TEMP, or CONTR"
     SQL Equivalent: CHECK constraint, WHERE clause, allowed values
-    Reference: [OWL 2 Primer — Property Restrictions](https://www.w3.org/TR/owl2-primer/#Property_Restrictions)
+Reference: [OWL 2 Primer — Property Restrictions](https://www.w3.org/TR/owl2-primer/#Property_Restrictions)
 
 
 ### Hierarchy (SubClass Relationship)
@@ -78,7 +79,7 @@
     Also Known As: Taxonomy, Inheritance, Is-A relationship, Subsumption
     Example: "APAC" is a subclass of "Region"; "Laptop" is a subclass of "Electronics"
     SQL Equivalent: Category hierarchy (dimension levels in analytics)
-    Reference: [OWL 2 Primer — Class Hierarchies](https://www.w3.org/TR/owl2-primer/#Class_Hierarchies)
+Reference: [OWL 2 Primer — Class Hierarchies](https://www.w3.org/TR/owl2-primer/#Class_Hierarchies)
 
 
 ### Synonym (Equivalent Labels)
@@ -87,7 +88,7 @@
     Also Known As: Alias, Alternative Label, Equivalent Term
     Example: "Revenue" = "GMS" = "Gross Merchandise Sales"
     SQL Equivalent: Business term that maps to the same column/expression
-    Reference: [SKOS Primer — Labels](https://www.w3.org/TR/skos-primer/#seclabel)
+Reference: [SKOS Primer — Labels](https://www.w3.org/TR/skos-primer/#seclabel)
 
 
 ### Derived Concept (Defined Class)
@@ -96,7 +97,7 @@
     Also Known As: Computed Concept, Calculated Field, Virtual Property
     Example: "Active Customer" defined as customer with order in last 90 days
     SQL Equivalent: Metric definition (formula + required filters)
-    Reference: [OWL 2 Primer — Defined Classes](https://www.w3.org/TR/owl2-primer/#Defined_Classes)
+Reference: [OWL 2 Primer — Defined Classes](https://www.w3.org/TR/owl2-primer/#Defined_Classes)
 
 
 ### Cardinality
@@ -108,7 +109,7 @@
         N:1 — Many to one (many employees belong to one department)
         N:M — Many to many (employees can be in multiple projects)
     SQL Equivalent: JOIN cardinality; determines if JOIN causes row fan-out
-    Reference: [OWL 2 Primer — Property Cardinality Restrictions](https://www.w3.org/TR/owl2-primer/#Property_Cardinality_Restrictions)
+Reference: [OWL 2 Primer — Property Cardinality Restrictions](https://www.w3.org/TR/owl2-primer/#Property_Cardinality_Restrictions)
 
 
 ### Domain and Range
@@ -122,7 +123,7 @@
     SQL Equivalent:
         Domain = which table owns the column
         Range = target table (FK) or data type (INT, STRING, DATE)
-    Reference: [OWL 2 Primer — Domain and Range Restrictions](https://www.w3.org/TR/owl2-primer/#Domain_and_Range_Restrictions)
+Reference: [OWL 2 Primer — Domain and Range Restrictions](https://www.w3.org/TR/owl2-primer/#Domain_and_Range_Restrictions)
 
 
 ### Disjoint Classes
@@ -131,7 +132,7 @@
     Also Known As: Mutually Exclusive Categories
     Example: "Permanent" and "Contractor" are disjoint — an employee cannot be both
     SQL Equivalent: Column value is exclusive (emp_category can be PERM or CONTR, not both)
-    Reference: [OWL 2 Primer — Disjoint Classes](https://www.w3.org/TR/owl2-primer/#Disjoint_Classes)
+Reference: [OWL 2 Primer — Disjoint Classes](https://www.w3.org/TR/owl2-primer/#Disjoint_Classes)
 
 
 ### Inverse Property
@@ -140,7 +141,7 @@
     Also Known As: Reverse Relationship, Bidirectional Link
     Example: "belongs_to" (Employee → Department) has inverse "has_members" (Department → Employee)
     SQL Equivalent: Same JOIN read from either direction
-    Reference: [OWL 2 Primer — Inverse Properties](https://www.w3.org/TR/owl2-primer/#Inverse_Properties)
+Reference: [OWL 2 Primer — Inverse Properties](https://www.w3.org/TR/owl2-primer/#Inverse_Properties)
 
 
 ### Transitive Property
@@ -148,7 +149,7 @@
     Definition: If A relates to B and B relates to C, then A relates to C
     Example: "reports_to" — if Alice reports to Bob and Bob reports to Carol, Alice indirectly reports to Carol
     SQL Equivalent: Recursive/hierarchical query (WITH RECURSIVE or CONNECT BY)
-    Reference: [OWL 2 Primer — Property Characteristics](https://www.w3.org/TR/owl2-primer/#Property_Characteristics)
+Reference: [OWL 2 Primer — Property Characteristics](https://www.w3.org/TR/owl2-primer/#Property_Characteristics)
 
 
 ## Formal Standards
