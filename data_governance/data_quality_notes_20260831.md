@@ -1,6 +1,6 @@
 # Why "It Didn't Crash" Isn't the Same as "It's Correct": Type Safety and Data Quality, Untangled
 
-A lot of confusion around Python's type system, validation libraries, and data quality tools comes from mashing three separate questions into one. This post pulls them apart:
+This is a follow up to https://github.com/rongali-naidu/blogs/blob/main/data_governance/what_exactly_is_data_quality.md . A lot of confusion around Python's type system, validation libraries, and data quality tools comes from mashing three separate questions into one. This post pulls them apart:
 
 1. **When** is a type actually checked — before the program runs, or while it's running?
 2. **What scope** is being validated — one record, or a whole batch/dataset?
