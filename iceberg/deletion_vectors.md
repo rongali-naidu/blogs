@@ -1,6 +1,6 @@
 # Iceberg v3: Why I mapped "Deletion Vectors" as "Deletion Bitmaps"
 
-Today i had to know a bit more about Iceberg v3 especially around Deletion vectors . Here is my quick nites.
+Today i had to know a bit more about Iceberg v3 especially Deletion vectors . Here is my notes on this pint.
 Apache Iceberg tables carry a **format version** — `1`, `2`, or `3` — that decides which on-disk features are allowed. v3 was finalized in 2025 and its headline change is how row-level deletes are stored. This post covers two things:
 
 1. The **main difference between v2 and v3** 
