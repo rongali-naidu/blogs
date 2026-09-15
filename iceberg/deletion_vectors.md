@@ -1,4 +1,4 @@
-# Iceberg v2 vs v3: "Deletion Vectors" (aka "Deletion Bitmap")
+# Iceberg v3: Why I mapped "Deletion Vectors" as "Deletion Bitmaps"
 
 Today i had to know a bit more about Iceberg v3 especially around Deletion vectors . Here is my quick nites.
 Apache Iceberg tables carry a **format version** — `1`, `2`, or `3` — that decides which on-disk features are allowed. v3 was finalized in 2025 and its headline change is how row-level deletes are stored. This post covers two things:
@@ -58,14 +58,14 @@ At read time the engine just loads file X's bitmap, and for each row checks the 
 
 ## 2. "Vector" here just means bitmap — not coordinates
 
-The name **"deletion vector"** trips people up, because in math/physics a **vector** means a point or direction in n-dimensional space — an n-tuple of coordinates (x, y, z, …). This has **nothing** to do with that.
+The name **"deletion vector"** tripped me up, because i am associating **vector** to n-dimensional space or an n-tuple of coordinates (x, y, z, …). This has **nothing** to do with that.
 
 The precise relationship:
 
 - A **bitmap is a one-dimensional vector whose values are restricted to {0, 1}.**
 - So a bitmap is a subset of vector — a bitmap is the degenerate, 1-D, binary case of a vector.
 
-Calling it a "vector" is therefore *technically* valid (it is a 1-D array) but needlessly abstract: the honest name is **"deletion bitmap."** It's exactly the bitmap you're already familiar with — a flat row of bits, one per row of data:
+Calling it a "vector" is therefore *technically* valid (it is a 1-D array) but needlessly abstract i mapped it to **"deletion bitmap."** for my mental mapping of the conept.
 
 ```
  row position:  0   1   2   3   4   5   6   7
