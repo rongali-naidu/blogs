@@ -664,6 +664,23 @@ p = Point(1, 2)
 print(p.x, p.y)                                # attribute access
 ```
 
+another alternative to
+
+```
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int = 0 #defaulr value support
+    y: int = 0 #defaulr value support
+
+    def doX():
+        return xx
+
+p = Point(1, 2)
+print(p.x, p.y)  # Output: 1 2
+print(p.doX()) 
+
 ---
 
 ## 12. AWS Lambda Handler
