@@ -680,7 +680,7 @@ class Point:
 p = Point(1, 2)
 print(p.x, p.y)  # Output: 1 2
 print(p.doX()) 
-
+```
 ---
 
 ## 12. AWS Lambda Handler
