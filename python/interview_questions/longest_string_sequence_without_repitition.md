@@ -106,6 +106,9 @@ def longest_unique_substr(s):
 
         # Always record the latest position for this character, whether
         # or not it just triggered a shrink.
+        # we dont need deafultdict here for assining for new keyes.
+        # its probnlem for accessing value for the new key but not here.
+
         last_seen_index[char] = current_index
 
         # Window size = current_index - window_start + 1 (inclusive on
