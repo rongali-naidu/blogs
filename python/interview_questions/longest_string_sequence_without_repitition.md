@@ -72,9 +72,7 @@ def longest_unique_substr(s):
     window_start = 0
     max_length = 0
 
-    for current_index in range(len(s)):
-        char = s[current_index]
-
+    for current_index, char in enumerate(s):
         # Two conditions, not one -- and both are required:
         #
         #   (1) char in last_seen_index
@@ -99,6 +97,7 @@ def longest_unique_substr(s):
         #   we'd wrongly reset window_start to 0 + 1 = 1, which would
         #   re-admit the still-duplicated 'y' at index 1 into the window
         #   (producing the invalid window "yyzabx" -- 'y' appears twice).
+
         if char in last_seen_index and last_seen_index[char] >= window_start:
             # Real duplicate: jump window_start to just past the
             # previous occurrence. No need to discard the whole window,
