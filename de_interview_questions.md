@@ -12,6 +12,28 @@
 - **[DataLemur](https://datalemur.com/)** — SQL-focused, good "explain the query pattern" style breakdowns, free tier is solid
 - **[Mode SQL Tutorial](https://mode.com/sql-tutorial/)** — free, good for brushing up window functions (RANK, LAG/LEAD, PARTITION BY) which come up constantly in DE SQL rounds
 
+- # Blogs with Frequently-Asked SQL Interview Question Lists
+
+## Data-Engineering-specific (best fit for your role)
+- **[929 SQL Interview Questions for Data Engineers | DataDriven](https://datadriven.io/sql-interview-questions)** — large, DE-scoped question bank, same site as the Python list already on your radar
+- **[SQL Interview Questions for Data Engineers: 30 Real Questions with Solutions | PipeCode](https://pipecode.ai/blogs/sql-interview-questions-for-data-engineers)** — smaller curated set, worked solutions rather than just Q&A
+- **[80 SQL Interview Questions for Data Engineers | DataVidhya](https://datavidhya.com/blog/sql-data-engineering-interview-questions/)** — framed as "real asks," DE-specific rather than generic SQL trivia
+
+## Window Functions specifically (this is the recurring weak spot in most DE interviews)
+- **[12 SQL Window Functions Interview Questions | DataLemur](https://datalemur.com/blog/sql-window-functions-interview-questions)** — short, sharply focused, good if you only have 20 minutes
+- **[SQL Window Functions Interview Questions | StrataScratch](https://www.stratascratch.com/blog/sql-window-functions-interview-questions)** — same platform as their practice problems, good follow-through from reading into doing
+- **[Top 10 SQL Window Functions Interview Questions | LearnSQL.com](https://learnsql.com/blog/sql-window-functions-interview-questions/)** — clean explanations, good if RANK/LAG/LEAD/PARTITION BY isn't fully reflexive yet
+
+## Broader / general SQL question banks
+- **[Top 99 SQL Interview Questions and Answers | DataCamp](https://www.datacamp.com/blog/top-sql-interview-questions-and-answers-for-beginners-and-intermediate-practitioners)** — long, comprehensive, good as a single-pass review rather than deep practice
+- **[Top 27 Advanced SQL Interview Questions | LearnSQL.com](https://learnsql.com/blog/advanced-sql-interview-questions/)** — skips the basics, goes straight to the harder end (subqueries, CTEs, advanced joins) — useful given your seniority level
+- **[60+ Most Important SQL Interview Questions | InterviewBit](https://www.interviewbit.com/sql-interview-questions/)** — broad general reference, decent as a checklist to skim for gaps
+
+## How I'd actually use this list given your timeline
+1. Skim **DataLemur's window functions post** first — highest-frequency topic in DE SQL rounds and the fastest read
+2. Do a pass through **DataDriven's 929-question bank**, filtering mentally for anything Iceberg/CDC/dedup-adjacent, since that maps directly to what you've already been asked
+3. Only reach for the **LearnSQL advanced list** if you have spare time — it's the "sharpen further" tier, not the "cover the basics" tier
+
 ## Spark / Big Data Systems
 - **[Apache Spark official docs — RDD & DataFrame programming guide](https://spark.apache.org/docs/latest/rdd-programming-guide.html)** — primary source, good for verifying exact API behavior (e.g., confirming `writeTo` vs `.write` details)
 - **[Databricks Blog](https://www.databricks.com/blog)** — frequent deep-dives on skew handling, Adaptive Query Execution, Delta Lake internals — written by the people who built Spark
