@@ -1,4 +1,4 @@
-# Building a Lakehouse with AWS DMS but Not Zero-ETL: Design Choices & Learnings
+# Building a Lakehouse with AWS DMS : Design Choices & Learnings
 
 **Context:** An application stores data in Amazon Aurora MySQL, and we want to bring that data into a data lakehouse.
 
