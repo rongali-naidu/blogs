@@ -36,7 +36,7 @@ Architecture patterns used:
 - **Lakehouse** — ACID operations via Apache Iceberg tables.
 - **Batch + near-real-time** — DMS applies changes near-real-time (CDC); Glue ETL runs on a cron schedule with job bookmarks, so cadence can shift from near-real-time to daily as needs change.
 
-Note: Iceberg doesnt provide Materialized Views Support natively. Glue Catalog provides the Materialized Views support by syncing the computed result to Icebrg table. More details here https://aws.amazon.com/blogs/big-data/introducing-apache-iceberg-materialized-views-in-aws-glue-data-catalog/
+Note on Iceberg MVs: Apache Iceberg does not provide materialized views natively — the  Iceberg spec only defines views (logical, no stored data); materialized views are still a proposal. The AWS Glue Data Catalog provides managed materialized-view support: it stores the pre-computed query result as an Iceberg table and handles change-detection and refresh (scheduled or incremental). It works only on the AWS-optimized Spark runtime (Glue/EMR/Athena, Spark ≥ 3.5.6) — not open-source Spark. More details: https://aws.amazon.com/blogs/big-data/introducing-apache-iceberg-materialized-views-in-aws-glue-data-catalog/
 
 ## Why AWS DMS over RDS "Zero-ETL" (as of 2026-09-08)
 
