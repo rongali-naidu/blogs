@@ -1,6 +1,6 @@
 # Building a Lakehouse with AWS DMS : Design Choices & Learnings
 
-**Context:** An application stores data in Amazon Aurora MySQL, and we want to bring that data into a data lakehouse.
+I wanted to briefly share a recent Lakehouse project — the design choices we made and the learnings along the way. The requirement is a common one: an application stores its data in Amazon RDS/Aurora, and we want to bring that data into a data lakehouse
 
 ## Overall Design Flow
     ┌─────────────────────────────┐
