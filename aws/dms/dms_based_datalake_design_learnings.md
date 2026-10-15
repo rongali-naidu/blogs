@@ -1,4 +1,4 @@
-# Building a Lakehouse with AWS DMS (and why not RDS Zero-ETL yet): Design Choices & Learnings
+# Building a Lakehouse with AWS DMS but Not Zero-ETL: Design Choices & Learnings
 
 **Context:** An application stores data in Amazon Aurora MySQL, and we want to bring that data into a data lakehouse.
 
@@ -40,9 +40,10 @@ Note on Iceberg MVs: Apache Iceberg does not provide materialized views natively
 
 ## Why AWS DMS over RDS "Zero-ETL" (as of 2026-09-08)
 
-1. **Zero-ETL doesn't support an S3 / S3 Tables target yet** — it currently targets the SageMaker Lakehouse (SMLH) / Redshift-managed catalog. Our target is open-format Iceberg on S3.
+1. **AWS RDS Zero-ETL doesn't support an S3 / S3 Tables target yet** — it currently targets the SageMaker Lakehouse (SMLH) / Redshift-managed catalog. Our target is open-format Iceberg on S3. For More on AWS Zero-ETL refer https://aws.amazon.com/what-is/zero-etl/
 2. **You can't run DMS and Zero-ETL on the same source at once.** Both rely on the binlog for CDC, but they need *different* binlog modes — DMS uses the classic binlog, while Aurora Zero-ETL requires enhanced binlog (`aurora_enhanced_binlog=1`). Switching the source to enhanced binlog can disrupt a running DMS task, so the two can't coexist on the same source.
 3. **We left the door open** to adopt Zero-ETL once it supports Iceberg on S3 — at which point the binlog-mode switch would be sequenced after DMS is retired.
+4. **Note**: Like Zero-ETL, DMS lands data into the Bronze layer with no custom ETL pipelines
 
 ## Key DMS Learnings
 
