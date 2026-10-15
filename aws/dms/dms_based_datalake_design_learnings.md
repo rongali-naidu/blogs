@@ -14,18 +14,18 @@
                    │  Parquet, date-partitioned
                    ▼
     ┌─────────────────────────────┐
-    │   S3  —  RAW / BRONZE        │   landing zone (not queried directly)
+    │   S3  —  RAW / BRONZE       │   landing zone (not queried directly)
     └──────────────┬──────────────┘
                    │  Glue ETL — cron schedule + job bookmarks
                    │  (clean, transform, PK MERGE)
                    ▼
     ┌─────────────────────────────┐
-    │  Iceberg on S3 — SILVER      │   ACID; merge-on-read; scheduled compaction
+    │  Iceberg on S3 — SILVER     │   ACID; merge-on-read; scheduled compaction
     └──────────────┬──────────────┘
                    │  aggregate
                    ▼
     ┌─────────────────────────────┐
-    │  Iceberg aggregates — GOLD   │   materialized views / aggregated datasets
+    │  Iceberg on S3     — GOLD   │   materialized views / aggregated datasets
     └──────────────┬──────────────┘
                    ▼
          BI / Analytics / Consumers
@@ -35,6 +35,8 @@ Architecture patterns used:
 - **Medallion** — Raw (Bronze) → Curated (Silver) → Aggregated (Gold).
 - **Lakehouse** — ACID operations via Apache Iceberg tables.
 - **Batch + near-real-time** — DMS applies changes near-real-time (CDC); Glue ETL runs on a cron schedule with job bookmarks, so cadence can shift from near-real-time to daily as needs change.
+
+Note: Iceberg doesnt provide Materialized Views Support natively. Glue Catalog provides the Materialized Views support by syncing the computed result to Icebrg table. More details here https://aws.amazon.com/blogs/big-data/introducing-apache-iceberg-materialized-views-in-aws-glue-data-catalog/
 
 ## Why AWS DMS over RDS "Zero-ETL" (as of 2026-09-08)
 
