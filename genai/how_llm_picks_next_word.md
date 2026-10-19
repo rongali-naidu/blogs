@@ -126,6 +126,39 @@ From the survivors, the model does a **weighted random draw**:
 
 The chosen token is appended to the reply, and **the entire loop runs again** to pick the word after that — one token at a time. This is literally why you see the answer stream in word by word.
 
----
+## Why there is limit on context-window when the tokens are processed in sequence?
+
+"processed in sequence" does not mean "one at a time, independently."** If it did, there'd be no limit. The limit exists precisely because every token must interact with every other token. Three reasons:
+
+### 1. Attention is all-to-all — cost grows with the *square* of length
+
+This ties straight back to the attention section. Self-attention means **every token looks at every other token.** So for `n` tokens, the model computes roughly `n × n` interactions.
+
+```
+100 tokens   →   100 × 100   =   10,000 interactions
+1,000 tokens →  1,000 × 1,000 = 1,000,000 interactions
+100,000 tokens → 100,000²    = 10,000,000,000 interactions
+```
+
+Double the context, **quadruple** the attention compute. This `O(n²)` scaling is the core reason there's a ceiling — at some point it's too slow and too expensive to be practical. "In sequence" doesn't save you, because each token still has to attend to all the others.
+
+### 2. Memory (the KV cache) grows linearly and must all stay resident
+
+the saved key/value vectors for every prior token? That cache lives in GPU memory, and it grows with **every token in the window**. A longer window means a bigger cache that must fit in finite GPU RAM, *simultaneously*, for the whole session. Run out of GPU memory → hard wall. So even though tokens arrive in sequence, the model must hold the representation of *all* of them at once to do attention.
+
+### 3. The model was trained with a fixed maximum length
+
+This is the subtle one. The limit isn't only about compute — it's baked into the model. During training, the model only ever saw sequences up to some maximum length (say 200K tokens). Its **positional encodings** — the mechanism that tells it "this is token #5, this is token #50,000" — were only ever learned up to that length. Feed it position #250,000 and it's in territory it never trained on; behavior degrades badly. So the number is a **declared, trained-in constant**, not an arbitrary software cap you can just raise.
+
+### Putting it together — why not "just accept more"?
+
+Because accepting more means:
+- **quadratically** more attention compute (slower, costlier),
+- **linearly** more GPU memory for the KV cache (can exhaust hardware),
+- operating **beyond the positions the model was trained for** (quality collapses).
+
+"Processed in sequence" describes the *order* tokens are consumed — but the model still needs the *entire* sequence co-resident and mutually attending, which is exactly what makes the window finite.
+
+
 
 
