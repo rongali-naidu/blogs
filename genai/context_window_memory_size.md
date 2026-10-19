@@ -1,5 +1,7 @@
 # When the normal Laptop has Gigabytes of RAM — Why LLMs Only Handle 20k Tokens
 
+edit: 2026/10/18: refer this notes https://github.com/rongali-naidu/blogs/blob/main/genai/how_llm_picks_next_word.md
+
 When I first started working with large language models (LLMs), one thing puzzled me. Models advertised context windows of **20k or 32k tokens** — just a few dozen pages of text. My immediate reaction was:
 
 > *“But my laptop has 16 GB of RAM. If normal computers can handle gigabytes of memory, why are LLMs restricted to such a small window?”*
