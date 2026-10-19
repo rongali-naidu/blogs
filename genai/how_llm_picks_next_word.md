@@ -1,8 +1,6 @@
 # How LLMs Picks the Next Word?
 
-Have you ever wondered what's actually happening when a language model answers you word by word? It can feel like the AI has a flowing stream of human thought — but under the hood, it's running a sequence of precise mathematical steps. There's no thinking, no understanding in the human sense: just numbers in, a *probability distribution* out, and one token **sampled** from it. And here's the twist most people miss — even though every step is exact math, the result is **not guaranteed to be the same each time**, because the final choice is a *probabilistic* draw, not a fixed calculation.
-
-To make this concrete, we'll follow one real request from start to finish:
+This is covered in many blogs but i wanted to calrfiy a few questions so gathered these points as my notes.To make this concrete, we'll follow one real request from start to finish:
 
 > **The user types:** *"What is the color of the sky?"*
 
