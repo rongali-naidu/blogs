@@ -78,7 +78,7 @@ Call 5:  "...The sky is blue"                        → predicts "."
 
 At Call 4, the model must see *"The sky is"* to know a **color** should come next, that it fits after "is," and that it hasn't already said it. Strip the partial answer away and Call 4 wouldn't know if it's at the start, middle, or end of a sentence — producing incoherent fragments.
 
-**"Isn't re-reading everything each time wasteful?"** You've spotted a real inefficiency, and engineers fixed it with the **KV cache**: the model saves the intermediate attention math for tokens it already processed, so each new call only does the heavy computation for the *one new* token and reuses the cached work for the rest. Conceptually it still considers the whole text every step; mechanically it doesn't recompute it from scratch. This is a big reason responses stream quickly.
+**"Isn't re-reading everything each time wasteful?"** This is addressed with the **KV cache**: the model saves the intermediate attention math for tokens it already processed, so each new call only does the heavy computation for the *one new* token and reuses the cached work for the rest. Conceptually it still considers the whole text every step; mechanically it doesn't recompute it from scratch. This is a big reason responses stream quickly.
 
 **And this is exactly what the "context window" is:** all the text the model re-reads on every token — system prompt + your question + the answer-so-far + earlier history. A "200K-token context window" means that's the most text it can re-read per step. Run past it and the oldest text falls out of view — which is why a model can "forget" the start of a very long conversation.
 
