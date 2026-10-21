@@ -1,3 +1,10 @@
+---
+title: "From Batch ETL to Real-Time Streaming with Kafka"
+date: 2025-09-23
+tags: [streaming, kafka]
+publish: true
+---
+
 ## Introduction: From Batch ETL to Real-Time Streaming with Kafka
 
 For decades, data engineers have relied on **traditional ETL pipelines** to move and transform data: extract changes from source systems on a schedule, transform them in staging, and load them into a data warehouse or data lake. This **batch-oriented approach** works well for many use cases, but it introduces latency — data is only as fresh as the ETL schedule allows, and spikes in processing often occur during batch runs.

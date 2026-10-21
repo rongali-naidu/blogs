@@ -1,3 +1,10 @@
+---
+title: "Governance Mapping: General → Data → AI Agent"
+date: 2025-12-26
+tags: [genai]
+publish: true
+---
+
 
 ## Governance Mapping: General → Data → AI Agent
 

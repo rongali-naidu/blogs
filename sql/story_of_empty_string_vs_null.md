@@ -1,3 +1,10 @@
+---
+title: "Story of Empty String vs NULL"
+date: 2025-02-12
+tags: [sql]
+publish: true
+---
+
 # Story of Empty String vs NULL
 
 ## Introduction ##

@@ -1,3 +1,10 @@
+---
+title: "The Utopian Vision of Data Lineage"
+date: 2025-03-24
+tags: [data-lineage]
+publish: true
+---
+
 ### **The Utopian Vision of Data Lineage**  
 
 This represents my utopian vision of an ideal, comprehensive data lineage system** that provides a **fine-grained, end-to-end view** of how data flows through an organization's entire ecosystem. It envisions a world where every piece of data can be traced seamlessly—from the point of **origin** to every system where it is **transformed, consumed, or leveraged**. 

@@ -1,3 +1,10 @@
+---
+title: "Understanding Amazon Bedrock Data Automation (BDA)"
+date: 2025-09-29
+tags: [aws, bedrock]
+publish: true
+---
+
 ## Understanding Amazon Bedrock Data Automation (BDA)
 
 [Amazon Bedrock Data Automation (BDA)](https://github.com/aws-samples/sample-document-processing-with-amazon-bedrock-data-automation) enables the asynchronous processing of documents using AI-powered blueprints. This workflow is conceptually similar to running an asynchronous query in Athena:

@@ -1,3 +1,10 @@
+---
+title: "Data Engineering Interview Prep — Resource List"
+date: 2026-09-27
+tags: [interview-prep]
+publish: true
+---
+
 # Data Engineering Interview Prep — Resource List
 
 ## Coding (Python / DSA patterns)

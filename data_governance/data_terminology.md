@@ -1,3 +1,10 @@
+---
+title: "How to Talk About Data Without the Jargon"
+date: 2026-08-04
+tags: [data-governance]
+publish: true
+---
+
 # How to Talk About Data Without the Jargon
 *A one-line cheat sheet — from Metadata to Ontology.*
 A single, non-overlapping set of terms for how meaning gets attached to data — and how to decide where anything belongs. *(▲ = umbrella term: names a collection, not a single item.)*

@@ -1,3 +1,10 @@
+---
+title: "Why We Moved from Hive-Style Data Lakes to Apache Iceberg?"
+date: 2026-06-10
+tags: [table-formats, iceberg]
+publish: true
+---
+
 # Why We Moved from Hive-Style Data Lakes to Apache Iceberg?
 
 ## Introduction

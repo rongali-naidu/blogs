@@ -1,3 +1,10 @@
+---
+title: "What is Pagination?"
+date: 2025-06-28
+tags: [postgresql]
+publish: true
+---
+
 ## What is Pagination?
 
 Pagination is the technique used to break a large dataset into manageable "pages" (chunks) of results. It’s essential for:

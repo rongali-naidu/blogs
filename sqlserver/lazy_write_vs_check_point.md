@@ -1,3 +1,10 @@
+---
+title: "Lazy Writer vs Checkpoint — What's the Difference?"
+date: 2025-06-30
+tags: [sql-server]
+publish: true
+---
+
 
 
 ## ✅ Lazy Writer vs Checkpoint — What's the Difference?

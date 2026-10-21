@@ -1,3 +1,10 @@
+---
+title: "The Fastest Way to Process Data Is to Avoid Reading Unnecessary Data"
+date: 2026-06-15
+tags: [data-architecture]
+publish: true
+---
+
 # The Fastest Way to Process Data Is to Avoid Reading Unnecessary Data
 
 Reading data is expensive.

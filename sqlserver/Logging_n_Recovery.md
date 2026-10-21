@@ -1,3 +1,10 @@
+---
+title: "SQL Server Internal Logging & Crash Recovery — A Deep Dive with Example"
+date: 2025-06-30
+tags: [sql-server]
+publish: true
+---
+
 # 🔍 SQL Server Internal Logging & Crash Recovery — A Deep Dive with Example
 
 This guide explains how **LSNs (Log Sequence Numbers)**, **Transaction IDs**, **log records**, and **data buffers** interact in SQL Server during transaction processing and crash recovery. We illustrate this with an in-depth example and clear visuals.

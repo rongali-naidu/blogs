@@ -1,3 +1,10 @@
+---
+title: "Zero Data Retention (ZDR) in Amazon Bedrock"
+date: 2026-07-15
+tags: [aws, bedrock]
+publish: true
+---
+
 ## Zero Data Retention (ZDR) in Amazon Bedrock
 
 **What it is:** ZDR is a data privacy configuration in Amazon Bedrock where no request or response data is written to durable storage by AWS or shared with the model provider. Once the response is returned, your data is gone from Bedrock's systems.

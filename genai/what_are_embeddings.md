@@ -1,3 +1,10 @@
+---
+title: "Embeddings: The Foundation of RAG and Agentic AI Solutions"
+date: 2025-09-23
+tags: [genai]
+publish: true
+---
+
 
 
 # Embeddings: The Foundation of RAG and Agentic AI Solutions

@@ -1,3 +1,10 @@
+---
+title: "Tactical approach vs Strategic approach in Data Engineering: Clarifying the Confusion"
+date: 2025-06-07
+tags: [career-and-strategy]
+publish: true
+---
+
 **Tactical approach vs Strategic approach in Data Engineering: Clarifying the Confusion**
 
 **Context**

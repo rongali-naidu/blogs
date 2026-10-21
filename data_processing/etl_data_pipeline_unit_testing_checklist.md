@@ -1,3 +1,10 @@
+---
+title: "ETL/Data Pipeline Unit Testing Checklist"
+date: 2025-03-17
+tags: [data-processing]
+publish: true
+---
+
 # ETL/Data Pipeline Unit Testing Checklist
 
 ## **Unit of Code:**

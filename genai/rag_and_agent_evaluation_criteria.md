@@ -1,3 +1,10 @@
+---
+title: "Evaluating RAG and Agent Systems: Dimensions with Practical Examples"
+date: 2026-01-04
+tags: [genai]
+publish: true
+---
+
 # Evaluating RAG and Agent Systems: Dimensions with Practical Examples
 
 LLM-based systems today are commonly built using either **Retrieval-Augmented Generation (RAG)** or **LLM-powered Agents**.

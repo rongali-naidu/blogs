@@ -1,3 +1,10 @@
+---
+title: "Equivalent Data Operations Across Spark, Pandas, Athena and Redshift SQL"
+date: 2025-03-23
+tags: [sql]
+publish: true
+---
+
 Here's a comprehensive guide to performing equivalent data operations across **Spark DataFrame**, **Pandas DataFrame**, **Spark SQL**, **Athena SQL**, and **Redshift SQL**.
 
 ### **1. Data Creation**

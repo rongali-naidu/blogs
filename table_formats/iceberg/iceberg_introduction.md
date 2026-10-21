@@ -1,3 +1,10 @@
+---
+title: "Getting Familiar with Apache Iceberg: The Basics, Examples, and the Truth About ACID"
+date: 2025-09-11
+tags: [table-formats, iceberg]
+publish: true
+---
+
 # Getting Familiar with Apache Iceberg: The Basics, Examples, and the Truth About ACID
 
 Apache Iceberg is one of the fastest-growing table formats in the data lake ecosystem. If you are a data engineer working with S3, Hadoop, or cloud object storage, chances are you’ve already come across it in conversations about **data lakes vs. lakehouses**.

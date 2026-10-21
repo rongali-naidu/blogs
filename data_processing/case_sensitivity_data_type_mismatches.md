@@ -1,3 +1,10 @@
+---
+title: "Case Sensitivity and Data Type Mismatches: The Silent Friction in Cross-System Data Integration"
+date: 2025-12-04
+tags: [data-processing]
+publish: true
+---
+
 # Case Sensitivity and Data Type Mismatches: The Silent Friction in Cross-System Data Integration
 
 ## Scenario

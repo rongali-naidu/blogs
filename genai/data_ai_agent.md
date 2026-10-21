@@ -1,3 +1,10 @@
+---
+title: "AI-Powered Data Analysis: From Text-to-SQL to Multi-Tool Agents"
+date: 2025-08-13
+tags: [genai]
+publish: true
+---
+
 # **AI-Powered Data Analysis: From Text-to-SQL to Multi-Tool Agents**
 
 In my [previous post](https://medium.com/@rongalinaidu/basic-text-to-sql-for-amazon-athena-metatadata-enrichment-8fb41c019ee5), I built a simple **Text-to-SQL** pipeline for Amazon Athena.

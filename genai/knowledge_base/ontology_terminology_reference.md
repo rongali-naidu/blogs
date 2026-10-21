@@ -1,3 +1,10 @@
+---
+title: "Ontology Terminology Reference"
+date: 2026-07-30
+tags: [genai, knowledge-base]
+publish: true
+---
+
 # Ontology Terminology Reference
 
 ## Core Concepts

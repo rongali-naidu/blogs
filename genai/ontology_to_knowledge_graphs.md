@@ -1,3 +1,10 @@
+---
+title: "From Raw Data to Knowledge Graphs : Schema, Metadata, Ontology, RDF, and Reasoning"
+date: 2026-07-06
+tags: [genai]
+publish: true
+---
+
 # From Raw Data to Knowledge Graphs : Schema, Metadata, Ontology, RDF, and Reasoning
 
 # Introduction

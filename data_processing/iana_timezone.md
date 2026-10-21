@@ -1,3 +1,10 @@
+---
+title: "Why We Should Use IANA Time Zones, Not Just Offsets"
+date: 2026-01-13
+tags: [data-processing]
+publish: true
+---
+
 # **Why We Should Use IANA Time Zones, Not Just Offsets**
 
 ## **What Is a Time Zone?**

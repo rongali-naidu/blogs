@@ -1,3 +1,10 @@
+---
+title: "Understanding PostgreSQL’s Index Methods"
+date: 2025-09-12
+tags: [postgresql]
+publish: true
+---
+
 ## Understanding PostgreSQL’s Index Methods
 
 From the PostgreSQL docs:

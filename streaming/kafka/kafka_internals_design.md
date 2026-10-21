@@ -1,3 +1,10 @@
+---
+title: "Kafka’s Internal Design: Architecture, Offsets, and Consumer Mechanics"
+date: 2025-09-23
+tags: [streaming, kafka]
+publish: true
+---
+
 
 # Kafka’s Internal Design: Architecture, Offsets, and Consumer Mechanics
 

@@ -1,3 +1,10 @@
+---
+title: "Magic Pill for SQL Server Performance Tuning : Nested Loop Joins + Covering Indexes"
+date: 2025-06-28
+tags: [sql-server]
+publish: true
+---
+
 
 
 # Magic Pill for SQL Server Performance Tuning : Nested Loop Joins +  Covering Indexes

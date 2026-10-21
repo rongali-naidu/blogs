@@ -1,3 +1,10 @@
+---
+title: "Defining Data Quality: The Foundation of Modern Data Architecture"
+date: 2025-11-11
+tags: [data-governance]
+publish: true
+---
+
 # **Defining Data Quality: The Foundation of Modern Data Architecture**
 
 ## **Introduction**

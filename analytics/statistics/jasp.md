@@ -1,3 +1,10 @@
+---
+title: "Discovering Statistics Using JASP: A Teaching Guide"
+date: 2025-07-02
+tags: [analytics, statistics]
+publish: true
+---
+
 
 ## [Discovering Statistics Using JASP: A Teaching Guide](https://jasp-stats.org/2025/04/12/discovering-statistics-using-jasp-a-teaching-guide/)
 

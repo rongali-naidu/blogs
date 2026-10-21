@@ -1,3 +1,10 @@
+---
+title: "Apache Iceberg: The Table Format That Makes Data Lakes Feel Like Databases"
+date: 2025-09-11
+tags: [table-formats, iceberg]
+publish: true
+---
+
 # Apache Iceberg: The Table Format That Makes Data Lakes Feel Like Databases
 
 ## Introduction

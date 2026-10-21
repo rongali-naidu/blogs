@@ -1,3 +1,10 @@
+---
+title: "Demystifying PostgreSQL Replication: WAL, WAL Decoding, and the Journey Toward Zero-ETL"
+date: 2025-06-28
+tags: [postgresql]
+publish: true
+---
+
 ## **Demystifying PostgreSQL Replication: WAL, WAL Decoding, and the Journey Toward Zero-ETL**
 
 PostgreSQL is known for its robustness and extensibility, and at the heart of its durability and replication mechanisms lies the **Write-Ahead Log (WAL)**. Whether you're ensuring high availability with cluster replication or building a modern Change Data Capture (CDC) pipeline, understanding how PostgreSQL uses WAL — and how it compares with tools like AWS DMS and Zero-ETL — is critical.

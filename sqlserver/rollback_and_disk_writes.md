@@ -1,3 +1,10 @@
+---
+title: "Transaction Rollback: Log and Buffer Pool View"
+date: 2025-06-30
+tags: [sql-server]
+publish: true
+---
+
 
 # Example: Transaction with Updates Followed by Rollback — Log & Buffer Pool View
 

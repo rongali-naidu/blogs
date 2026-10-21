@@ -1,3 +1,10 @@
+---
+title: "Understanding and Fixing the Athena GENERIC_INTERNAL_ERROR: result is null error"
+date: 2025-07-07
+tags: [aws, athena]
+publish: true
+---
+
 
 # Understanding and Fixing the Athena `GENERIC_INTERNAL_ERROR: result is null` error
 

@@ -1,3 +1,10 @@
+---
+title: "Understanding AWS Q Developer, Q CLI, CodeWhisperer, and Kiro"
+date: 2025-10-11
+tags: [aws, developer-tools]
+publish: true
+---
+
 
 # Understanding AWS Q Developer, Q CLI, CodeWhisperer, and Kiro
 

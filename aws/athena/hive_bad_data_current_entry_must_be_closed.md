@@ -1,3 +1,10 @@
+---
+title: "Debugging \"HIVE_BAD_DATA: Error Parsing a column in the table: Current entry must be closed before a null can be written\" in Athena"
+date: 2025-03-14
+tags: [aws, athena]
+publish: true
+---
+
 # Debugging "HIVE\_BAD\_DATA: Error Parsing a column in the table: Current entry must be closed before a null can be written" in Athena
 
 When querying deeply nested JSON data in AWS Athena, encountering the following error can be frustrating and challenging to resolve:

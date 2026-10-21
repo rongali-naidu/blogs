@@ -1,3 +1,10 @@
+---
+title: "What Does *Hive-Compatible* AWS Glue Table Really Mean?"
+date: 2026-01-03
+tags: [aws, glue]
+publish: true
+---
+
 
 # What Does *Hive-Compatible* AWS Glue Table Really Mean?
 

@@ -1,3 +1,10 @@
+---
+title: "How LLMs Picks the Next Word?"
+date: 2026-10-18
+tags: [genai]
+publish: true
+---
+
 # How LLMs Picks the Next Word?
 
 This is covered in many blogs but i wanted to calrfiy a few questions so gathered these points as my notes.To make this concrete, we'll follow one real request from start to finish:

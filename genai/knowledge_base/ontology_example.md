@@ -1,3 +1,10 @@
+---
+title: "Schema Ontology: hr_db"
+date: 2026-07-30
+tags: [genai, knowledge-base]
+publish: true
+---
+
 # Schema Ontology: hr_db
 
 ## Domain

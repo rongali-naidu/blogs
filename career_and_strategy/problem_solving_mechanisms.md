@@ -1,3 +1,10 @@
+---
+title: "From Observation to Resolution: A Universal Workflow for Solving Problems"
+date: 2025-12-03
+tags: [career-and-strategy]
+publish: true
+---
+
 # **From Observation to Resolution: A Universal Workflow for Solving Problems**
 
 In every domain—software, healthcare, or business—problems arise. Some are small and temporary, others are complex and persistent. How do experts systematically tackle them? The answer lies in a universal workflow:

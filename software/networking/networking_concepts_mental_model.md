@@ -1,3 +1,10 @@
+---
+title: "A Mental Map for Understanding REST, GraphQL, JSON-RPC, HTTP, WebSockets, TCP, and MCP"
+date: 2026-06-20
+tags: [software, networking]
+publish: true
+---
+
 # A Mental Map for Understanding REST, GraphQL, JSON-RPC, HTTP, WebSockets, TCP, and MCP
 
 Having spent most of my time in data engineering, terms like REST, GraphQL, JSON-RPC, HTTP, WebSockets, TCP, MCP, and gRPC always felt related, but I didn't have a simple way to organize them in my head.

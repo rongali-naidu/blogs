@@ -1,3 +1,10 @@
+---
+title: "Exploring AWS S3 Tables: Federated Catalogs, Lake Formation Integration, and Access Challenges"
+date: 2025-04-20
+tags: [aws, s3-tables]
+publish: true
+---
+
 ## Exploring AWS S3 Tables: Federated Catalogs, Lake Formation Integration, and Access Challenges
 
 This week, I had the opportunity to get hands-on with the new **AWS S3 Tables**. Here are my observations and key learnings from that experience.

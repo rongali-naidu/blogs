@@ -1,3 +1,10 @@
+---
+title: "How Data Flow: Traditional Data Lake/Warehouse vs. Data Mesh"
+date: 2025-10-05
+tags: [data-architecture, data-mesh]
+publish: true
+---
+
 ## How Data Flow: Traditional Data Lake/Warehouse vs. Data Mesh
 
 Let’s use the **media player events** scenario to compare **real-time (hot) data flows** in a typical centralized setup versus a Data Mesh approach, and discuss practical implications.

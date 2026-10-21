@@ -1,3 +1,10 @@
+---
+title: "Why Measuring ROI on Data Platforms is Hard"
+date: 2025-10-04
+tags: [data-architecture]
+publish: true
+---
+
 # Why Measuring ROI on Data Platforms is Hard
 
 Investing in data platforms is no longer optional — modern organizations rely on robust data lakes, pipelines, and analytics platforms to power insights, decisions, and innovation. Yet, despite heavy investments, many leaders struggle to quantify the **return on investment (ROI)** for their data platforms. Why is that?

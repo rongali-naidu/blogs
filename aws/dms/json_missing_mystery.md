@@ -1,3 +1,10 @@
+---
+title: "The Case of the Missing JSON column: Why AWS DMS Silently Dropped Our JSON Field"
+date: 2026-09-24
+tags: [aws, dms]
+publish: true
+---
+
 # The Case of the Missing JSON column: Why AWS DMS Silently Dropped Our JSON Field
 
 *A debugging story about MySQL `JSON` columns, primary keys, and AWS Database Migration Service (DMS).*

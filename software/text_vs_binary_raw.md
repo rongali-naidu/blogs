@@ -1,3 +1,10 @@
+---
+title: "If Everything Is Bytes, Why Do We Talk About Text, Binary, and Raw Data?"
+date: 2026-06-21
+tags: [software]
+publish: true
+---
+
 # If Everything Is Bytes, Why Do We Talk About Text, Binary, and Raw Data?
 
 When I first learned about files, people kept saying things like:

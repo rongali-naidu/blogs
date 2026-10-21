@@ -1,3 +1,10 @@
+---
+title: "Did u notice this while creating S3-Tables through Athena CTAS?"
+date: 2025-08-18
+tags: [aws, athena]
+publish: true
+---
+
 
 # Did u notice this while creating S3-Tables through Athena CTAS?
 

@@ -1,3 +1,10 @@
+---
+title: "Mastering JSON Processing Across Athena, Redshift Spectrum, Redshift SUPER, and Spark SQL"
+date: 2025-08-04
+tags: [data-architecture]
+publish: true
+---
+
 
 # Mastering JSON Processing Across Athena, Redshift Spectrum, Redshift SUPER, and Spark SQL
 

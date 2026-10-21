@@ -1,3 +1,10 @@
+---
+title: "The Guide to Database Models : Logical, Physical, and Relational and NoSQL Models Explained"
+date: 2026-01-04
+tags: [modelling]
+publish: true
+---
+
 # **The  Guide to Database Models : Logical, Physical, and Relational and NoSQL Models Explained**
 
 Databases are the backbone of modern software systems. Choosing the right **data model**, understanding **logical vs physical modeling**, and considering **storage & access patterns** is critical for performance, scalability, and maintainability. This guide covers **all major database models**, including relational, NoSQL, dimensional, time-series, and hybrid systems, while integrating **normalization, denormalization, and one-wide-table (OWT) concepts** in the correct context.

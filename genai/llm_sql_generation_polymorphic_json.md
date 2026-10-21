@@ -1,3 +1,10 @@
+---
+title: "Polymorphic JSON in DynamoDB : Challenges for Glue, Athena, and AI-Based SQL Generation"
+date: 2026-02-09
+tags: [genai]
+publish: true
+---
+
 # Polymorphic JSON in DynamoDB : Challenges for Glue, Athena, and AI-Based SQL Generation
 
 Modern event-driven systems often use DynamoDB to capture user actions, operational events, or audit logs. DynamoDB’s schema-less design enables rapid iteration and flexibility at write time. However, that same flexibility introduces challenges when this data flows into data lakes, analytics engines, or AI-based data discovery systems.

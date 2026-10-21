@@ -1,3 +1,10 @@
+---
+title: "What Cleaning Data Means for Data Engineers and Machine Learning"
+date: 2025-03-24
+tags: [analytics]
+publish: true
+---
+
 ## What Cleaning Data Means for Data Engineers and Machine Learning
 
 Data is the backbone of modern data engineering and machine learning (ML) workflows. However, real-world data is rarely perfect. It often contains missing values, outliers, duplicate records, and inconsistencies that can degrade the performance of ML models or lead to inaccurate insights. This is where data cleaning plays a crucial role.

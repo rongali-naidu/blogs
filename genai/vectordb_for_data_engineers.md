@@ -1,3 +1,10 @@
+---
+title: "Why Mastering Vector Databases is Important for Data Engineers in the Generative AI Landscape"
+date: 2024-09-18
+tags: [genai]
+publish: true
+---
+
 ## Why Mastering Vector Databases is Important for Data Engineers in the Generative AI Landscape
 
 In this blog, we'll understand how vector databases work in the context of Generative AI and RAG, specifically focusing on Amazon OpenSearch Service, and why data engineers need to learn  building pipelines for Vector databases.

@@ -1,3 +1,10 @@
+---
+title: "Building Data Lakes That Scale: Practical Best Practices"
+date: 2025-09-21
+tags: [data-architecture]
+publish: true
+---
+
 ## Building Data Lakes That Scale: Practical Best Practices
 
 When you move from small datasets to big ones—hundreds of millions or billions of rows / TBs / PBs—many obvious designs begin to creak. A data lake isn’t a black box: its performance depends heavily on how you lay out your data, manage metadata, and structure queries. Below are key design patterns that help data lakes scale well, drawing from AWS best practices (Athena, S3, Iceberg) and general experience.

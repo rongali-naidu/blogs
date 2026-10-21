@@ -1,3 +1,10 @@
+---
+title: "SCD2 Interview Solution + Slowly Changing Dimension Overview"
+date: 2026-09-13
+tags: [sql]
+publish: true
+---
+
 # SCD2 Interview Solution + Slowly Changing Dimension Overview
 
 ## The problem

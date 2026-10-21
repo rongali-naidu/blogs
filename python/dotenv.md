@@ -1,3 +1,10 @@
+---
+title: "Managing Configuration with python-dotenv in Python"
+date: 2025-09-29
+tags: [python]
+publish: true
+---
+
 # Managing Configuration with `python-dotenv` in Python
 
 When building Python applications, it’s common to deal with **sensitive configuration values** such as API keys, database credentials, and feature flags. Hardcoding these values in your code is a bad practice — it makes your app insecure and difficult to manage across environments (dev, test, prod).

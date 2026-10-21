@@ -1,3 +1,10 @@
+---
+title: "Demystifying Data Engineering: A Personal Journey Through Continuous Learning and Innovation"
+date: 2025-03-29
+tags: [career-and-strategy]
+publish: true
+---
+
 # Demystifying Data Engineering: A Personal Journey Through Continuous Learning and Innovation
 
 ### Introduction

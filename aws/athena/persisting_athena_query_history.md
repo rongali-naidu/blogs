@@ -1,3 +1,10 @@
+---
+title: "Unlocking Athena Query History: The Why and the How of Persisting Execution Metadata"
+date: 2025-07-15
+tags: [aws, athena]
+publish: true
+---
+
 # Unlocking Athena Query History: The Why and the How of Persisting Execution Metadata
 
 ## Purpose

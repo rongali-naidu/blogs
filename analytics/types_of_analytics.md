@@ -1,3 +1,10 @@
+---
+title: "Understanding the Levels of Analytics Maturity"
+date: 2025-10-04
+tags: [analytics]
+publish: true
+---
+
 ## **Understanding the Levels of Analytics Maturity**
 
 Analytics is more than just reporting numbers — it represents a **continuum of data-driven insight**, ranging from understanding what happened in the past to enabling systems that learn and act autonomously. Organizations progress through these levels as their **data infrastructure, governance, and AI capabilities** mature. Collectively, these levels are referred to as **Types of Analytics** under the broader discipline of **Data Analytics** or **Business Analytics**.

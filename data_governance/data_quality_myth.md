@@ -1,3 +1,10 @@
+---
+title: "Why I Think “Data as a Product” Principle in Data Mesh Doesn’t Fix the Data Quality Problem"
+date: 2025-10-04
+tags: [data-governance]
+publish: true
+---
+
 
 ## Why I Think “Data as a Product” Principle in Data Mesh Doesn’t Fix the Data Quality Problem
 

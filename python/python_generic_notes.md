@@ -1,3 +1,10 @@
+---
+title: "Python Reference Notes"
+date: 2026-09-20
+tags: [python]
+publish: true
+---
+
 # Python Reference Notes
 
 A consolidated reference of the Python modules, idioms, and patterns commonly used in data engineering work (ETL pipelines, AWS/boto3 automation, database access, logging, testing, and performance). Code snippets are cleaned up from working examples and annotated.

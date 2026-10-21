@@ -1,3 +1,10 @@
+---
+title: "AWS Containers for Absolute Beginners: Understanding Docker, Images, Containers, and Related Services"
+date: 2026-01-08
+tags: [aws, containers]
+publish: true
+---
+
 ### AWS Containers for Absolute Beginners: Understanding Docker, Images, Containers, and Related Services
 
 Containers are a modern way to package and run applications. AWS provides several services to work with containers, but it can be confusing if you are new. This guide introduces key terms and explains how they all fit together in simple language.

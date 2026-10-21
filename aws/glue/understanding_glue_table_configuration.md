@@ -1,3 +1,10 @@
+---
+title: "Understanding AWS Glue Input Format, Output Format, and JsonSerDe"
+date: 2025-03-12
+tags: [aws, glue]
+publish: true
+---
+
 # Understanding AWS Glue Input Format, Output Format, and JsonSerDe
 
 AWS Glue is a powerful, serverless data integration service that enables you to extract, transform, and load (ETL) data across a variety of AWS services. When working with AWS Glue tables, understanding **InputFormat**, **OutputFormat**, and **SerDe** (Serializer/Deserializer) is crucial for efficient data processing. This blog explores how these components interact from end to end, including how AWS Glue interacts with Amazon S3, and clarifies the distinction between **table properties** and **SerDe properties** with practical examples.

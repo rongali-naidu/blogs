@@ -1,3 +1,10 @@
+---
+title: "The Four Principles of Data Mesh"
+date: 2025-10-05
+tags: [data-architecture, data-mesh]
+publish: true
+---
+
 ### Principle 1: Domain Data Ownership
 
 A domain represents an internal division or department within a company that owns a specific part of the business process. These processes are typically automated through multiple micro-services, which generate the corresponding operational data. The domain that owns this operational data is responsible for making it available for analytics and downstream consumption.

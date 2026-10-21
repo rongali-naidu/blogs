@@ -1,3 +1,10 @@
+---
+title: "Your Software Engineer, Data Engineer, and Database Engineer Are (Mostly) Talking About the Same Thing"
+date: 2026-07-17
+tags: [software]
+publish: true
+---
+
 # Your Software Engineer, Data Engineer, and Database Engineer Are (Mostly) Talking About the Same Thing
 
 *I kept getting confused because the same idea had different names depending on who I was talking to. A software engineer said "object," a database engineer said "row," a data engineer said "record." They were all describing the same thing. These are my notes.*

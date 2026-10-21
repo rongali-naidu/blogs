@@ -1,3 +1,10 @@
+---
+title: "uv, pip, pyenv, and Conda etc"
+date: 2026-07-10
+tags: [python]
+publish: true
+---
+
 ## uv, pip, pyenv, and Conda etc
 
 For years, the Python ecosystem has been notorious for its "tool fatigue." Setting up a single project often required a fragile stack of separate utilities: pyenv for Python versions, venv for isolation, and pip for packages. Then came Anaconda, introducing a completely different philosophy.

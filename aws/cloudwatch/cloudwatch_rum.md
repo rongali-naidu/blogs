@@ -1,3 +1,10 @@
+---
+title: "User Behavior and Experience Analytics Using CloudWatch RUM and Athena"
+date: 2026-05-01
+tags: [aws, cloudwatch]
+publish: true
+---
+
 
 #  User Behavior and Experience Analytics Using CloudWatch RUM and Athena
 

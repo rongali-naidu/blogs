@@ -1,3 +1,10 @@
+---
+title: "With Gen AI: Should We Refocus Our Efforts from Semantic Layers to High-Quality Metadata at Datalake/Database Catalog"
+date: 2025-03-18
+tags: [genai]
+publish: true
+---
+
 ### **With Gen AI: Should We Refocus Our Efforts from Semantic Layers to High-Quality Metadata at Datalake/Database Catalog**
 
 The latest technology trend of Business Intelligence (BI) is being driven by Generative AI (Gen AI). Considering how Gen AI translates user intent to SQLs, should we reconsider where our efforts should go to get the most out of the latest trend?

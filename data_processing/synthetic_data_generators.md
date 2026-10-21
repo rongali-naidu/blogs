@@ -1,3 +1,10 @@
+---
+title: "Synthetic Data & Streaming Test Generators: Why They Matter"
+date: 2025-10-27
+tags: [data-processing]
+publish: true
+---
+
 ## Synthetic Data & Streaming Test Generators: Why They Matter
 
 Before diving into each tool, it helps to understand *why* we need them in modern data / streaming architectures.

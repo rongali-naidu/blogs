@@ -1,3 +1,10 @@
+---
+title: "Longest Substring Without Repeating Characters"
+date: 2026-09-27
+tags: [interview-prep, python]
+publish: true
+---
+
 ## PROBLEM: Longest Substring Without Repeating Characters
 
 (a.k.a. "The Window Cleaner" / session-replay framing)

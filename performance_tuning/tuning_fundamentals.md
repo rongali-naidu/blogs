@@ -1,3 +1,10 @@
+---
+title: "Performance Tuning Fundamentals"
+date: 2026-06-17
+tags: [performance-tuning]
+publish: true
+---
+
 
 > Stable principles. Vendor-specific notes and links fill the right columns. Add vendors as new columns — the left columns never change.
 

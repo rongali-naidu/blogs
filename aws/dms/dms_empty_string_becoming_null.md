@@ -1,3 +1,10 @@
+---
+title: "The Empty String That Became NULL: A DMS Full-Load vs CDC Mystery"
+date: 2026-09-24
+tags: [aws, dms]
+publish: true
+---
+
 # The Empty String That Became NULL: A DMS Full-Load vs CDC Mystery
 
 *A debugging story about how the same value can be an empty string in one half of your data

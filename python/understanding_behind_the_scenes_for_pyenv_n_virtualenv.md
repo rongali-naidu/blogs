@@ -1,3 +1,10 @@
+---
+title: "Understanding pyenv and Virtual Environments: The Complete Unix-Level Guide"
+date: 2025-10-11
+tags: [python]
+publish: true
+---
+
 # Understanding `pyenv` and Virtual Environments: The Complete Unix-Level Guide
 
 When managing multiple Python projects, developers often face version conflicts, dependency chaos, and “it works on my machine” issues. Two tools — **`pyenv`** and **virtual environments** — solve this elegantly, but to really use them well, it helps to know what’s happening *under the hood*.

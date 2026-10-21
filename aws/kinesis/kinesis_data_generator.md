@@ -1,3 +1,10 @@
+---
+title: "Streamline Your AWS Testing with Amazon Kinesis Data Generator"
+date: 2025-09-29
+tags: [aws, kinesis]
+publish: true
+---
+
 # 🚀 Streamline Your AWS Testing with Amazon Kinesis Data Generator
 
 Testing streaming data applications can be challenging without realistic, high-volume data. The Amazon Kinesis Data Generator (KDG) simplifies this process by providing a browser-based interface to send test data to Amazon Kinesis Data Streams and Amazon Kinesis Data Firehose. Whether you're developing applications with Amazon Kinesis Data Analytics, Apache Flink, or other real-time processing tools, KDG is an invaluable resource.

@@ -1,3 +1,10 @@
+---
+title: "Streamlit for Rapid ML Demo Web Applications"
+date: 2025-09-07
+tags: [genai]
+publish: true
+---
+
 # Streamlit for Rapid ML Demo Web Applications
 
 When building AI/ML applications, one of the challenges is: *how do I share my model or experiment with others quickly?*

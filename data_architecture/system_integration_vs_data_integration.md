@@ -1,3 +1,10 @@
+---
+title: "How Boundaries Between System Integration and Data Integration Are Merging"
+date: 2025-10-15
+tags: [data-architecture]
+publish: true
+---
+
 # How Boundaries Between System Integration and Data Integration Are Merging
 
 In the past, **System Integration** and **Data Integration** were two distinct disciplines:

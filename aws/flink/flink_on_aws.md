@@ -1,3 +1,10 @@
+---
+title: "Real-Time Data Processing with Apache Flink on AWS"
+date: 2025-09-29
+tags: [aws, flink]
+publish: true
+---
+
 # Real-Time Data Processing with Apache Flink on AWS
 
 Streaming data has become a critical part of modern architectures, from IoT sensor telemetry to financial transactions. **Apache Flink** is a distributed framework for **high-throughput, low-latency stream and batch processing**. On AWS, Flink integrates seamlessly with services like **Kinesis Data Streams**, enabling real-time analytics pipelines.

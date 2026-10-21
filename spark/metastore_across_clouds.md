@@ -1,3 +1,10 @@
+---
+title: "Metastore: From Hive Metastore to Cloud-Native Catalogs"
+date: 2026-01-02
+tags: [spark]
+publish: true
+---
+
 # Metastore: From Hive Metastore to Cloud-Native Catalogs
 
 In every data lake architecture, one component silently determines whether data is usable or merely a collection of files: **the Metastore**.

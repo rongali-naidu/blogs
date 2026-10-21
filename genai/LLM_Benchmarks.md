@@ -1,3 +1,10 @@
+---
+title: "Understanding LLM Benchmarks"
+date: 2025-11-25
+tags: [genai]
+publish: true
+---
+
 ## Understanding LLM Benchmarks
 
 As large language models (LLMs) continue to evolve rapidly, it’s increasingly important to understand **how their capabilities are measured**. Benchmarks provide objective, comparable ways to assess reasoning, coding, tool use, and domain-specific tasks across different model providers like OpenAI, Anthropic, Google, and more.

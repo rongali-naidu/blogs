@@ -1,3 +1,10 @@
+---
+title: "Iceberg v3: Why I mapped \"Deletion Vectors\" as \"Deletion Bitmaps\""
+date: 2026-09-15
+tags: [table-formats, iceberg]
+publish: true
+---
+
 # Iceberg v3: Why I mapped "Deletion Vectors" as "Deletion Bitmaps"
 
 Today i had to know a bit more about Iceberg v3 especially Deletion vectors . Here is my notes on this pint.

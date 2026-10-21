@@ -1,3 +1,10 @@
+---
+title: "WSL : Another Alternative for Working with Linux from VSCode in Windows"
+date: 2025-08-31
+tags: [linux]
+publish: true
+---
+
 # WSL : Another Alternative for Working with Linux from VSCode in Windows
 
 As developers, we often need to work in Linux environments — whether it’s building cloud-native apps, running Python data workflows, or compiling C++ projects. But if your primary workstation is **Windows**, you have multiple options for accessing Linux:

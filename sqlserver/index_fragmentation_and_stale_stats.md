@@ -1,3 +1,10 @@
+---
+title: "Optimizing SQL Server: Fixing Index Fragmentation and Stale Statistics"
+date: 2025-06-30
+tags: [sql-server]
+publish: true
+---
+
 
 # Optimizing SQL Server: Fixing Index Fragmentation and Stale Statistics
 

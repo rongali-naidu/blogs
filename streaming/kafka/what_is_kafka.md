@@ -1,3 +1,10 @@
+---
+title: "Understanding Kafka: A Distributed Messaging System for Log Processing"
+date: 2025-09-21
+tags: [streaming, kafka]
+publish: true
+---
+
 # Understanding Kafka: A Distributed Messaging System for Log Processing
 
 Apache Kafka is a distributed messaging system designed to handle high-throughput, low-latency data streams. Originally developed at LinkedIn, Kafka has become a cornerstone in modern data architectures, particularly for real-time log processing and analytics. In this blog, we'll explore the fundamental concepts of Kafka, drawing insights from the seminal paper, ["Kafka: A Distributed Messaging System for Log Processing"](https://notes.stephenholiday.com/Kafka.pdf), authored by Jay Kreps, Neha Narkhede, and Jun Rao.

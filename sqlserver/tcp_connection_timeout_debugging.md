@@ -1,3 +1,10 @@
+---
+title: "From SQL Logs to Packet Captures: My First Network Debugging to Trace Lost DB Connections"
+date: 2025-07-28
+tags: [sql-server]
+publish: true
+---
+
 # From SQL Logs to Packet Captures: My First Network Debugging to Trace Lost DB Connections
 
 ## Introduction

@@ -1,3 +1,10 @@
+---
+title: "I Wish I Knew: The Document Data Model is Just JSON"
+date: 2025-08-04
+tags: [data-architecture]
+publish: true
+---
+
 # I Wish I Knew: The Document Data Model is Just JSON
 
 ---

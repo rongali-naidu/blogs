@@ -1,3 +1,10 @@
+---
+title: "uv vs pip: Do We Really Need Another Python Package Manager?"
+date: 2025-09-29
+tags: [python]
+publish: true
+---
+
 # 🚀 uv vs pip: Do We Really Need Another Python Package Manager?
 
 If you’ve been in the Python ecosystem for a while, you’re probably asking the same question many developers are:

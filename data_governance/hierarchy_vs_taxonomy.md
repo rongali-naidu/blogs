@@ -1,3 +1,10 @@
+---
+title: "Hierarchy vs. Taxonomy: The Universal Distinction"
+date: 2026-08-04
+tags: [data-governance]
+publish: true
+---
+
 # Hierarchy vs. Taxonomy: The Universal Distinction
 
 **Hierarchy is the skeleton; Taxonomy is a specific job that skeleton does.**

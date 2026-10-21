@@ -1,3 +1,10 @@
+---
+title: "Optimizing JSON Ingestion for Data Lakes: From Raw to Query-Ready Format"
+date: 2025-02-25
+tags: [data-processing]
+publish: true
+---
+
 # **Optimizing JSON Ingestion for Data Lakes: From Raw to Query-Ready Format**
 
 ## **Introduction**

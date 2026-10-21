@@ -1,3 +1,10 @@
+---
+title: "10 Underused SQL Features — Spark SQL Edition"
+date: 2026-09-23
+tags: [spark]
+publish: true
+---
+
 # 10 Underused SQL Features — Spark SQL Edition
 
 https://medium.com/@dataexpert/the-10-spark-interview-problems-i-kept-getting-wrong-14a1325309a5

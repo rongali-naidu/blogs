@@ -1,3 +1,10 @@
+---
+title: "Domain Data Archetypes in Data Mesh"
+date: 2025-10-05
+tags: [data-architecture, data-mesh]
+publish: true
+---
+
 ### Introduction
 Note : Archetype means recurring, conceptual patterns
 

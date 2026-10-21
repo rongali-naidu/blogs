@@ -1,3 +1,10 @@
+---
+title: "Why LLMs Input is measured in Tokens, Not Words — And Why It Matters"
+date: 2025-09-05
+tags: [genai]
+publish: true
+---
+
 # Why LLMs Input is measured in Tokens, Not Words — And Why It Matters
 
 We often hear LLM usage limits in **tokens**. So, it’s natural to ask: why can’t they specify limits in terms of words?

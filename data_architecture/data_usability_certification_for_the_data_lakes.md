@@ -1,3 +1,10 @@
+---
+title: "Data Usability & Data Quality Certifications For Data Lake: Bridging Data Warehouses and Modern Data Architectures"
+date: 2025-10-30
+tags: [data-architecture]
+publish: true
+---
+
 
 # Data Usability & Data Quality Certifications For Data Lake: Bridging Data Warehouses and Modern Data Architectures
 

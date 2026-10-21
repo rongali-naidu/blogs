@@ -1,3 +1,10 @@
+---
+title: "The Math and Magic of HyperLogLog: Algorithm behind ApproxCountDistinct"
+date: 2025-07-10
+tags: [spark]
+publish: true
+---
+
 ## The Math and Magic of HyperLogLog: Algorithm behind ApproxCountDistinct
 
 Let’s say you want to:

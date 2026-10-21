@@ -1,3 +1,10 @@
+---
+title: "The Architectural Leap: Why AWS Redshift RG Instances Are Changing Big Data"
+date: 2026-07-08
+tags: [aws, redshift]
+publish: true
+---
+
 
 # The Architectural Leap: Why AWS Redshift RG Instances Are Changing Big Data
 If you have been managing an Amazon Redshift cluster over the last few years, you are likely intimately familiar with **RA3 instances**. Introduced as Redshift’s 3rd generation, RA3 revolutionized data warehousing by decoupling compute and storage. It allowed companies to scale their data footprints to massive proportions without paying for idle, expensive processing servers.

@@ -1,3 +1,10 @@
+---
+title: "Demystifying “LLMs Calling Tools” and Agentic AI Patterns"
+date: 2025-09-04
+tags: [genai]
+publish: true
+---
+
 
 # Demystifying “LLMs Calling Tools” and Agentic AI Patterns
 

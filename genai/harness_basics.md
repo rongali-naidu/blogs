@@ -1,3 +1,10 @@
+---
+title: "Harness basics"
+date: 2026-08-05
+tags: [genai]
+publish: true
+---
+
 An AI Harness is the software infrastructure that wraps around an AI agent — managing memory, executing tools, and enforcing guardrails — providing everything an agent needs to operate beyond a basic chatbot.
 
 Think of it this way: the LLM is the brain, but the harness is the entire nervous system, skeletal structure, and sensory organs that let that brain actually do things in the world.

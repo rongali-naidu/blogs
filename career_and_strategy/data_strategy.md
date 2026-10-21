@@ -1,3 +1,10 @@
+---
+title: "Key Essence of Various Data Strategy References"
+date: 2025-04-07
+tags: [career-and-strategy]
+publish: true
+---
+
 ## Key Essence of Various Data Strategy References
 
 ### Introduction

@@ -1,3 +1,10 @@
+---
+title: "Key Aspects to Check Before Accepting a “Data-Driven” Conclusion"
+date: 2025-11-10
+tags: [analytics, statistics]
+publish: true
+---
+
 # 🧭 Key Aspects to Check Before Accepting a “Data-Driven” Conclusion
 
 Is your "Data-Driven" Decision Truly Data-Driven?

@@ -1,3 +1,10 @@
+---
+title: "When the normal Laptop has Gigabytes of RAM — Why LLMs Only Handle 20k Tokens"
+date: 2025-09-11
+tags: [genai]
+publish: true
+---
+
 # When the normal Laptop has Gigabytes of RAM — Why LLMs Only Handle 20k Tokens
 
 edit: 2026/10/18: refer this notes https://github.com/rongali-naidu/blogs/blob/main/genai/how_llm_picks_next_word.md

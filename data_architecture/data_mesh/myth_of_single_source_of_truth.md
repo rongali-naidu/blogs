@@ -1,3 +1,10 @@
+---
+title: "The Myth of a Single Source of Truth"
+date: 2025-10-05
+tags: [data-architecture, data-mesh]
+publish: true
+---
+
 ## 🧩 1️⃣ Source of Truth
 
 **Definition:**

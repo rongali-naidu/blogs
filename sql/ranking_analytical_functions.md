@@ -1,3 +1,10 @@
+---
+title: "ROW_NUMBER vs RANK vs DENSE_RANK: Ties, Determinism, and Top-N Patterns"
+date: 2026-09-13
+tags: [sql]
+publish: true
+---
+
 # ROW_NUMBER vs RANK vs DENSE_RANK: Ties, Determinism, and Top-N Patterns
 
 ## The three functions, side by side

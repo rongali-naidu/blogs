@@ -1,3 +1,10 @@
+---
+title: "Switching from Static Rule Workflows to Dynamic AI Agent-Based Workflows: How LLMs, Schemas (Pydantic!), and MCP Transform Workflows"
+date: 2025-09-04
+tags: [genai]
+publish: true
+---
+
 # Switching from Static Rule Workflows to Dynamic AI Agent-Based Workflows: How LLMs, Schemas (Pydantic!), and MCP Transform Workflows
 
 When we think of automation, the default notion is often a **rule-based workflow**:

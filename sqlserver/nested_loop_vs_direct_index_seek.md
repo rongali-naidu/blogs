@@ -1,3 +1,10 @@
+---
+title: "Why One Iteration of a Nested Loop Join Can Be Slower Than a Direct Index Seek"
+date: 2025-05-16
+tags: [sql-server]
+publish: true
+---
+
 # Why One Iteration of a Nested Loop Join Can Be Slower Than a Direct Index Seek
 
 Sometimes a seemingly simple SQL query with a join runs slower than expected, even when fetching just a single row, and with perfect indexing.

@@ -1,3 +1,10 @@
+---
+title: "Python Dataclasses"
+date: 2025-09-29
+tags: [python]
+publish: true
+---
+
 
 ### `from dataclasses import dataclass`
 

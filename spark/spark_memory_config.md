@@ -1,3 +1,10 @@
+---
+title: "Spark Executor Memory: Components and Config Parameters"
+date: 2026-09-13
+tags: [spark]
+publish: true
+---
+
 # Spark Executor Memory: Components and Config Parameters
 
 ## The memory layout, top to bottom

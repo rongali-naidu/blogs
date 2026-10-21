@@ -1,3 +1,10 @@
+---
+title: "Partitioning vs Sharding vs Distribution vs Hashing vs Clustering vs Buckets: Clarifying the Confusion"
+date: 2025-08-03
+tags: [data-architecture]
+publish: true
+---
+
 # Partitioning vs Sharding vs Distribution vs Hashing vs Clustering vs Buckets: Clarifying the Confusion
 
 In the world of data engineering and architecture, concepts like **partitioning**, **sharding**, **distribution**, **hashing**, **clustering**, and **bucketing** are frequently used but often misunderstood or used interchangeably. This blog aims to clarify these concepts, explore their relationships, and provide real-world examples to demystify how data is organized, stored, and scaled.

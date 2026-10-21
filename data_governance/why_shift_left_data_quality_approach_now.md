@@ -1,3 +1,10 @@
+---
+title: "Why Shift-Left in Data Quality became Relevant?"
+date: 2025-10-15
+tags: [data-governance]
+publish: true
+---
+
 
 # Why Shift-Left in Data Quality became Relevant?
 

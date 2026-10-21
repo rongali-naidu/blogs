@@ -1,3 +1,10 @@
+---
+title: "Magic Pill for SQL Server SQL Tuning : NL Joins + Covered Indexes"
+date: 2025-06-28
+tags: [sql-server]
+publish: false
+---
+
 
 # Magic Pill for SQL Server SQL Tuning : NL Joins + Covered Indexes
 

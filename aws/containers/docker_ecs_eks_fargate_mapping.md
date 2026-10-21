@@ -1,3 +1,10 @@
+---
+title: "Mapping Docker, ECS, EKS, Fargate and EC2"
+date: 2026-08-01
+tags: [aws, containers]
+publish: true
+---
+
 # Mapping Docker, ECS, EKS, Fargate and EC2
 
 

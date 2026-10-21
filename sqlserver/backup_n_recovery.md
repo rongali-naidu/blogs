@@ -1,3 +1,10 @@
+---
+title: "SQL Server Backup Explained: Full + Log + Ola Hallengren Script"
+date: 2025-07-01
+tags: [sql-server]
+publish: true
+---
+
 # 🛡️ SQL Server Backup Explained: Full + Log + Ola Hallengren Script
 
 Backing up a SQL Server database isn’t just about copying files — it’s about maintaining **transactional consistency**, **recoverability**, and **minimal downtime**. Let’s walk through what’s really happening during a backup and how to automate it safely.

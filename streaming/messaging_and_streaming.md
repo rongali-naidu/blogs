@@ -1,3 +1,10 @@
+---
+title: "Understanding Messaging Systems and Data Streaming in Modern Software Architecture and Modern Data Architecture"
+date: 2025-05-07
+tags: [streaming]
+publish: true
+---
+
 # Understanding Messaging Systems and Data Streaming in Modern Software Architecture and Modern Data Architecture
 
 ### Introduction

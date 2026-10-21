@@ -1,3 +1,10 @@
+---
+title: "Major call outs in data mesh"
+date: 2025-10-06
+tags: [data-architecture, data-mesh]
+publish: true
+---
+
 
 [How to Move Beyond a Monolithic Data Lake to a Distributed Data Mesh](https://martinfowler.com/articles/data-monolith-to-mesh.html)
 

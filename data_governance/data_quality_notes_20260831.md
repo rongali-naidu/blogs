@@ -1,3 +1,10 @@
+---
+title: "Why \"It Didn't Crash\" Isn't the Same as \"It's Correct\": Type Safety and Data Quality, Untangled"
+date: 2026-08-31
+tags: [data-governance]
+publish: true
+---
+
 # Why "It Didn't Crash" Isn't the Same as "It's Correct": Type Safety and Data Quality, Untangled
 
 This is a follow up to https://github.com/rongali-naidu/blogs/blob/main/data_governance/what_exactly_is_data_quality.md . A lot of confusion around Python's type system, validation libraries, and data quality tools comes from mashing three separate questions into one. This post pulls them apart:

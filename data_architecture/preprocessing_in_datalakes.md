@@ -1,3 +1,10 @@
+---
+title: "Does a Data Lake Require Pre-processing?"
+date: 2025-03-12
+tags: [data-architecture]
+publish: true
+---
+
 # Does a Data Lake Require Pre-processing?
 
 In my early experiences with data warehousing, I became accustomed to the structured approach of staging and processing layers. These layers are integral to the ETL (Extract, Transform, Load) process, ensuring that data is cleansed, transformed, and loaded into the warehouse in a consistent and reliable manner.

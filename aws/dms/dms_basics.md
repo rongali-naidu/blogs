@@ -1,3 +1,10 @@
+---
+title: "AWS Database Migration Service (DMS): Architecture, Data Flow, and Building a Production Pipeline with CDK"
+date: 2026-03-12
+tags: [aws, dms]
+publish: true
+---
+
 # AWS Database Migration Service (DMS): Architecture, Data Flow, and Building a Production Pipeline with CDK
 
 ## Introduction

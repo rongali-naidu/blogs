@@ -1,3 +1,10 @@
+---
+title: "Knowledge Base with Ontology-Based Metadata Enrichment"
+date: 2026-07-30
+tags: [genai, knowledge-base]
+publish: true
+---
+
 # Knowledge Base with Ontology-Based Metadata Enrichment
 
 ## 1. Foundation: What We Have (Phase 1)

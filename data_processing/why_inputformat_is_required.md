@@ -1,3 +1,10 @@
+---
+title: "Why InputFormat Is Required in Hadoop, Spark and AWS Glue"
+date: 2025-03-12
+tags: [data-processing]
+publish: true
+---
+
 The need for **InputFormat** in systems like **Hadoop**, **Spark**, and **AWS Glue** arises because Python’s built-in **csv** and **json** modules are designed for **local, small-scale** processing, while **InputFormat** handles **large-scale, distributed** data efficiently. Here’s why:
 
 ---

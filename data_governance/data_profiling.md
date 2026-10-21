@@ -1,3 +1,10 @@
+---
+title: "What is Data Profiling and Why Do We Need It?"
+date: 2025-07-07
+tags: [data-governance]
+publish: true
+---
+
 # What is Data Profiling and Why Do We Need It?
 
 Data profiling is the process of examining data from existing sources to collect statistics, summaries about the data’s structure, content. It’s a foundational step in understanding the data .

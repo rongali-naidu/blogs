@@ -1,3 +1,10 @@
+---
+title: "Memory Management and the Role of OS Page Cache: Traditional RDBMS vs Redshift"
+date: 2025-09-23
+tags: [aws, redshift]
+publish: true
+---
+
 
 # Memory Management and the Role of OS Page Cache: Traditional RDBMS vs Redshift
 

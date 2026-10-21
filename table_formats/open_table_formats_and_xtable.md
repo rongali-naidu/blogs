@@ -1,3 +1,10 @@
+---
+title: "Exploring Open Table Formats and Apache XTable: A New Era of Data Interoperability"
+date: 2025-03-25
+tags: [table-formats]
+publish: true
+---
+
 # Exploring Open Table Formats and Apache XTable: A New Era of Data Interoperability
 
 Modern data ecosystems are more complex than ever, with organizations managing massive datasets across data lakes, data warehouses, and analytical engines. Open table formats have emerged as a solution to ensure interoperability, performance, and governance in these dynamic environments. Apache XTable is the latest entrant in this space, promising enhanced compatibility and flexibility. In this blog, we will explore open table formats, their importance, and how Apache XTable is poised to transform data management.

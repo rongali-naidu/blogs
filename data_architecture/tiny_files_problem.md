@@ -1,3 +1,10 @@
+---
+title: "The Tiny Files Problem: A Silent Bottleneck in Real-Time Data Lakes"
+date: 2025-05-30
+tags: [data-architecture]
+publish: true
+---
+
 
 # **The Tiny Files Problem: A Silent Bottleneck in Real-Time Data Lakes**
 

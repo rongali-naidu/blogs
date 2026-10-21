@@ -1,3 +1,10 @@
+---
+title: "How Iceberg Tracks Updates and Deletes"
+date: 2025-09-11
+tags: [table-formats, iceberg]
+publish: true
+---
+
 # 1) What is Iceberg
 
 Iceberg is a *metadata/transaction layer* over Parquet/ORC/Avro on S3. Every write (append/update/delete/compact) produces a new **snapshot** (root metadata → manifest list → manifests → data/delete files). Reads consult that metadata to pick files and apply deletes so queries see a consistent snapshot. ([Apache Iceberg][1])

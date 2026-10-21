@@ -1,3 +1,10 @@
+---
+title: "Data Lake Requirements Reference"
+date: 2025-10-04
+tags: [data-architecture]
+publish: true
+---
+
 # Data Lake Requirements Reference
 
 | Dimension               | Sub-Dimension                             | Requirements                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | AI Usage Requirements                                                   |

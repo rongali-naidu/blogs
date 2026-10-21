@@ -1,3 +1,10 @@
+---
+title: "Data Transformation : Part 1: Marshalling & Unmarshalling"
+date: 2025-09-28
+tags: [data-processing]
+publish: true
+---
+
 # Data Transformation : Part 1: Marshalling & Unmarshalling
 
 ## What is Data Transformation?

@@ -1,3 +1,10 @@
+---
+title: "What Years of Working with Data Have Taught Me About Data Quality"
+date: 2025-03-17
+tags: [data-governance]
+publish: true
+---
+
 ## What Years of Working with Data Have Taught Me About Data Quality
 
 **Data quality** is a term that gets thrown around a lot, but its meaning varies depending on who you ask.

@@ -1,3 +1,10 @@
+---
+title: "Polars vs Pandas vs DuckDB — The Modern DataFrame Showdown (with Examples)"
+date: 2025-10-20
+tags: [python]
+publish: true
+---
+
 
 # Polars vs Pandas vs DuckDB — The Modern DataFrame Showdown (with Examples)
 

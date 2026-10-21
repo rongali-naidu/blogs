@@ -1,3 +1,10 @@
+---
+title: "From CPUs to GPUs/TPUs: Parallelism, Tensors, CUDA, PyTorch/TensforFlow"
+date: 2025-11-22
+tags: [genai]
+publish: true
+---
+
 # From CPUs to GPUs/TPUs: Parallelism, Tensors, CUDA, PyTorch/TensforFlow
 
 ## Introduction

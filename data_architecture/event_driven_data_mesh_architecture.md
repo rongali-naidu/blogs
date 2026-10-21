@@ -1,3 +1,10 @@
+---
+title: "Event-Driven Data Mesh Architecture For Systems Integration and Analytics"
+date: 2025-10-07
+tags: [data-architecture]
+publish: true
+---
+
 ## **Event-Driven Data Mesh Architecture For Systems Integration and Analytics**
 
 ### **Problem Statement**

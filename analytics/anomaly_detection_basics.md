@@ -1,3 +1,10 @@
+---
+title: "Anomaly Detection: Concepts, Models"
+date: 2025-09-21
+tags: [analytics]
+publish: true
+---
+
 # Anomaly Detection: Concepts, Models
 
 ## Introduction

@@ -1,3 +1,10 @@
+---
+title: "From Data Engineering to Data Science: My Journey of Understanding Models and Data Drift"
+date: 2025-03-28
+tags: [analytics]
+publish: true
+---
+
 ### From Data Engineering to Data Science: My Journey of Understanding Models and Data Drift
 
 ### Note on Data Engineering:

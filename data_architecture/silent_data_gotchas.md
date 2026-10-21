@@ -1,3 +1,10 @@
+---
+title: "Silent Data Traps in SQL Engines: Case, Time, Types, and Text"
+date: 2025-08-20
+tags: [data-architecture]
+publish: true
+---
+
 # Silent Data Traps in SQL Engines: Case, Time, Types, and Text  
 
 Working across multiple databases sounds simple — until you run into the *silent gotchas*.  

@@ -1,3 +1,10 @@
+---
+title: "How My Mind Maps LLM Optimizations to Database Optimizations"
+date: 2025-11-13
+tags: [genai]
+publish: true
+---
+
 
 # **How My Mind Maps LLM Optimizations to Database Optimizations**
 

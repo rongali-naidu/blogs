@@ -1,3 +1,10 @@
+---
+title: "Types of Patterns in General Data Analysis"
+date: 2025-05-16
+tags: [analytics]
+publish: true
+---
+
 
 ## Types of Patterns in General Data Analysis
 

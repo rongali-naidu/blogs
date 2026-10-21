@@ -1,3 +1,10 @@
+---
+title: "Python Iterables, Iterators, Generators, and yield — The Mental Model That Finally Made It Click"
+date: 2026-06-17
+tags: [python]
+publish: true
+---
+
 # Python Iterables, Iterators, Generators, and `yield` — The Mental Model That Finally Made It Click
 
 I kept getting confused between:

@@ -1,3 +1,10 @@
+---
+title: "Unified Data Lineage: Meta’s Approach and Re-engineering for General Implementation"
+date: 2025-06-29
+tags: [data-lineage]
+publish: true
+---
+
 
 # Unified Data Lineage: Meta’s Approach and Re-engineering for General Implementation
 

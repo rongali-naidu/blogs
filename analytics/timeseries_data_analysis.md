@@ -1,3 +1,10 @@
+---
+title: "Patterns, Trends, Seasonality, Cycles, and Noise: Key Concepts in Time Series Data Analysis"
+date: 2025-05-16
+tags: [analytics]
+publish: true
+---
+
 # Patterns, Trends, Seasonality, Cycles, and Noise: Key Concepts in Time Series Data Analysis
 
 ## What is Time Series Data?

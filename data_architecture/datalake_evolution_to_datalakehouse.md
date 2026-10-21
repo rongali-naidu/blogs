@@ -1,3 +1,10 @@
+---
+title: "How our Data Lake evolved into a Data Lakehouse"
+date: 2025-03-13
+tags: [data-architecture]
+publish: true
+---
+
 # How our Data Lake evolved into a Data Lakehouse
 
 ![Alt text](../images/lakehouse_architecture.jpg)

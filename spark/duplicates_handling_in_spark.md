@@ -1,3 +1,10 @@
+---
+title: "Handling Duplicates in Apache Spark: distinct(), dropDuplicates(), vs. Window Functions"
+date: 2026-09-20
+tags: [spark]
+publish: true
+---
+
 ## Handling Duplicates in Apache Spark: distinct(), dropDuplicates(), vs. Window Functions
 
 When engineering data pipelines in Apache Spark, removing duplicate records is a daily task. However, choosing the wrong strategy can lead to unpredictable data loss or severe performance bottlenecks.

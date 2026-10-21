@@ -1,3 +1,10 @@
+---
+title: "Understanding Retry Mechanisms in Software Systems"
+date: 2025-09-28
+tags: [software, system-design]
+publish: true
+---
+
 # Understanding Retry Mechanisms in Software Systems
 
 In modern software systems, transient failures are common — network hiccups, temporary service outages, or throttling by APIs. To handle these gracefully, systems implement **retry mechanisms**. 

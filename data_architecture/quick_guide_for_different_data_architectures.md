@@ -1,3 +1,10 @@
+---
+title: "Quick Guide to Different Data Architectures : Traditional Data Warehouse, AWS Lake House, and Medallion Architecture"
+date: 2025-03-15
+tags: [data-architecture]
+publish: true
+---
+
 # Quick Guide to Different Data Architectures : Traditional Data Warehouse, AWS Lake House, and Medallion Architecture
 
 In the rapidly evolving world of data management, three dominant architectures stand out: **Traditional Data Warehouse**, **AWS Lake House Architecture**, and **Medallion Architecture**. Each serves a unique purpose while sharing a common goal: organizing data for efficient storage, processing, and analysis. This blog explores these architectures and highlights their similarities and differences.

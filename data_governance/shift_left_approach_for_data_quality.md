@@ -1,3 +1,10 @@
+---
+title: "Shift left approach for data quality"
+date: 2025-10-15
+tags: [data-governance]
+publish: true
+---
+
 Absolutely! Here’s a **concise summary of the concepts we discussed** about data quality, Shift Left, and layered validation:
 
 ---

@@ -1,3 +1,10 @@
+---
+title: "SSL vs TLS"
+date: 2026-07-15
+tags: [software, networking]
+publish: true
+---
+
 
 ## SSL vs TLS
 

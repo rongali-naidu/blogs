@@ -1,3 +1,10 @@
+---
+title: "Gaps-and-Islands, Window Functions, and the PARTITION BY / GROUP BY Confusion"
+date: 2026-09-13
+tags: [sql]
+publish: true
+---
+
 # Gaps-and-Islands, Window Functions, and the PARTITION BY / GROUP BY Confusion
 
 ## The problem type: gaps and islands

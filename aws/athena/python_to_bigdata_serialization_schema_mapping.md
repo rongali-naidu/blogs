@@ -1,3 +1,10 @@
+---
+title: "For Python Developers: Bridging CSV Handling to Spark & Athena Internals"
+date: 2025-08-18
+tags: [aws, athena]
+publish: true
+---
+
 # For Python Developers: Bridging CSV Handling to Spark & Athena Internals
 
 ## Introduction

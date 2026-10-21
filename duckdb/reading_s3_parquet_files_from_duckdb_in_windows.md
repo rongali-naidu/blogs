@@ -1,3 +1,10 @@
+---
+title: "Querying S3-Parquet with DuckDB"
+date: 2026-09-22
+tags: [duckdb]
+publish: true
+---
+
 # Querying S3-Parquet with DuckDB
 
 ## The scenario

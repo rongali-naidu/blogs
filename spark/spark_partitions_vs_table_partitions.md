@@ -1,3 +1,10 @@
+---
+title: "Don't Confuse Spark Execution Partitions with Table-Level Partitions"
+date: 2025-07-09
+tags: [spark]
+publish: true
+---
+
 ## Don't Confuse Spark Execution Partitions with Table-Level Partitions
 ### 1. **Spark Partition (Execution-Time Partition)**
 **This is what Spark tasks operate on**.

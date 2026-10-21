@@ -1,3 +1,10 @@
+---
+title: "From Disk Pages to Memory Heap Objects: Why Apache Arrow is Required"
+date: 2026-10-18
+tags: [data-architecture, arrow]
+publish: true
+---
+
 # From Disk Pages to Memory Heap Objects: Why Apache Arrow is Required
 
 In modern data engineering, two open-source technologies sit at the heart of almost every analytical pipeline: [Apache Parquet](https://parquet.apache.org/), the de facto standard for storing columnar data efficiently on disk, and [Apache Arrow](https://arrow.apache.org/), the standard for representing that data in memory for high-performance analytics. (Table-format layers like [Apache Iceberg](https://iceberg.apache.org/) sit *on top of* Parquet files to manage schemas, transactions, and partitioning at scale — but the foundational split between disk storage and in-memory compute stays the same, so we'll set Iceberg aside for this exploration.)

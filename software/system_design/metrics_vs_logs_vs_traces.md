@@ -1,3 +1,10 @@
+---
+title: "Observability in Distributed Systems: Metrics, Logs, and Traces"
+date: 2025-09-28
+tags: [software, system-design]
+publish: true
+---
+
 # Observability in Distributed Systems: Metrics, Logs, and Traces
 
 Understanding what’s happening in a modern distributed system requires **observability**, which includes **metrics, logs, and traces**. so, let’s clarify them using a consistent example:
