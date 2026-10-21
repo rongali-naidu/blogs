@@ -10,7 +10,7 @@ publish: true
 https://medium.com/@dataexpert/the-10-spark-interview-problems-i-kept-getting-wrong-14a1325309a5
 
 > PySpark DataFrame API equivalents of ten "rarely taught" SQL features originally shown in PostgreSQL. Same examples and numbering as the Spark SQL file.
-> Companion file: [`spark-sql-advanced-features.md`](spark-sql-advanced-features.md).
+> Companion file: [Spark SQL edition](postgres_sql_equivalent.md).
 > Targets **PySpark 3.5**; APIs that need **Spark 4.x** or Delta/Iceberg are flagged.
 
 ---
