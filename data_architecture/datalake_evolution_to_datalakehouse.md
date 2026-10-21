@@ -1,6 +1,6 @@
 # How our Data Lake evolved into a Data Lakehouse
 
-![Alt text](images/lakehouse_architecture.jpg)
+![Alt text](../images/lakehouse_architecture.jpg)
 
 Image Source: [AWS Blog](https://aws.amazon.com/blogs/big-data/harness-the-power-of-your-data-with-aws-analytics/)
 

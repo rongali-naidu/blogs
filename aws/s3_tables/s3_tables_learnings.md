@@ -13,13 +13,13 @@ To start with a brief overview : [Amazon S3 Tables](https://aws.amazon.com/blogs
 * Each S3 Table Bucket provides options to create multiple namespaces and multiple tables within each namespace.
 * Note : Not all S3-Table buckets operations are supported through AWS Console. some are supported through CLI and REST API , like deleting bucket, managing resource policies
 
-![Alt text](images/s3_table_buckets.jpeg)
+![Alt text](../../images/s3_table_buckets.jpeg)
 
 
 #### Changes in Lakeformation
 
 
-  ![Alt text](images/lakeformation_catalogs.jpeg)
+  ![Alt text](../../images/lakeformation_catalogs.jpeg)
   
 - Added new section for **Catalogs** 
 
@@ -28,7 +28,7 @@ To start with a brief overview : [Amazon S3 Tables](https://aws.amazon.com/blogs
 
 #### Mapping of S3-Table resources to Lakeformation Catalog
 
-  ![Alt text](images/S3_Tables_Catalog_Mapping.jpeg)
+  ![Alt text](../../images/S3_Tables_Catalog_Mapping.jpeg)
 
   
   
@@ -48,7 +48,7 @@ First time, we create S3 Table Bucket, we get an option to chose "Enable Integra
 
 As shown in the below image, the S3-Tables are shown under Separate Catalogs, Databases (Namespace).
 
-![Alt text](images/athena_for_s3_catalogs.jpeg)
+![Alt text](../../images/athena_for_s3_catalogs.jpeg)
 
 ### Observations and Challenges
 

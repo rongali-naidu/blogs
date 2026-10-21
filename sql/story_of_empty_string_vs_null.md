@@ -5,7 +5,7 @@
 One of the sources of confusion for people working with the data and SQL is the distinction between empty strings ('') and NULL values. If you are working with the databases like Oracle, which handles Emptry Strings as NULL, you may argue that both NULL and Emptry Strings are same. If you are working with databases like Amazon Redshift, AWS Athena you will argue that they are different. 
 
 Look at the following screenshot showing the NULL and Emptry Strings in the output returned by Athena. Visually both looks similar . 
-![Alt text](images/null-vs-emptry-string.jpeg)
+![Alt text](../images/null-vs-emptry-string.jpeg)
 While both may seem similar at first glance, they have fundamental differences that can impact data quality, query results, and application logic.Misunderstanding these concepts often leads to more time spent in debugging data quality issues.In this blog, I’ll clarify the difference between empty strings and NULL values, explore common pitfalls, and provide practical tips to handle them effectively in SQL-based databases like Amazon Redshift. I also added programming context to understand what these means at the Programming Level.
 
 ## Understanding the Difference
