@@ -1,3 +1,10 @@
+---
+title: "Open Standards relevant for Agentic Solutions"
+date: 2026-10-22
+tags: [genai]
+publish: true
+---
+
 ### Open Standards vs. Vendor-Specific Alternatives
 
 | Standard / Specification | Domain Focus | Primary Telemetry / Metadata Type | Popular Vendor-Specific Alternatives (Proprietary / Commercial) |
