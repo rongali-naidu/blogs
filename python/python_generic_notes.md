@@ -411,6 +411,56 @@ time.mktime(...)      # struct_time -> Unix timestamp (float), useful for math
 
 ---
 
+```
+@
+
+from datetime import date, timedelta
+
+today = date.today()
+
+# Week Start (Monday)---0
+# Subtract the number of days we are into the current week
+week_start = today - timedelta(days=today.weekday())
+
+# Week End (Sunday)
+# Add the remaining days left in the 7-day cycle
+week_end = week_start + timedelta(days=6)
+
+print(f"Week Start (Mon): {week_start}")
+print(f"Week End (Sun):   {week_end}")
+
+# Note for US Week-start and Week-end day
+# 2. Convert Python's weekday (0=Mon, 6=Sun) to US weekday (0=Sun, 6=Sat)
+# Adding 1 and applying modulo 7 shifts Sunday from index 6 to index 0
+us_weekday = (dt.weekday() + 1) % 7
+
+# 3. Calculate start (Sunday) and end (Saturday)
+start_of_week = dt - timedelta(days=us_weekday)
+week_end = week_start + timedelta(days=6)
+
+#Month start and Month end 
+
+import calendar
+from datetime import date
+
+today = date.today()
+
+# Month Start
+# Force the day component to be exactly 1
+month_start = today.replace(day=1)
+
+# Month End
+# calendar.monthrange returns a tuple: (first_weekday, number_of_days_in_month)
+_, num_days = calendar.monthrange(today.year, today.month)
+month_end = today.replace(day=num_days)
+
+print(f"Month Start:      {month_start}")
+print(f"Month End:        {month_end}")
+
+
+
+```
+
 ## 5. File Handling, Context Managers, `pathlib` & JSON
 
 ### Context managers (`with`) — the idiomatic way
