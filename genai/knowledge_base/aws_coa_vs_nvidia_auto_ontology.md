@@ -44,7 +44,7 @@ to approve it.
 | | AWS COA | NVIDIA Auto Ontology |
 |---|---|---|
 | **Philosophy** | standards-first: a formal **W3C OWL** ontology | pragmatic: a **context layer for text-to-SQL** |
-| **Ontology format** | OWL in Turtle, stored in Amazon Neptune | records in **Postgres + pgvector** (no RDF/OWL) |
+| **Ontology format** | OWL in Turtle, stored in Amazon Neptune | terms, SQL attributes and joins as rows in **Postgres + pgvector**; exchanged as **Apache Ossie YAML** (no RDF/OWL) |
 | **Reasoning** | OWL reasoners (HermiT, ELK) | validates SQL against certified definitions and lineage |
 | **Runs on** | AWS only (Neptune, OpenSearch Serverless, Bedrock, AgentCore) | anywhere with Postgres + pgvector and an LLM endpoint |
 | **Built-in evaluation** | not part of the project | separate toolkit, **ontology-sql-eval** (BIRD and other benchmarks) |
@@ -87,6 +87,15 @@ steps:
 | **Expose** | serves the context through MCP, a CLI, a streaming API and agent skills |
 | **Learn** | feeds certified corrections and usage back into the ontology |
 
+* **What the ontology contains:** three kinds of definition.
+  * **Terms:** business concepts such as *Customer*, each with a
+    description and synonyms, mapped to tables and columns.
+  * **SQL attributes:** reviewed SQL expressions under a term, such as
+    revenue or margin.
+  * **Relationships:** how tables join, inferred from keys and from the
+    data.
+* **Format:** stored in Postgres, with embeddings in pgvector. Models are
+  imported and exported as **Apache Ossie YAML**.
 * **Sources:** Databricks, Snowflake, Postgres and DuckDB.
 * **Evaluation:** a companion repo, **ontology-sql-eval**, compares a
   schema-only LLM with the ontology-grounded agent on BIRD, BEAVER,
@@ -101,7 +110,7 @@ Details: [NVIDIA Auto Ontology in the repo](https://github.com/rongali-naidu/sem
 |---|---|---|
 | **How the ontology is built** | LLM *induction* from schemas or documents, or upload your own OWL | *discovery* from catalog metadata, or connect existing ontologies and semantic models |
 | **Link to the data** | explicit **R2RML mappings** (table/column → class/property) | catalog metadata linked to ontology concepts |
-| **Reuse of standards** | grounding to FIBO, schema.org (`rdfs:subClassOf`, `skos:*Match`) | not a focus |
+| **Standards** | OWL, R2RML, SPARQL, SKOS; grounding to FIBO, schema.org | Apache Ossie YAML for import / export |
 | **Human review** | induced ontologies are **proposals**; experts approve them | **certified** definitions; corrections feed back (Learn) |
 | **Reasoning** | formal OWL reasoning (HermiT, ELK) | SQL validated against certified definitions and lineage |
 | **How agents get answers** | tiers: metric → ontology (SPARQL → SQL through Ontop) → documents | ontology-grounded text-to-SQL, with provenance |
@@ -112,6 +121,177 @@ Details: [NVIDIA Auto Ontology in the repo](https://github.com/rongali-naidu/sem
 | **Measuring accuracy** | not built in | **ontology-sql-eval**, on public benchmarks |
 | **Contributions** | read-only mirror: issues welcome, no PRs | not accepting external contributions |
 | **Maturity (Nov 2026)** | tagged releases (`v0.3.x`); AWS says the managed capability will move into **AWS Context** | no tagged release yet |
+
+### One example, two representations
+
+Here is the same piece of business knowledge in each tool. It comes from
+the retail example in my
+[reference repo](https://github.com/rongali-naidu/semantics-ontology-graphs/tree/main/examples/retail):
+
+> *What was revenue from premium customers?*
+> (In the example data, the answer is **1678.45**.)
+
+To answer it, the agent needs four facts:
+
+1. what "premium customers" means, and that they are customers;
+2. how revenue is computed;
+3. how orders join to customers;
+4. which column marks a customer as premium.
+
+#### AWS COA: a formal OWL ontology, a mapping and a metric
+
+**The ontology** is a standard OWL file in Turtle. Concepts are *classes*,
+and rules are *axioms* that a reasoner understands:
+
+```turtle
+retail:Customer a owl:Class ;
+    rdfs:label "Customer"@en ;
+    skos:definition "A person with an account who can place orders."@en .
+
+retail:PremiumCustomer a owl:Class ;
+    rdfs:subClassOf retail:Customer ;          # every premium customer IS a customer
+    rdfs:label "Premium customer"@en .
+
+retail:placedBy a owl:ObjectProperty , owl:FunctionalProperty ;
+    rdfs:domain retail:Order ;
+    rdfs:range  retail:Customer ;
+    owl:inverseOf retail:placedOrder .
+
+retail:Order rdfs:subClassOf [                 # every order has exactly one customer
+    a owl:Restriction ;
+    owl:onProperty retail:placedBy ;
+    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+    owl:onClass retail:Customer ] .
+
+retail:subCategoryOf a owl:TransitiveProperty . # Laptops ⊂ Computers ⊂ Electronics
+```
+
+**The R2RML mapping** connects the ontology to the tables. Here, a boolean
+column becomes a class:
+
+```turtle
+map:PremiumCustomer a rr:TriplesMap ;
+    rr:logicalTable [ rr:sqlQuery "SELECT * FROM customers WHERE is_premium = 'true'" ] ;
+    rr:subjectMap [ rr:template "https://example.org/retail/data/{customer_id}" ;
+                    rr:class retail:PremiumCustomer ] .
+```
+
+**The governed metric** is registered in COA's metric service:
+
+```json
+{ "name": "revenue",
+  "description": "Sum of quantity * unit price actually paid (not list price).",
+  "expression": { "dialects": [ { "dialect": "POSTGRESQL",
+      "expression": "SELECT SUM(quantity * unit_price) AS revenue FROM retail.order_lines" } ] },
+  "sourceTable": "order_lines",
+  "ontologyConcepts": [ "https://example.org/retail/ontology#OrderLine",
+                        "https://example.org/retail/ontology#unitPrice",
+                        "https://example.org/retail/ontology#quantity" ] }
+```
+
+**How COA answers:**
+
+1. It finds the `revenue` metric.
+2. The question adds a qualifier ("premium customers"), so it moves to the
+   ontology tier.
+3. A SPARQL query over `retail:PremiumCustomer` and `retail:placedBy` is
+   rewritten into SQL (Ontop) through the mapping.
+4. The SQL runs on the live tables.
+
+#### NVIDIA Auto Ontology: terms, SQL attributes and joins
+
+The same knowledge as Auto Ontology records. *These are illustrative.* The
+field names come from its source code (`dal/terms.py`,
+`dal/sql_attributes.py`); the values are mine, because the docs publish no
+sample payloads:
+
+```yaml
+term:
+  name: Customer
+  description: A person with an account who can place orders.
+  synonyms: [client, buyer, shopper]
+  name_certified: true
+  represents: customers                 # table → term link
+
+term:
+  name: Premium customer
+  description: A customer with a paid membership.
+  synonyms: [premium member, member]
+  columns: [customers.is_premium]       # column → term link
+
+sql_attribute:                          # under the term "Order line"
+  name: revenue
+  expression: SUM(order_lines.quantity * order_lines.unit_price)
+  certified: true
+
+relationship:                           # inferred from keys and data
+  orders.customer_id → customers.customer_id
+  order_lines.order_id → orders.order_id
+```
+
+**How Auto Ontology answers:**
+
+1. "premium customers" matches the term *Premium customer* by synonym.
+2. The term leads to the column `customers.is_premium`.
+3. The certified `revenue` SQL attribute supplies the formula.
+4. The join relationships supply the path.
+5. The agent writes the SQL, and it's validated against the certified
+   definitions.
+
+#### What each representation can express
+
+| Knowledge | AWS COA (OWL) | NVIDIA Auto Ontology |
+|---|---|---|
+| synonyms and descriptions | ✅ `rdfs:label`, `skos:altLabel`, `skos:definition` | ✅ `synonyms`, `description` |
+| business term → table / column | ✅ R2RML mapping | ✅ term ↔ table and column links |
+| governed metric formula | ✅ metric service | ✅ certified SQL attribute |
+| how tables join | ✅ object properties + mapping | ✅ join relationships |
+| *a premium customer **is a** customer* | ✅ `rdfs:subClassOf`; a reasoner infers it | ❌ two separate terms, "related" only because they share the `customers` table |
+| *Laptops are in Electronics* (via Computers) | ✅ `owl:TransitiveProperty`; inferred | ❌ no hierarchy; you'd encode it in SQL |
+| *every order has exactly one customer* | ✅ cardinality axiom, machine-checkable | ❌ at most a sentence in a description |
+| exchange format | OWL / Turtle, queried with SPARQL | Apache Ossie YAML, queried through MCP / API |
+
+The top four rows are what text-to-SQL needs most, and **both tools cover
+them**. The bottom rows are where an ontology in the formal sense adds
+*reasoning*: knowledge that's inferred and checked rather than written down
+in every query.
+
+### So why does NVIDIA call it an ontology?
+
+Because "ontology" has two meanings, and both are in use.
+
+* **The broad meaning.** In Tom Gruber's classic definition, an ontology is
+  "an explicit specification of a conceptualization": a shared, written-down
+  model of the concepts in a domain and how they relate. Nothing in that
+  definition requires OWL. Business terms with definitions, synonyms,
+  mappings and relationships meet it.
+* **The formal meaning.** In the Semantic Web tradition, an ontology is an
+  OWL model with classes, hierarchies and logical axioms that a reasoner can
+  use to infer new facts and detect contradictions.
+
+Deborah McGuinness's *ontology spectrum* puts these on one line:
+
+> glossary → thesaurus → taxonomy → classes and properties → formal axioms
+
+* **Auto Ontology** sits at the lighter end: a glossary with synonyms (a
+  thesaurus), plus mappings, governed SQL and a join graph. In the terms of
+  my repo, it's closer to a **semantic model plus a context graph** than to
+  a formal ontology.
+* **COA** sits at the formal end.
+
+NVIDIA isn't alone in using the broad meaning. **Palantir Foundry
+Ontology** and **Microsoft Fabric IQ** also call their business-concept
+layers "ontologies" without using OWL.
+
+**The practical takeaway:** when a product says "ontology", ask four
+questions:
+
+1. Does it model **hierarchies** (is-a)?
+2. Can it express **rules** (cardinality, disjointness)?
+3. Does it **reason** (infer and check)?
+4. What's the **exchange format** (OWL, Ossie, proprietary)?
+
+The answers tell you which end of the spectrum you're buying.
 
 ### Same goal, different bets
 
@@ -126,8 +306,8 @@ SPARQL, R2RML).
 context layer in Postgres, built to make agent SQL correct and to *prove* it
 on benchmarks. It's lighter to run and cloud-neutral, and the Learn step
 improves it from real usage. The trade-off: there's no OWL file to exchange,
-no SPARQL and no formal reasoner, so it isn't an ontology in the
-Semantic-Web sense.
+no SPARQL and no formal reasoner, so it's an ontology in the broad sense
+rather than the formal one (see above).
 
 In the terms I use in the repo, COA is a **formal ontology plus a virtual
 knowledge graph**, while Auto Ontology is closer to a **context graph** of
