@@ -18,8 +18,10 @@ agents over MCP. But they make very different design choices. This post
 compares them side by side.
 
 > **Scope:** this comparison is based on each project's public
-> documentation as of November 2026 (COA `v0.3.8`; Auto Ontology `main`,
-> which has no tagged release yet). I haven't run either in production.
+> documentation and source code as of November 2026 (COA `v0.3.8`; Auto
+> Ontology `main`, which has no tagged release yet). I ran parts of both
+> locally ([results](#i-ran-both-on-the-same-example)), but neither as a
+> full deployment.
 > More detail, plus a retail example expressed in every format, is in my
 > reference repo:
 > [semantics-ontology-graphs](https://github.com/rongali-naidu/semantics-ontology-graphs).
@@ -200,42 +202,54 @@ map:PremiumCustomer a rr:TriplesMap ;
 
 #### NVIDIA Auto Ontology: terms, SQL attributes and joins
 
-The same knowledge as Auto Ontology records. *These are illustrative.* The
-field names come from its source code (`dal/terms.py`,
-`dal/sql_attributes.py`); the values are mine, because the docs publish no
-sample payloads:
+Here is the same model in Auto Ontology's native format. This is **real
+output**, not illustrative: I converted the repo's Apache Ossie model with
+the Ossie → Auto Ontology converter that Auto Ontology itself uses
+([details below](#i-ran-both-on-the-same-example)). Excerpt, with internal
+IDs replaced by names:
 
 ```yaml
 term:
-  name: Customer
-  description: A person with an account who can place orders.
-  synonyms: [client, buyer, shopper]
-  name_certified: true
-  represents: customers                 # table → term link
+  name: customers
+  represents: [customers]                # table → term
+  columns_attributes:
+  - name: customer_id
+    column: customers.customer_id
+  - name: is_premium                     # "premium" is just a column on the term
+    description: Paid membership (the ontology class PremiumCustomer)
+    column: customers.is_premium
 
-term:
-  name: Premium customer
-  description: A customer with a paid membership.
-  synonyms: [premium member, member]
-  columns: [customers.is_premium]       # column → term link
+sql_attribute:                           # under the term "order_lines"
+  name: line_amount
+  sql: SELECT quantity * unit_price AS "line_amount" FROM "retail"."retail"."order_lines"
 
-sql_attribute:                          # under the term "Order line"
+custom_analysis:                         # how an Ossie metric is stored
   name: revenue
-  expression: SUM(order_lines.quantity * order_lines.unit_price)
-  certified: true
+  description: Sum of quantity * unit price paid
+  sql: SELECT SUM(order_lines.line_amount) AS "revenue" FROM "retail"."retail"."order_lines"
 
-relationship:                           # inferred from keys and data
-  orders.customer_id → customers.customer_id
-  order_lines.order_id → orders.order_id
+join:
+  source_table: orders
+  target_table: customers
+  join_columns: [{source: customer_id, target: customer_id}]
 ```
+
+Notice what isn't there:
+
+* no *Premium customer* concept: "premium" survives only as a column, with
+  the ontology class mentioned in its description text;
+* no *is-a* link to *Customer*;
+* no category hierarchy.
 
 **How Auto Ontology answers:**
 
-1. "premium customers" matches the term *Premium customer* by synonym.
-2. The term leads to the column `customers.is_premium`.
-3. The certified `revenue` SQL attribute supplies the formula.
-4. The join relationships supply the path.
-5. The agent writes the SQL, and it's validated against the certified
+1. "customers" matches the term *customers*. "premium" has to be matched
+   to the column `customers.is_premium`, through its name, its description
+   or embeddings.
+2. The `revenue` custom analysis (built on the `line_amount` SQL attribute)
+   supplies the formula.
+3. The joins supply the path from `order_lines` to `orders` to `customers`.
+4. The agent writes the SQL, and it's validated against the certified
    definitions.
 
 #### What each representation can express
@@ -246,7 +260,7 @@ relationship:                           # inferred from keys and data
 | business term → table / column | ✅ R2RML mapping | ✅ term ↔ table and column links |
 | governed metric formula | ✅ metric service | ✅ certified SQL attribute |
 | how tables join | ✅ object properties + mapping | ✅ join relationships |
-| *a premium customer **is a** customer* | ✅ `rdfs:subClassOf`; a reasoner infers it | ❌ two separate terms, "related" only because they share the `customers` table |
+| *a premium customer **is a** customer* | ✅ `rdfs:subClassOf`; a reasoner infers it | ❌ no concept for it, only the column `is_premium` on the term *customers* |
 | *Laptops are in Electronics* (via Computers) | ✅ `owl:TransitiveProperty`; inferred | ❌ no hierarchy; you'd encode it in SQL |
 | *every order has exactly one customer* | ✅ cardinality axiom, machine-checkable | ❌ at most a sentence in a description |
 | exchange format | OWL / Turtle, queried with SPARQL | Apache Ossie YAML, queried through MCP / API |
@@ -255,6 +269,100 @@ The top four rows are what text-to-SQL needs most, and **both tools cover
 them**. The bottom rows are where an ontology in the formal sense adds
 *reasoning*: knowledge that's inferred and checked rather than written down
 in every query.
+
+### I ran both on the same example
+
+To check the comparison, I ran what I could of each project, locally, on
+the retail example from my repo. Neither project was fully deployed: COA
+needs an AWS account, and Auto Ontology needs NVIDIA's hosted models.
+
+#### NVIDIA Auto Ontology: Ossie model → Auto Ontology model
+
+Auto Ontology imports models as Apache Ossie YAML, through a converter
+from the Ossie project
+(`apache/ossie`, `converters/nvidia`, at the commit Auto Ontology pins). I
+fed it the repo's retail Ossie model.
+
+* **Result:** 8 tables became **8 terms** with their columns, the
+  relationships became **8 joins**, and the 8 metrics became **8 custom
+  analyses**.
+* **Correctness:** I ran the 8 converted metrics on the warehouse data, and
+  every one matched the known answer (revenue 1878.43, average order value
+  469.61, discount 10.00…). Premium-customer revenue, assembled from the
+  `is_premium` column and the joins, came to **1678.45**.
+
+Two practical findings:
+
+1. **Spec-version gap.** The converter pinned by Auto Ontology expects an
+   older Ossie layout than the current spec:
+   * expressions written as `dialects` rather than `sql`;
+   * metrics at the top level rather than inside datasets.
+
+   On my model it **silently dropped** the five dataset-level metrics,
+   including `revenue`, until I moved them to the top level.
+2. **Synonyms didn't come through.** The Ossie model's `ai_context.synonyms`
+   (*sales*, *GMV*, *turnover*…) don't appear on the converted terms, even
+   though terms have a `synonyms` field in Auto Ontology's database. You'd
+   add them again in the UI, or let discovery suggest them.
+
+**Not run:** discovery, semantic compilation and chat. They call NVIDIA's
+hosted models, which this environment can't reach.
+
+#### AWS COA: ontology validation and the virtual knowledge graph
+
+* **Validation, with COA's own code.** I ran COA's `ontology-engine`
+  validators (Tiers 1–3) on the retail ontology and data:
+  * **Tier 1:** HermiT consistency, no unsatisfiable classes, no taxonomy
+    cycles, a single connected graph, SHACL, datatypes. **All passed.**
+  * **Tier 2:** structural metrics. **Passed.**
+  * **Tier 3:** flagged classes and properties with no `rdfs:comment`.
+    That's fair: my ontology uses `skos:definition` instead.
+* **A deliberate contradiction.** I then added one triple saying customer
+  C1 is also a Seller. The ontology declares Customer and Seller disjoint.
+  HermiT detected the inconsistency, and COA's Tier-1 gate **blocked** the
+  ontology. The only message was "Reasoner failed:", with no explanation,
+  so COA could explain this case better.
+* **The virtual knowledge graph, with COA's configuration.** I ran Ontop
+  5.5.0 with the flags, versions and checksums COA's VKG container uses,
+  over the repo's ontology, R2RML mapping and warehouse schema. I asked it
+  two SPARQL questions.
+  1. *Revenue from premium customers.* Ontop turned the class into a filter
+     through the mapping:
+
+     ```sql
+     SELECT SUM(CAST(V2."QUANTITY" AS DECIMAL(20, 6)) * V2."UNIT_PRICE") AS "sum1"
+     FROM "ORDERS" V1, "ORDER_LINES" V2, "CUSTOMERS" V3
+     WHERE V3."IS_PREMIUM" = 'true'
+       AND V1."ORDER_ID" = V2."ORDER_ID" AND V1."CUSTOMER_ID" = V3."CUSTOMER_ID"
+     ```
+
+     On the warehouse data: **1678.45**. ✅
+  2. *Revenue from all customers* (`?c a retail:Customer`). The mapping
+     stores premium customers only under `PremiumCustomer`, so Ontop had to
+     apply `PremiumCustomer ⊑ Customer`. It then used the keys and
+     `NOT NULL` constraints to **remove the joins entirely**:
+
+     ```sql
+     SELECT SUM(CAST(V1."QUANTITY" AS DECIMAL(20, 6)) * V1."UNIT_PRICE") AS "sum1"
+     FROM "ORDER_LINES" V1
+     ```
+
+     On the warehouse data: **1878.43**. ✅
+
+**Not run:** induction (Bedrock), the metric service, MCP serving and
+Neptune. They need an AWS deployment.
+
+#### What the run shows
+
+Both produce correct SQL for the question. The difference is **where the
+knowledge lives**:
+
+* In **Auto Ontology**, "premium" is a column and the joins are a list.
+  The agent (LLM) has to know to filter on `is_premium` and which joins to
+  use.
+* In **COA**, "premium" is a class and the subclass link is an axiom. The
+  SQL, filter and join elimination included, was *derived* by Ontop from
+  the ontology and the mapping, not written by an LLM.
 
 ### So why does NVIDIA call it an ontology?
 
