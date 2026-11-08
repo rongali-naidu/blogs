@@ -458,21 +458,7 @@ The overlap matters more than the differences:
   every time. The repo explains
   [why you need both](https://github.com/rongali-naidu/semantics-ontology-graphs/blob/main/foundations/04-data-agents.md#43-isnt-that-redundant-a-semantic-model-and-a-graph-of-semantic-model-information).
 
-### Learn more
-
-I keep notes, diagrams and a runnable retail example of ontologies,
-knowledge graphs and semantic models in one place. Every format (OWL, RDF,
-property graph, SQL, Ossie, dbt) is checked in CI to give the same answers:
-
-👉 **[github.com/rongali-naidu/semantics-ontology-graphs](https://github.com/rongali-naidu/semantics-ontology-graphs)**
-
-Useful starting points:
-
-* [What a data agent needs: ontology, semantic model, knowledge graph](https://github.com/rongali-naidu/semantics-ontology-graphs/blob/main/foundations/04-data-agents.md)
-* [Mapping tables to an ontology: R2RML, OBDA, LLM-assisted](https://github.com/rongali-naidu/semantics-ontology-graphs/blob/main/ontologies/concepts/07-mapping-ontology-to-tables.md)
-* [All ontology products compared](https://github.com/rongali-naidu/semantics-ontology-graphs/blob/main/ontologies/implementations/README.md)
-
-Sources:
+### Sources
 [aws/context-ontology-accelerator](https://github.com/aws/context-ontology-accelerator) ·
 [COA docs](https://aws.github.io/context-ontology-accelerator/) ·
 [NVIDIA/auto-ontology](https://github.com/NVIDIA/auto-ontology) ·
