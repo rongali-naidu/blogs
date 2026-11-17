@@ -521,6 +521,21 @@ Northguard and Kafka:
 - [InfoQ: LinkedIn announces Northguard and Xinfra](https://www.infoq.com/news/2025/06/linkedin-northguard-xinfra/)
 - [The company that created Kafka is replacing it with a new solution](https://blog.dataengineerthings.org/the-company-that-created-kafka-is-replacing-it-with-a-new-solution-386cd1c2dcc8)
 
+Case studies (engineering write-ups and talks on real-time platforms at scale):
+
+| Write-up | Topics it covers |
+| --- | --- |
+| [Capturing a billion emo(j)i-ons — Hotstar](https://highscalability.com/capturing-a-billion-emo-j-i-ons/) | Spike ingestion, Kafka, 2-second micro-batch aggregation, push to clients |
+| [Analysing high-throughput data in real time — Hotstar](https://hasgeek.com/fifthelephant/2019/sub/analysing-high-throughput-data-in-real-time-Us6NRn9XGPLLgdX2aJSW3q) | Unified ingestion, Kafka Streams/KSQL, real-time product metrics |
+| [Patterns for building a scalable data platform — Hotstar](https://hasgeek.com/fifthelephant/winter-edition-2019/sub/patterns-for-building-a-scalable-data-platform-9nb8Mfvv7i6ZJoox3tHVRr) | Ingestion proxy, schemas, decoupled storage and compute, noisy neighbours |
+| [Real-time decisions with Garfield and Apache Druid — PhonePe](https://tech.phonepe.com/powering-real-time-decisions-with-phonepes-garfield-platform-and-apache-druid/) | Real-time OLAP, rollup, sketches, cardinality limits, query governance |
+| [Data classification and the real-time highway — Razorpay](https://razorpay.com/blog/data-classification-real-time-highway/) | Entities vs. events, CDC ordering, small files, replica lag |
+| [11% faster and 21% cheaper with Amazon EMR — Razorpay](https://aws.amazon.com/blogs/big-data/how-razorpay-achieved-11-performance-improvement-and-21-cost-reduction-with-amazon-emr/) | Spark cost tuning, Graviton, Spot strategy, Delta Lake medallion |
+| [How Trino and Alluxio power analytics — Razorpay](https://engineering.razorpay.com/how-trino-and-alluxio-power-analytics-at-razorpay-803d3386daaf) | Query-engine workload isolation, shared cache over S3, autoscaling |
+| [Logging platform journey on ClickHouse — Zomato](https://clickhouse.com/videos/zomatos-logging-platform-journey) | Moving petabyte-scale logs from Elasticsearch to ClickHouse |
+| [Real-time analytics and predictions with Confluent Kafka — Swiggy](https://current.confluent.io/post-conference-videos-2025/powering-real-time-analytics-predictions-and-recommendations-at-swiggy-with-confluent-kafka-bng25) | Managed Kafka, canary testing of consumers |
+| [Scaling with common sense — Zerodha](https://zerodha.tech/blog/scaling-with-common-sense/) | Simplicity, caching, database tuning, WebSocket streaming |
+
 Related posts in this repo:
 
 - [Understanding messaging systems and data streaming](messaging_and_streaming.md)
