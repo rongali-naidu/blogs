@@ -2,10 +2,12 @@
 title: "Anomaly Detection: Concepts, Models"
 date: 2025-09-21
 tags: [analytics]
-publish: true
+publish: false
 ---
 
 # Anomaly Detection: Concepts, Models
+
+> **Superseded** by the 3-part series: [Fundamentals](anomaly_detection_fundamentals.md) · [Models](anomaly_detection_models.md) · [AWS Services](anomaly_detection_in_aws_services.md).
 
 ## Introduction
 
@@ -118,7 +120,7 @@ Helps to provide adoptive thresholds compared to the Rule based techniques
 ### Regression-Based
 
 * **Supervised Regression**: Deviations between predicted vs. actual = anomalies.
-* **TVAD**: Models expected metric values using contextual features.
+* **Contextual target-variable models**: Model expected metric values using contextual features.
 
 ### Deep Learning Time-Series Models
 
